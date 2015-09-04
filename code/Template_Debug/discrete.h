@@ -14,11 +14,10 @@ namespace csl
   struct discrete
   {
     // template parameter.
-    typedef _Tp  value_type;
-    typedef _Tp* pointer;
+    typedef std::size_t size_type;
 
     // member variable.
-    std::vector<value_type> m_data;
+    std::vector<_Tp> m_data;
 
     // capacity.
     void
@@ -32,24 +31,24 @@ namespace csl
     clear()
     { m_data.clear(); }
 
-    std::size_t
-    size()
+    size_type
+    size() const
     { return m_data.size(); }
 
     // element access.
-    std::size_t
-    query(value_type __x)
+    size_type
+    query(const _Tp& __x) const
     {
       return std::lower_bound(m_data.begin(), m_data.end(), __x) - m_data.begin() + 1;
     }
 
     // modifiers.
-    void
-    insert(value_type __x)
+    inline void
+    insert(_Tp __x)
     { m_data.push_back(__x); }
 
     template <typename _InputIterator>
-    void
+    inline void
     insert(_InputIterator first, _InputIterator last)
     {
       m_data.insert(m_data.end(), first, last);

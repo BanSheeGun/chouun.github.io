@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/2015/01/29/code-template/</loc>
+    <lastmod>2015-09-04T00:53:40.457Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/2015/09/03/note-antifascism/</loc>
     <lastmod>2015-09-03T13:51:42.349Z</lastmod>
   </url>
@@ -37,11 +42,6 @@
   </url>
   
   <url>
-    <loc>http://fateud.com/2015/01/29/code-template/</loc>
-    <lastmod>2015-08-21T17:21:11.871Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://fateud.com/baidu_verify_g7rL4HvyAE.html</loc>
     <lastmod>2015-08-07T16:36:14.489Z</lastmod>
   </url>
@@ -69,11 +69,6 @@
   <url>
     <loc>http://fateud.com/categories/index.html</loc>
     <lastmod>2015-06-18T14:42:27.212Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fateud.com/code/CodeTemplate/README.html</loc>
-    <lastmod>2015-02-20T09:19:30.882Z</lastmod>
   </url>
   
 </urlset>

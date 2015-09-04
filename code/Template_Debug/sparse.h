@@ -9,6 +9,7 @@
 namespace csl
 {
   static std::vector<std::size_t> msb(2, 0);
+
   void
   msb_build(std::size_t p_data) {
     for (std::size_t i = msb.size(), t = msb[i-1]; i <= p_data; ++i)

@@ -13,15 +13,13 @@ namespace csl
       _Tp _FlagS = '@',
       _Tp _FlagD = '#',
       _Tp _FlagT = '\0'>
-  class manacher
+  struct manacher
   {
-  public :
     // template parameter.
     typedef _Tp         key_type;
     typedef int         value_type;
     typedef std::size_t size_type;
 
-  private :
     void
     generate(const key_type* __src)
     {
@@ -47,19 +45,21 @@ namespace csl
       }
     }
 
-  public :
     // capacity.
-    void
+    inline void
     build(const key_type* __src)
     {
       generate(__src);
       calculate();
     }
 
-  public :
+    size_type
+    size() const
+    { return m_size - 4; }
+
     // element access.
     value_type
-    query()
+    query() const
     {
       value_type __res = value_type();
       for (size_type i = 0; i < m_size; ++i)
@@ -74,12 +74,11 @@ namespace csl
     }
 
     value_type
-    operator [] (size_type __x)
+    operator [] (size_type __x) const
     {
       return m_data[__x + 2] - 1;
     }
 
-  private :
     // member variable.
     std::vector<key_type>   m_dest;
     std::vector<value_type> m_data;

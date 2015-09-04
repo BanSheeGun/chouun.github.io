@@ -7,14 +7,15 @@
 namespace csl {
   template <typename _Tp = char, _Tp _FlagS = '@',
       _Tp _FlagD = '#', _Tp _FlagT = '\0'>
-  class manacher {
-  public :
+  struct manacher {
     typedef _Tp         key_type;
     typedef int         value_type;
     typedef std::size_t size_type;
-    void build(const key_type* __src)
+    inline void build(const key_type* __src)
     { generate(__src); calculate(); }
-    value_type query() {
+    size_type size() const
+    { return m_size - 4; }
+    value_type query() const {
       value_type __res = value_type();
       for (size_type i = 0; i < m_size; ++i)
         if (m_data[i] > __res) __res = m_data[i];
@@ -22,12 +23,8 @@ namespace csl {
     }
     value_type at(size_type __x)
     { return __x + 2 < m_size ? this->operator[](__x) : 0; }
-    value_type operator [] (size_type __x)
+    value_type operator [] (size_type __x) const
     { return m_data[__x + 2] - 1; }
-  private :
-    std::vector<key_type>   m_dest;
-    std::vector<value_type> m_data;
-    size_type               m_size;
     void generate(const key_type* __src) {
       m_dest.clear();
       m_dest.push_back(_FlagS), m_dest.push_back(_FlagD);
@@ -43,6 +40,9 @@ namespace csl {
         if (k + i > p) p = k + i, j = i; m_data[i] = k;
       }
     }
+    std::vector<key_type>   m_dest;
+    std::vector<value_type> m_data;
+    size_type               m_size;
   };
 } // namespace csl
 #endif /* MANACHER_H_ */

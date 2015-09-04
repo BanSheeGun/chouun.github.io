@@ -3,7 +3,7 @@
 
 #ifndef CSL_ALGO_H_
 #define CSL_ALGO_H_
-#define CSL_ALGO_H_VERSION 20150820L
+#define CSL_ALGO_H_VERSION 20150823L
 
 #include <vector>
 
@@ -22,30 +22,27 @@ namespace csl
       div.resize(__n);
       prm.clear();
       phi[1] = 1;
-      for (int i = 2; i < __n; i++)
+      for (int i = 2; i < __n; ++i)
       {
         if (!div[i])
         {
-          phi[i] = i-1;
+          phi[i] = i - 1;
           div[i] = i;
           prm.push_back(i);
         }
-        for (int j = 0; j < (int)prm.size(); j++)
+        for (int j = 0, m = (int)prm.size(); j < m; ++j)
         {
           if (i * prm[j] >= __n) break;
           div[i * prm[j]] = prm[j];
           if (i % prm[j] == 0)
-          {
-            phi[i * prm[j]] = phi[i] * prm[j];
-            break;
-          }
+          { phi[i * prm[j]] = phi[i] * prm[j]; break; }
           else
-          {
-            phi[i * prm[j]] = phi[i] * (prm[j] - 1);
-          }
+          { phi[i * prm[j]] = phi[i] * (prm[j] - 1); }
+
         }
       }
     }
+
   } // namespace euler
 
 } // namespace csl
