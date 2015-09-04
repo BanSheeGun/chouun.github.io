@@ -1,5 +1,5 @@
 /*
- *  20150808L
+ *  20150904L
  *
  *  模板参数：
  *  sparse_table <_Tp, _Compare>
@@ -7,7 +7,7 @@
  *    _Compare : 比较函数
  *
  *  成员变量：
- *  m_data : vector< vector<_Tp*> >
+ *  m_data : vector< vector<_Tp> >
  *    存储空间
  *
  *  m_comp : _Compare

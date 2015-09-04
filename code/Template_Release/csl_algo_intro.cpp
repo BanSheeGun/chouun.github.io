@@ -1,5 +1,16 @@
 /*
- *  20150821L
+ *  20150904L
+ *
+ *  template <typename _Tp>
+ *  struct less : public std::binary_function<_Tp, _Tp, _Tp>
+ *    返回较小值
+ *
+ *  template <typename _Tp>
+ *  struct greater : public std::binary_function<_Tp, _Tp, _Tp>
+ *    返回较大值
+ *
+ *  namespace euler
+ *    欧拉函数
  *
  *  euler::phi : std::vector<int>
  *    获取欧拉函数
