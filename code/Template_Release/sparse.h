@@ -17,20 +17,20 @@ namespace csl {
   template <typename _Tp, typename _Compare = csl::less<_Tp> >
   class sparse_table {
   public :
-    typedef std::size_t size_t;
+    typedef std::size_t size_type;
     sparse_table(const _Compare& p_comp=_Compare()) : m_data(), m_comp(p_comp) { }
     void clear()
     { m_data.clear(); }
-    _Tp query(size_t first, size_t last) const {
-      size_t k=msb[last-first+1]; last=last+1-(1<<k);
+    _Tp query(size_type first, size_type last) const {
+      size_type k=msb[last-first+1]; last=last+1-(1<<k);
       return m_comp(m_data[k][first], m_data[k][last]);
     }
-    void build(_Tp* p_data, size_t p_size) {
+    void build(_Tp* p_data, size_type p_size) {
       msb_build(p_size); m_data.clear();
       m_data.push_back(std::vector<_Tp>(p_data,p_data+p_size));
-      for (size_t k=1,d=2,t=1;d<=p_size;++k,d<<=1,t<<=1) {
+      for (size_type k=1,d=2,t=1;d<=p_size;++k,d<<=1,t<<=1) {
         m_data.push_back(std::vector<_Tp>(p_size-d+1));
-        for (size_t i=0,j=p_size+1-d;i<j;++i)
+        for (size_type i=0,j=p_size+1-d;i<j;++i)
           m_data[k][i]=m_comp(m_data[k-1][i],m_data[k-1][i+t]);
       }
     }

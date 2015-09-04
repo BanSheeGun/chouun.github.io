@@ -26,7 +26,7 @@ namespace csl
   {
   public :
     // template parameter.
-    typedef std::size_t size_t;
+    typedef std::size_t size_type;
 
   public : 
     // constructor & destructor.
@@ -38,31 +38,31 @@ namespace csl
     clear()
     { m_data.clear(); }
 
-    size_t
+    size_type
     size() const
     { return m_data.empty() ? 0 : m_data.at(0).size(); }
 
   public : 
     // element access.
     _Tp
-    query(size_t first, size_t last) const
+    query(size_type first, size_type last) const
     {
-      size_t k = msb[last-first+1]; last = last + 1 - (1<<k);
+      size_type k = msb[last-first+1]; last = last + 1 - (1<<k);
       return m_comp(m_data[k][first], m_data[k][last]);
     }
 
   public : 
     // modifiers.
     void
-    build(_Tp* p_data, size_t p_size)
+    build(_Tp* p_data, size_type p_size)
     {
       msb_build(p_size);
       m_data.clear();
       m_data.push_back(std::vector<_Tp>(p_data, p_data + p_size));
-      for (size_t k = 1, d = 2, t = 1; d <= p_size; ++k, d <<= 1, t <<= 1)
+      for (size_type k = 1, d = 2, t = 1; d <= p_size; ++k, d <<= 1, t <<= 1)
       {
         m_data.push_back(std::vector<_Tp>(p_size - d + 1));
-        for (size_t i = 0, j = p_size + 1 - d; i < j; ++i)
+        for (size_type i = 0, j = p_size + 1 - d; i < j; ++i)
           m_data[k][i] = m_comp(m_data[k-1][i], m_data[k-1][i+t]);
       }
     }
