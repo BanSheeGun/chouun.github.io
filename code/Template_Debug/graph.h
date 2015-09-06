@@ -18,9 +18,7 @@ namespace csl
     typedef _graph_node<_Tp>* _Link;
     typedef _graph_node<_Tp>  _Self;
 
-#ifdef GRAPH_USE_PREV
     _Link prev;
-#endif
     _Link next;
     size_type from;
     size_type to;
@@ -45,18 +43,15 @@ namespace csl
     void
     m_add_edge(size_type from, size_type to, const value_type& data)
     {
+      if (m_size == m_data.size()) m_data.reserve(m_size + 1);
       _Link node = m_data.data() + m_size++;
-#ifdef GRAPH_USE_PREV
       node->prev = 0;
-#endif
       node->next = m_impl[from];
       node->from = from;
       node->to   = to;
       node->data = data;
-#ifdef GRAPH_USE_PREV
       if (m_impl[from]) m_impl[from]->prev = node;
-#endif
-      m_impl[from]       = node;
+      m_impl[from] = node;
     }
 
     // constructor & destructor.
@@ -71,7 +66,7 @@ namespace csl
 
     // capacity.
     void
-    build(size_type __v, size_type __e)
+    build(size_type __v, size_type __e = 0)
     {
       m_impl.assign(__v, _Link());
       m_data.resize(__e);
@@ -114,11 +109,122 @@ namespace csl
     // specialized algorithms.
 
     // member variable.
-  private :
     std::vector<_Link> m_impl;
     std::vector<_Node> m_data;
     size_type          m_size;
 
+  };
+
+  template <typename _Tp>
+  struct tarjan
+  {
+  public :
+    typedef typename graph<_Tp>::_Link _Link;
+
+    typedef std::size_t size_type;
+
+  private :
+    void
+    __scc(size_type u)
+    {
+      dfn[u] = low[u] = ++idx;
+      vis[u] = true;
+      sta.push_back(u);
+      for (_Link i = map->m_impl[u]; i; i = i->next)
+      {
+        size_type v = i->to;
+        if (!dfn[v])
+        {
+          __scc(v);
+          if (low[u] > low[v]) low[u] = low[v];
+        }
+        else
+        {
+          if (vis[v] && low[u] > dfn[v]) low[u] = dfn[v];
+        }
+      }
+      if (dfn[u] == low[u])
+      {
+        size_type v;
+        do {
+          v = sta.back();
+          sta.pop_back();
+          vis[v] = false;
+          key[v] = cnt;
+        } while (v != u);
+        ++cnt;
+      }
+    }
+
+    void
+    __dcc(size_type u)
+    {
+      dfn[u] = low[u] = ++idx;
+      for (_Link i = map->m_impl[u]; i; i = i->next)
+      {
+        size_type __x = i - map->m_data.data();
+        if (vis[__x]) continue;
+        vis[__x] = vis[__x^1] = true;
+
+        size_type v = i->to;
+        if (!dfn[v])
+        {
+          __dcc(v);
+          if (low[u] > low[v]) low[u] = low[v];
+          if (dfn[u] < low[v]) key[__x] = key[__x^1] = true;
+        }
+        else
+        {
+          if (low[u] > dfn[v]) low[u] = dfn[v];
+        }
+      }
+    }
+
+  public :
+    void scc(graph<_Tp>& __map)
+    {
+      map = &__map;
+      size_type __n = map->m_impl.size();
+      idx = 0;
+      cnt = 0;
+      sta.reserve(__n);
+      vis.assign(__n, false);
+
+      dfn.assign(__n, 0);
+      low.resize(__n);
+      key.resize(__n);
+
+      for (size_type i = 0; i < __n; ++i)
+        if (!dfn[i]) __scc(i);
+    }
+
+    void dcc(graph<_Tp>& __map)
+    {
+      map = &__map;
+      size_type __n = map->m_impl.size();
+      size_type __m = map->m_data.size();
+      idx = 0;
+      vis.assign(__m, false);
+
+      dfn.assign(__n, 0);
+      low.resize(__n);
+      key.assign(__m, false);
+
+      for (size_type i = 0; i < __n; ++i)
+        if (!dfn[i]) __dcc(i);
+    }
+
+  public :
+    std::vector<size_type> dfn;
+    std::vector<size_type> low;
+    std::vector<size_type> key;
+
+  private :
+    graph<_Tp>* map;
+    size_type   idx;
+    size_type   cnt;
+    std::vector<size_type> sta;
+    std::vector<bool> vis;
   };
 
 } // namespace csl

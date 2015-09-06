@@ -18,6 +18,8 @@ namespace csl {
     { m_data.clear(); }
     size_type size() const
     { return m_data.size(); }
+    void reserve(size_type __n)
+    { m_data.reserve(__n); }
     size_type query(const _Tp& __x) const
     { return std::lower_bound(m_data.begin(), m_data.end(), __x) - m_data.begin() + 1; }
     inline void insert(_Tp __x)

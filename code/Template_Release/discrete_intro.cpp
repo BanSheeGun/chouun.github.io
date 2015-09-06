@@ -1,5 +1,5 @@
 /*
- *  20150822L
+ *  20150904L
  *
  *  struct discrete
  *
@@ -16,6 +16,9 @@
  *
  *  size() : size_type
  *    返回存储空间的大小
+ *
+ *  reserve(size_type __n) : void
+ *    保证存储空间容量不小于__n，预先使用能提高效率
  *
  *  修改符：
  *  insert(_Tp __x) : void

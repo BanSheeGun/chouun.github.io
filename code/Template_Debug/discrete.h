@@ -35,6 +35,10 @@ namespace csl
     size() const
     { return m_data.size(); }
 
+    void
+    reserve(size_type __n)
+    { m_data.reserve(__n); }
+
     // element access.
     size_type
     query(const _Tp& __x) const
