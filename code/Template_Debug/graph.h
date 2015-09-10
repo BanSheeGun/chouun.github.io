@@ -56,7 +56,7 @@ namespace csl
 
     // constructor & destructor.
     explicit
-    graph(size_type __v, size_type __e) : m_size()
+    graph(size_type __v = 0, size_type __e = 0) : m_size()
     {
       m_impl.reserve(__v);
       m_data.reserve(__e);
@@ -78,26 +78,40 @@ namespace csl
     { return m_size; }
 
     // element access.
-    _Link
-    operator [] (size_type __x) const
+    inline _Link
+    getHead(size_type __x) const
     { return m_impl[__x]; }
+
+    inline _Link
+    getEdge(size_type __x)
+    { return m_data.data() + __x; }
+
+    inline size_type
+    getEdgeIndex(_Link __x) const
+    { return __x - m_data.data(); }
 
     // modifiers.
     void
-    add_edge(size_type from, size_type to, const value_type& data)
+    add_edge(size_type from,
+             size_type to,
+             const value_type& data)
     {
       m_add_edge(from, to, data);
     }
 
     void
-    add_double_edge(size_type from, size_type to, const value_type& data)
+    add_double_edge(size_type from,
+                    size_type to,
+                    const value_type& data)
     {
       m_add_edge(from, to, data);
       m_add_edge(to, from, data);
     }
 
     void
-    add_couple_edge(size_type from, size_type to, const value_type& data1,
+    add_couple_edge(size_type from,
+                    size_type to,
+                    const value_type& data1,
                     const value_type& data2 = value_type())
     {
       m_add_edge(from, to, data1);
@@ -130,7 +144,7 @@ namespace csl
       dfn[u] = low[u] = ++idx;
       vis[u] = true;
       sta.push_back(u);
-      for (_Link i = map->m_impl[u]; i; i = i->next)
+      for (_Link i = map->getHead(u); i; i = i->next)
       {
         size_type v = i->to;
         if (!dfn[v])
@@ -160,7 +174,7 @@ namespace csl
     __dcc(size_type u)
     {
       dfn[u] = low[u] = ++idx;
-      for (_Link i = map->m_impl[u]; i; i = i->next)
+      for (_Link i = map->getHead(u); i; i = i->next)
       {
         size_type __x = i - map->m_data.data();
         if (vis[__x]) continue;
@@ -181,49 +195,51 @@ namespace csl
     }
 
   public :
-    void scc(graph<_Tp>& __map)
+    void
+    scc(graph<_Tp>& __map)
     {
       map = &__map;
       size_type __n = map->m_impl.size();
       idx = 0;
       cnt = 0;
       sta.reserve(__n);
-      vis.assign(__n, false);
-
       dfn.assign(__n, 0);
       low.resize(__n);
       key.resize(__n);
+      vis.assign(__n, false);
 
       for (size_type i = 0; i < __n; ++i)
         if (!dfn[i]) __scc(i);
     }
 
-    void dcc(graph<_Tp>& __map)
+    void
+    dcc(graph<_Tp>& __map)
     {
       map = &__map;
       size_type __n = map->m_impl.size();
       size_type __m = map->m_data.size();
       idx = 0;
-      vis.assign(__m, false);
-
       dfn.assign(__n, 0);
       low.resize(__n);
       key.assign(__m, false);
+      vis.assign(__m, false);
 
       for (size_type i = 0; i < __n; ++i)
         if (!dfn[i]) __dcc(i);
     }
 
-  public :
-    std::vector<size_type> dfn;
-    std::vector<size_type> low;
-    std::vector<size_type> key;
+    inline size_type
+    operator [] (const size_type __x) const
+    { return key[__x]; }
 
   private :
     graph<_Tp>* map;
     size_type   idx;
     size_type   cnt;
     std::vector<size_type> sta;
+    std::vector<size_type> dfn;
+    std::vector<size_type> low;
+    std::vector<size_type> key;
     std::vector<bool> vis;
   };
 
