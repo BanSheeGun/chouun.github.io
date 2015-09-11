@@ -1,9 +1,9 @@
-// Name : graph.h 中文名
+// Name : graph.h 图论
 // Copyright : fateud.com
 
 #ifndef GRAPH_H_
 #define GRAPH_H_
-#define GRAPH_H_VERSION
+#define GRAPH_H_VERSION 20150911L
 
 #include <vector>
 
