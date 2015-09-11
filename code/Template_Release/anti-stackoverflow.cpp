@@ -8,7 +8,7 @@ void Main() {
 
 // Anti Stack Overflow
 int main() {
-  int _size = 16 << 20; // MB : << 20 ; KB : << 10 ;
+  int _size = 16 << 20; // KB(<< 10), MB(<< 20).
   char* _data = (char*)malloc(_size) + _size;
 #if __x86_64__ || __ppc64__ || _WIN64
   __asm__ __volatile__("movq %0,%%rsp\n pushq $_exit\n"::"r"(_data));
