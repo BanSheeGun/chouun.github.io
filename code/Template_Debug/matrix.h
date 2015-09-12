@@ -3,9 +3,10 @@
 
 #ifndef MATRIX_H_
 #define MATRIX_H_
-#define MATRIX_H_VERSION 20150911L
+#define MATRIX_H_VERSION 20150912L
 
 #include <vector>
+#include <ostream>
 
 namespace csl
 {
@@ -19,15 +20,16 @@ namespace csl
     typedef _Tp& reference;
 
     typedef std::size_t size_type;
-    typedef std::vector< std::vector<_Tp> > container;
     typedef csl::matrix<_Tp> _Self;
 
-  public : 
     // constructor & destructor.
-    matrix() { }
+    matrix() : m_data(), m_h(), m_w() { }
 
-    matrix(size_type __n, size_type __m)
-    : m_data(container(__n, std::vector<value_type>(__m))) { }
+    matrix(const _Self& __x)
+    { *this = __x; }
+
+    matrix(size_type __h, size_type __w)
+    : m_data(container(__h*__w)), m_h(__h), m_w(__w) { }
 
     static _Self
     identity(size_type __n)
@@ -42,68 +44,84 @@ namespace csl
     identity(const _Self& __x)
     { return identity(__x.height()); }
 
-  public : 
     // capacity.
     inline size_type
     height() const
-    { return m_data.size(); }
+    { return m_h; }
 
     inline size_type
-    weight() const
-    { return m_data[0].size(); }
+    width() const
+    { return m_w; }
 
-  public : 
     // element access.
-    inline std::vector<value_type>&
+    inline value_type*
     operator [] (size_type __x)
-    { return m_data[__x]; }
+    { return &m_data[__x * m_w]; }
 
-  public :
+    inline const value_type*
+    operator [] (size_type __x) const
+    { return &m_data[__x * m_w]; }
+
     // operator overloading.
-    friend _Self&
-    operator += (_Self& a, const _Self& b)
+    _Self&
+    operator += (const _Self& b)
     {
-      size_type n = a.height();
-      size_type m = a.weight();
-      for (size_type i = 0; i < n; ++i)
-        for (size_type j = 0; j < m; ++j)
-          a.m_data[i][j] += b.m_data[i][j];
-      return a;
+      size_type __n = height() * width();
+      for (size_type i = 0; i < __n; ++i)
+        m_data[i] += b.m_data[i];
+      return *this;
     }
 
-    friend _Self&
-    operator *= (_Self& a, const _Self& b)
+    _Self&
+    operator *= (const _Self& b)
     {
-      size_type n = a.height();
-      size_type m = b.weight();
-      size_type p = a.weight();
-      a.m_temp.assign(n, std::vector<value_type>(m));
+      size_type n = height();
+      size_type p = width();
+      size_type m = b.width();
+      _Self c(n, m);
       for (size_type i = 0; i < n; ++i)
         for (size_type k = 0; k < p; ++k)
         {
-          value_type __tmp = a.m_data[i][k];
+          value_type __tmp = (*this)[i][k];
           if (!__tmp) continue;
           for (size_type j = 0; j < m; ++j)
-            a.m_temp[i][j] += __tmp * b.m_data[k][j];
+            c[i][j] += __tmp * b[k][j];
         }
-      a.m_data.swap(a.m_temp);
-      return a;
+      std::swap(m_data, c.m_data);
+      m_h = c.m_h;
+      m_w = c.m_w;
+      return *this;
     }
 
-    friend _Self
-    operator + (const _Self& a, const _Self& b)
-    { return _Self(a) += b; }
+    _Self
+    operator + (const _Self& b) const
+    { return _Self(*this) += b; }
 
+    _Self
+    operator * (const _Self& b) const
+    { return _Self(*this) *= b; }
 
-    friend _Self
-    operator * (const _Self& a, const _Self& b)
-    { return _Self(a) *= b; }
+    friend std::ostream&
+    operator << (std::ostream &o, const _Self& a)
+    {
+      size_type n = a.height();
+      size_type m = a.width();
+      for (size_type i = 0; i < n; ++i) {
+        for (size_type j = 0; j < m; ++j)
+          o << a.m_data[i][j] << " ";
+        o << std::endl;
+      }
+      return o;
+    }
 
   private :
     // member variable.
-    container m_data;
-    container m_temp;
+    std::vector<_Tp> m_data;
+    size_type m_h;
+    size_type m_w;
+
   };
+
 } // namespace csl
 
 #endif /* MATRIX_H_ */
