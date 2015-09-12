@@ -1,4 +1,4 @@
-// Name : graph.h 图论
+// Name : Graph 图论
 // Copyright : fateud.com
 
 #ifndef GRAPH_H_

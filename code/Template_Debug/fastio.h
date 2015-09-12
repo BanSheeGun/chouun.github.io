@@ -1,4 +1,4 @@
-// Name : fastio 快速读入
+// Name : Fast Input/Output 快速读入
 // Copyright : fateud.com
 
 #ifndef FASTIO_H_
