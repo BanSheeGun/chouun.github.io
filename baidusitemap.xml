@@ -2,15 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
-    
-    
   <url>
     <loc>http://fateud.com/code-template/</loc>
-    <lastmod>2015-09-12T08:34:21.160Z</lastmod>
+    <lastmod>2015-09-16T09:05:03.778Z</lastmod>
     <data>
         <display>
         <title>代码模板（长期更新）</title>
-        <pubTime>2015-09-12T08:34:21.160Z</pubTime>
+        <pubTime>2015-09-16T09:05:03.778Z</pubTime>
         
         <tag>bestcoder </tag>
          
@@ -27,6 +25,8 @@
     </data>
     </url>
 
+    
+    
     
   <url>
     <loc>http://fateud.com/note-hexo/</loc>
