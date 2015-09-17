@@ -25,4 +25,12 @@
  *    欧拉筛法, [0,__n)
  *    初始化欧拉函数/最小因子/素数序列
  *
+ *  template <typename _Tp, typename _Comp >
+ *  isomorph_min(_Tp* data, std::size_t size, _Comp comp) : std::size_t
+ *    求data的循环最大/小同构中下标最小的
+ *
+ *  template <typename _Tp, typename _Comp >
+ *  isomorph_max(_Tp* data, std::size_t size, _Comp comp) : std::size_t
+ *    求data的循环最大/小同构中下标最大的
+ *
  */
