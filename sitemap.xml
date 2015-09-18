@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/icpc2015-ccol/</loc>
+    <lastmod>2015-09-18T14:50:00.860Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/acm/index.html</loc>
     <lastmod>2015-09-17T13:27:40.303Z</lastmod>
   </url>
