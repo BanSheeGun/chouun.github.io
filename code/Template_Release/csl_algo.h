@@ -2,7 +2,7 @@
 // Copyright : fateud.com
 #ifndef CSL_ALGO_H_
 #define CSL_ALGO_H_
-#define CSL_ALGO_H_VERSION 20150904L
+#define CSL_ALGO_H_VERSION 20150917L
 #include <vector>
 namespace csl {
   template <typename _Tp>
@@ -31,5 +31,29 @@ namespace csl {
       }
     }
   } // namespace euler
+  template <typename _Tp, typename _Comp >
+  std::size_t isomorph_min(_Tp* data, std::size_t size, _Comp comp) {
+    std::size_t i = 0, j = 1;
+    for (std::size_t k; i < size && j < size;) {
+      for (k = 0; data[i+k] == data[j+k] && k < size; ++k);
+      if (k == size) return i;
+      if (!comp(data[i+k], data[j+k])) std::swap(i, j);
+      j = std::max(j + k + 1, i + 1);
+    }
+    return i;
+  }
+  template <typename _Tp, typename _Comp >
+  std::size_t isomorph_max(_Tp* data, std::size_t size, _Comp comp) {
+    std::size_t i = 0, j = 1;
+    for (std::size_t k; i < size && j < size;) {
+      for (k = 0; data[i+k] == data[j+k] && k < size; ++k);
+      if (k == size) i = std::max(i, j), j = i + 1;
+      else {
+        if (!comp(data[i+k], data[j+k])) std::swap(i, j);
+        j = std::max(j + k + 1, i + 1);
+      }
+    }
+    return i;
+  }
 } // namespace csl
 #endif /* CSL_ALGO_H_ */

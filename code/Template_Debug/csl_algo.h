@@ -3,7 +3,7 @@
 
 #ifndef CSL_ALGO_H_
 #define CSL_ALGO_H_
-#define CSL_ALGO_H_VERSION 20150904L
+#define CSL_ALGO_H_VERSION 20150917L
 
 #include <vector>
 

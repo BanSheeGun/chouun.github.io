@@ -1,5 +1,5 @@
 /*
- *  20150904L
+ *  20150917L
  *
  *  template <typename _Tp>
  *  struct less : public std::binary_function<_Tp, _Tp, _Tp>
@@ -27,10 +27,10 @@
  *
  *  template <typename _Tp, typename _Comp >
  *  isomorph_min(_Tp* data, std::size_t size, _Comp comp) : std::size_t
- *    求data的循环最大/小同构中下标最小的
+ *    给定从data起长为size循环两次的序列，求其最大/小同构中最小的下标
  *
  *  template <typename _Tp, typename _Comp >
  *  isomorph_max(_Tp* data, std::size_t size, _Comp comp) : std::size_t
- *    求data的循环最大/小同构中下标最大的
+ *    给定从data起长为size循环两次的序列，求其最大/小同构中最大的下标
  *
  */

@@ -3,7 +3,7 @@
 
 #ifndef CSL_MATH_H_
 #define CSL_MATH_H_
-#define CSL_MATH_H_VERSION 20150820L
+#define CSL_MATH_H_VERSION 20150918L
 
 namespace csl
 {
@@ -29,31 +29,38 @@ namespace csl
     return x = 1, y = 0, a;
   }
 
-  template <typename _Tp, typename _Key>
+  template <typename _Tp>
   inline _Tp
-  pow(_Tp c, _Tp n, _Key k)
+  mul(_Tp a, _Tp b, const _Tp m)
+  {
+    _Tp c = 0;
+    for (a %= m; b; b >>= 1, a = (a << 1) % m)
+      if (b & 1) c = (c + a) % m;
+    return c;
+  }
+
+  template <typename _Val, typename _Key>
+  inline _Val
+  pow(_Val c, _Val n, const _Key k)
   {
     for (; k; n = n * n, k >>= 1)
       if (k & 1) c = c * n;
     return c;
   }
 
-  template <typename _Tp, typename _Key>
-  inline _Tp
-  pow(_Tp c, _Tp n, _Key k, _Tp m)
+  template <typename _Val, typename _Key>
+  inline _Val
+  pow(_Val c, _Val n, _Key k, const _Val m)
   {
-    for (; k; n = n * n % m, k >>= 1)
+    for (n %= m; k; n = n * n % m, k >>= 1)
       if (k & 1) c = c * n % m;
-    return c % m;
+    return c;
   }
 
-  template <typename _Tp>
-  inline _Tp
-  inv(_Tp x, _Tp m)
-  {
-    return csl::pow(_Tp(1), x, m - 2, m);
-  }
-
+  template <typename _Val, typename _Key>
+  inline _Val
+  inv(_Val x, const _Key m)
+  { return csl::pow(_Val(1), x, m - 2, m); }
 } // namespace csl
 
 #endif /* CSL_MATH_H_ */
