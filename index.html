@@ -81,6 +81,150 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/note-math/" title="残龙的数学笔记" itemprop="url">残龙的数学笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
+		
+  <p class="article-time">
+    <time datetime="2015-09-20T18:25:31.960Z" itemprop="datePublished"> 发表于 2015-09-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>老实说了吧，这篇东西是个大坑，反正我根本没准备填。<br>你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/note-math/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/筆記/">筆記</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/數論/">數論</a><a href="/tags/遞推/">遞推</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/note-math/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/note-vpn/" title="架設一個L2TP協議的簡易vpn" itemprop="url">架設一個L2TP協議的簡易vpn</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
+		
+  <p class="article-time">
+    <time datetime="2015-09-20T17:48:07.000Z" itemprop="datePublished"> 发表于 2015-09-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
+<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
+<h2 id="起因">起因</h2><p>萬惡的學校，一開學又開始慘無人道的十一點斷網，最近準備區域賽急需大量資料的我，完全無法接受慘痛的現實。<br>轉念一想，實驗室是通宵供電供網的，然而天天睡實驗室對身體不利，所以我決定通過代理來解決上網問題。</p>
+<h2 id="架設">架設</h2><p>我先回憶了上個學期架設vpn的過程，進行了同樣的步驟。</p>
+<p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
+<p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
+<p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
+<h2 id="路由">路由</h2><p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
+<p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
+<ol>
+<li>TCP 1723 端口：PPTP協議連接端口</li>
+<li>UDP 1701 端口：L2TP協議連接端口</li>
+<li>UDP 500 端口：Internet密鑰交換(IKE) - 用戶數據報協議</li>
+<li>UDP 4500 端口：IPsec NAT-T</li>
+<li>TCP/UDP 50 端口：封裝式安全協議(ESP) - Internet協議(IP)協議</li>
+</ol>
+<p>然後嘗試著訪問百度，哇哦！還是血崩…</p>
+<h2 id="尾聲">尾聲</h2><p>我原以爲要跟上次一樣不了了之了，結果chrome虎軀一震，竟然連上了，真是xnmbyy！<br>測試了一下Google，秒連，說明並不是錯覺。也懶得糾結這麼多了，能上就好。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/筆記/">筆記</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/L2TP/">L2TP</a><a href="/tags/vpn/">vpn</a><a href="/tags/網絡/">網絡</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/note-vpn/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/note-hexo/" title="Hello Hexo" itemprop="url">Hello Hexo</a>
   </h1>
   <p class="article-author">By
@@ -529,70 +673,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/note-math/" title="残龙的数学笔记" itemprop="url">残龙的数学笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
-		
-  <p class="article-time">
-    <time datetime="2015-03-28T10:41:59.000Z" itemprop="datePublished"> 发表于 2015-03-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>老实说了吧，这篇东西是个大坑，反正我根本没准备填。<br>你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/note-math/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/筆記/">筆記</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/數論/">數論</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/note-math/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
@@ -611,7 +691,7 @@
 		  
 		
 		  
-			<li><a href="/categories/筆記/" title="筆記">筆記<sup>3</sup></a></li>
+			<li><a href="/categories/筆記/" title="筆記">筆記<sup>4</sup></a></li>
 		  
 		
 		  
@@ -628,11 +708,23 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/github/" title="github">github<sup>1</sup></a></li>
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vpn/" title="vpn">vpn<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/網絡/" title="網絡">網絡<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/人性/" title="人性">人性<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/語言學/" title="語言學">語言學<sup>1</sup></a></li>
 			
 		
 			
@@ -652,6 +744,10 @@
 			
 		
 			
+				<li><a href="/tags/遞推/" title="遞推">遞推<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/伤离别/" title="伤离别">伤离别<sup>1</sup></a></li>
 			
 		
@@ -660,7 +756,7 @@
 			
 		
 			
-				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+				<li><a href="/tags/L2TP/" title="L2TP">L2TP<sup>1</sup></a></li>
 			
 		
 			
@@ -668,7 +764,7 @@
 			
 		
 			
-				<li><a href="/tags/語言學/" title="語言學">語言學<sup>1</sup></a></li>
+				<li><a href="/tags/github/" title="github">github<sup>1</sup></a></li>
 			
 		
 			
@@ -689,22 +785,6 @@
 		
 			
 				<li><a href="/tags/長春賽區/" title="長春賽區">長春賽區<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/網絡賽/" title="網絡賽">網絡賽<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/bestcoder/" title="bestcoder">bestcoder<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/codeforces/" title="codeforces">codeforces<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/template/" title="template">template<sup>1</sup></a></li>
 			
 		
 		</ul>

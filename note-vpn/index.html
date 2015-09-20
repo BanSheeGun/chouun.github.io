@@ -4,23 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>残龙的数学笔记 | Fate / Unlimited Darkness</title>
+    <title>架設一個L2TP協議的簡易vpn | Fate / Unlimited Darkness</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="ChouUn">
     
 
     
-    <meta name="description" content="老实说了吧，这篇东西是个大坑，反正我根本没准备填。你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。">
+    <meta name="description" content="|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。
+ChouUnuser.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1
+起因萬惡的學校，一開學又開始慘無人道的十一點斷網，最近準備區域賽急需大量資料的我，完全無法接受慘痛的現實。轉念一想，實驗室是通宵供電供網的，然而天天睡實驗">
 <meta property="og:type" content="article">
-<meta property="og:title" content="残龙的数学笔记">
-<meta property="og:url" content="http://fateud.com/note-math/index.html">
+<meta property="og:title" content="架設一個L2TP協議的簡易vpn">
+<meta property="og:url" content="http://fateud.com/note-vpn/index.html">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
-<meta property="og:description" content="老实说了吧，这篇东西是个大坑，反正我根本没准备填。你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。">
-<meta property="og:updated_time" content="2015-09-20T18:25:31.960Z">
+<meta property="og:description" content="|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。
+ChouUnuser.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1
+起因萬惡的學校，一開學又開始慘無人道的十一點斷網，最近準備區域賽急需大量資料的我，完全無法接受慘痛的現實。轉念一想，實驗室是通宵供電供網的，然而天天睡實驗">
+<meta property="og:updated_time" content="2015-09-20T18:25:03.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="残龙的数学笔记">
-<meta name="twitter:description" content="老实说了吧，这篇东西是个大坑，反正我根本没准备填。你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。">
+<meta name="twitter:title" content="架設一個L2TP協議的簡易vpn">
+<meta name="twitter:description" content="|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。
+ChouUnuser.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1
+起因萬惡的學校，一開學又開始慘無人道的十一點斷網，最近準備區域賽急需大量資料的我，完全無法接受慘痛的現實。轉念一想，實驗室是通宵供電供網的，然而天天睡實驗">
 <link rel="publisher" href="117134980329222155883">
 
     
@@ -80,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/note-math/" title="残龙的数学笔记" itemprop="url">残龙的数学笔记</a>
+      <a href="/note-vpn/" title="架設一個L2TP協議的簡易vpn" itemprop="url">架設一個L2TP協議的簡易vpn</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-20T18:25:31.960Z" itemprop="datePublished"> 发表于 2015-09-21</time>
+    <time datetime="2015-09-20T17:48:07.000Z" itemprop="datePublished"> 发表于 2015-09-21</time>
     
   </p>
 </header>
@@ -96,22 +102,28 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数论"><span class="toc-number">1.</span> <span class="toc-text">数论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最大公约数(Greatest_Common_Divisor)"><span class="toc-number">1.1.</span> <span class="toc-text">最大公约数(Greatest Common Divisor)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#欧几里得算法(Euclidean_Algorithm)"><span class="toc-number">1.1.1.</span> <span class="toc-text">欧几里得算法(Euclidean Algorithm)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#扩展欧几里得算法(Extended_Euclidean_Algorithm)"><span class="toc-number">1.1.2.</span> <span class="toc-text">扩展欧几里得算法(Extended Euclidean Algorithm)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#莫比乌斯函数(Möbius_Function)"><span class="toc-number">1.2.</span> <span class="toc-text">莫比乌斯函数(Möbius Function)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递推"><span class="toc-number">2.</span> <span class="toc-text">递推</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_a[n-1]^2_-_2"><span class="toc-number">2.1.</span> <span class="toc-text">a[n] = a[n-1]^2 - 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]"><span class="toc-number">2.2.</span> <span class="toc-text">a[n] = p⋅a[n-1] + q⋅a[n-2]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#(a+√b)^n"><span class="toc-number">2.3.</span> <span class="toc-text">(a+√b)^n</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#架設"><span class="toc-number">2.</span> <span class="toc-text">架設</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-number">3.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#尾聲"><span class="toc-number">4.</span> <span class="toc-text">尾聲</span></a></li></ol>
 		
 		</div>
 		
-		<p>老实说了吧，这篇东西是个大坑，反正我根本没准备填。<br>你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。</p>
-<a id="more"></a>
-<h2 id="数论">数论</h2><h3 id="最大公约数(Greatest_Common_Divisor)">最大公约数(Greatest Common Divisor)</h3><p>某几个整数共有约数中最大的一个。</p>
-<h4 id="欧几里得算法(Euclidean_Algorithm)">欧几里得算法(Euclidean Algorithm)</h4><p>欧几里德算法：$\begin{eqnarray} gcd(a,b) = \begin{cases}<br>a,                 &amp; b = 0 \cr<br>gcd(b, a \bmod b), &amp; otherwise<br>\end{cases} \end{eqnarray}$</p>
-<blockquote>
-<p>证明:<br>令$r = gcd(a,b)$<br>则$r \mid a, r \mid b$<br>故$r \mid (a - b)$<br>引$r \mid (a - kb) \Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b) \Rightarrow r \mid (a \bmod b)$<br>故$gcd(a,b) \equiv gcd(b, a \bmod b)$</p>
-</blockquote>
-<h4 id="扩展欧几里得算法(Extended_Euclidean_Algorithm)">扩展欧几里得算法(Extended Euclidean Algorithm)</h4><h3 id="莫比乌斯函数(Möbius_Function)">莫比乌斯函数(Möbius Function)</h3><p>一般用$mu(n)$或者$\mu(n)$表示，是个积性函数(multiplicative function)<br>$\begin{eqnarray} \mu(n) = \begin{cases}<br>x = 1,      &amp; n = 1 \cr<br>x = (-1)^k, &amp; \text{if } n \text{ is the product of } k \text{ different primes} \cr<br>x = 0,         &amp; otherwise<br>\end{cases} \end{eqnarray}$</p>
-<h2 id="递推">递推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$a_{n} = a_{n-1}^2 - 2$<br>令 $a_{0} = x + \frac{1}{x}$<br>则 $a_{n} = x^{2^n} + \frac{1}{x^{2^n}}$</p>
-<h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$a_{n} = p a_{n-1} + q a_{n-2}$<br>特征方程 $x ^ 2 = px + q$，求得 $\alpha \beta$。<br>若 $\alpha \neq \beta$，则 $a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n$；<br>若 $\alpha = \beta$，则 $a_{n} = (c_{1} + n c_{2}) \alpha ^ n$。<br>求得 $c_{1}, c_{2}$，求得 $p, q$，即求得 $a_{n}$。</p>
-<h3 id="(a+√b)^n">(a+√b)^n</h3><p>$S_{n} = \lceil (a + \sqrt{b})^{n} \rceil $<br>构造 $(a + \sqrt{b})^{n} + (a - \sqrt{b})^{n}$<br>$\because 0 &lt; a - \sqrt{b} &lt; 1$，<br>且二项式展开、合并同类项后，只可能有 $\sqrt{b}^{2i} = b^i$<br>$\therefore S_{n} = (a + \sqrt{b})^{n} + (a - \sqrt{b})^{n}$<br>$S_{n} ((a + \sqrt{b}) + (a - \sqrt{b}))$<br>$ = (a + \sqrt{b})^{n+1} + (a - \sqrt{b})^{n+1} + (a + \sqrt{b})(a - \sqrt{b})((a + \sqrt{b})^{n-1} + (a - \sqrt{b})^{n-1})$<br>$ = S_{n+1} + (a ^ 2 - b) S_{n-1}$<br>移项得 $S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1}$</p>
-<p>也可以直接构造上一节“a[n] = p⋅a[n-1] + q⋅a[n-2]”的形式，<br>特征根 $a - \sqrt{b}, a + \sqrt{b}$，$p = 2a, q = b - a ^ 2$<br>轻松得 $S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1}$</p>
+		<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
+<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
+<h2 id="起因">起因</h2><p>萬惡的學校，一開學又開始慘無人道的十一點斷網，最近準備區域賽急需大量資料的我，完全無法接受慘痛的現實。<br>轉念一想，實驗室是通宵供電供網的，然而天天睡實驗室對身體不利，所以我決定通過代理來解決上網問題。</p>
+<h2 id="架設">架設</h2><p>我先回憶了上個學期架設vpn的過程，進行了同樣的步驟。</p>
+<p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
+<p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
+<p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
+<h2 id="路由">路由</h2><p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
+<p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
+<ol>
+<li>TCP 1723 端口：PPTP協議連接端口</li>
+<li>UDP 1701 端口：L2TP協議連接端口</li>
+<li>UDP 500 端口：Internet密鑰交換(IKE) - 用戶數據報協議</li>
+<li>UDP 4500 端口：IPsec NAT-T</li>
+<li>TCP/UDP 50 端口：封裝式安全協議(ESP) - Internet協議(IP)協議</li>
+</ol>
+<p>然後嘗試著訪問百度，哇哦！還是血崩…</p>
+<h2 id="尾聲">尾聲</h2><p>我原以爲要跟上次一樣不了了之了，結果chrome虎軀一震，竟然連上了，真是xnmbyy！<br>測試了一下Google，秒連，說明並不是錯覺。也懶得糾結這麼多了，能上就好。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -125,7 +137,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/數論/">數論</a><a href="/tags/遞推/">遞推</a>
+  <span></span> <a href="/tags/L2TP/">L2TP</a><a href="/tags/vpn/">vpn</a><a href="/tags/網絡/">網絡</a>
   </div>
 
 </div>
@@ -134,7 +146,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://fateud.com/note-math/" data-title="残龙的数学笔记 | Fate / Unlimited Darkness" data-tsina="null" class="share clearfix">
+	  <div data-url="http://fateud.com/note-vpn/" data-title="架設一個L2TP協議的簡易vpn | Fate / Unlimited Darkness" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,11 +159,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/note-math/" title="残龙的数学笔记">
+  <strong>上一篇：</strong><br/>
+  <span>
+  残龙的数学笔记</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/note-vpn/"  title="架設一個L2TP協議的簡易vpn">
+<a href="/note-hexo/"  title="Hello Hexo">
  <strong>下一篇：</strong><br/> 
- <span>架設一個L2TP協議的簡易vpn
+ <span>Hello Hexo
 </span>
 </a>
 </div>
@@ -172,7 +192,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数论"><span class="toc-number">1.</span> <span class="toc-text">数论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最大公约数(Greatest_Common_Divisor)"><span class="toc-number">1.1.</span> <span class="toc-text">最大公约数(Greatest Common Divisor)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#欧几里得算法(Euclidean_Algorithm)"><span class="toc-number">1.1.1.</span> <span class="toc-text">欧几里得算法(Euclidean Algorithm)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#扩展欧几里得算法(Extended_Euclidean_Algorithm)"><span class="toc-number">1.1.2.</span> <span class="toc-text">扩展欧几里得算法(Extended Euclidean Algorithm)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#莫比乌斯函数(Möbius_Function)"><span class="toc-number">1.2.</span> <span class="toc-text">莫比乌斯函数(Möbius Function)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递推"><span class="toc-number">2.</span> <span class="toc-text">递推</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_a[n-1]^2_-_2"><span class="toc-number">2.1.</span> <span class="toc-text">a[n] = a[n-1]^2 - 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]"><span class="toc-number">2.2.</span> <span class="toc-text">a[n] = p⋅a[n-1] + q⋅a[n-2]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#(a+√b)^n"><span class="toc-number">2.3.</span> <span class="toc-text">(a+√b)^n</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#架設"><span class="toc-number">2.</span> <span class="toc-text">架設</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-number">3.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#尾聲"><span class="toc-number">4.</span> <span class="toc-text">尾聲</span></a></li></ol>
  
   </div>
 
