@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fateud.com/icpc2015-ccol/</loc>
-    <lastmod>2015-09-19T17:18:33.408Z</lastmod>
+    <loc>http://fateud.com/note-math/</loc>
+    <lastmod>2015-09-20T02:25:41.033Z</lastmod>
   </url>
   
   <url>
-    <loc>http://fateud.com/note-math/</loc>
-    <lastmod>2015-09-19T16:57:43.870Z</lastmod>
+    <loc>http://fateud.com/note-hexo/</loc>
+    <lastmod>2015-09-20T01:56:39.101Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fateud.com/icpc2015-ccol/</loc>
+    <lastmod>2015-09-19T17:18:33.408Z</lastmod>
   </url>
   
   <url>
@@ -34,11 +39,6 @@
   <url>
     <loc>http://fateud.com/about/index.html</loc>
     <lastmod>2015-09-12T11:24:28.647Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fateud.com/note-hexo/</loc>
-    <lastmod>2015-09-10T08:06:10.757Z</lastmod>
   </url>
   
   <url>

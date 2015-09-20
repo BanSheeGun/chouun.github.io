@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命运 / 无尽长夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-09-19T17:18:33.408Z</updated>
+  <updated>2015-09-20T01:56:39.101Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -14,6 +14,172 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello Hexo]]></title>
+    <link href="http://fateud.com/note-hexo/"/>
+    <id>http://fateud.com/note-hexo/</id>
+    <published>2015-09-20T01:56:39.101Z</published>
+    <updated>2015-09-20T01:56:39.101Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info.</p>
+</blockquote>
+<p>以上一行字，表明我转投了<a href="http://hexo.io/" target="_blank" rel="external"><strong>Hexo</strong></a>的怀抱。</p>
+<a id="more"></a>
+<p>最初用的<a href="http://blog.csdn.net/y63308042" target="_blank" rel="external"><em>csdn</em></a>，感觉自由度过低（不能任意DIY），很是不爽；<br>后来用<a href="http://idlepilot.com/" target="_blank" rel="external"><em>飞行员</em></a>的衡天主机搭了个<a href="http://cn.wordpress.org/" target="_blank" rel="external"><em>WordPress</em></a>，然而维护太繁琐。<br>累觉不爱的我听从<a href="http://loli.be/" target="_blank" rel="external"><em>Smoogle</em></a>用了<a href="http://hexo.io/" target="_blank" rel="external"><em>Hexo</em></a>，现在想来静态blog也是极好。<br>用<a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>写博文，这才符合我这种屌丝码农的身份嘛……</p>
+<h2 id="绪论">绪论</h2><h3 id="Hexo是啥箇物事">Hexo是啥箇物事</h3><blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。<br>Hexo使用<a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<h3 id="Hexo由边个开发">Hexo由边个开发</h3><blockquote>
+<p>Hexo用<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>开发，作者是台湾大学生<a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>。</p>
+</blockquote>
+<h3 id="出现问题谁背锅">出现问题谁背锅</h3><blockquote>
+<p>如果您在使用过程中遇到问题，请查看<a href="https://hexo.io/zh-cn/docs/troubleshooting.html" target="_blank" rel="external">问题解答</a>，或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>、<a href="https://groups.google.com/group/hexo" target="_blank" rel="external">Google Group</a>上正面刚作者。</p>
+</blockquote>
+<h2 id="搭建">搭建</h2><h3 id="安装Node-js">安装Node.js</h3><p>到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js官网</a>下载<strong>相应平台</strong>的<a href="http://nodejs.org/download/" target="_blank" rel="external">最新版本</a>，安装之。</p>
+<h3 id="安装Git">安装Git</h3><blockquote>
+<ul>
+<li>Windows：下载并安装<a href="https://git-scm.com/download/win" target="_blank" rel="external">git</a>.</li>
+<li>Mac：使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>、<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a>或下载<a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a>。</li>
+<li>Linux (Ubuntu, Debian)：<code>$ sudo apt-get install git-core</code></li>
+<li>Linux (Fedora, Red Hat, CentOS)：<code>$ sudo yum install git-core</code></li>
+</ul>
+</blockquote>
+<h3 id="安装Hexo">安装Hexo</h3><p>笔者以Windows为例</p>
+<ol>
+<li>打开Git Bash，执行<code>$ npm install -g hexo</code></li>
+<li>用<code>$ cd</code>跟<code>$ ls</code>命令，进入一个文件夹作为Hexo的本地存储区域</li>
+<li>执行<code>$ hexo init</code></li>
+<li>执行<code>$ npm install</code></li>
+</ol>
+<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/cd&ls.png">
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#10;&#9500;&#9472;&#9472; _config.yml&#10;&#9500;&#9472;&#9472; package.json&#10;&#9500;&#9472;&#9472; scaffolds&#10;&#9500;&#9472;&#9472; scripts&#10;&#9500;&#9472;&#9472; source&#10;&#9474;   &#9500;&#9472;&#9472; _drafts&#10;&#9474;   &#9492;&#9472;&#9472; _posts&#10;&#9492;&#9472;&#9472; themes</span><br></pre></td></tr></table></figure>
+<p>其实到这里已经差不多了，剩下的只是如何去编辑、查看、发布。</p>
+<h2 id="起飞">起飞</h2><h3 id="部署前戏">部署前戏</h3><ol>
+<li>修改<code>\_config.yml</code>的deploy部分，注意你在此处用的repository必须名为<code>your_user_name.github.io</code>（忽略大小写）</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git&#10;  repository: https://github.com/ChouUn/chouun.github.io.git&#10;  branch: master</span><br></pre></td></tr></table></figure>
+<ol>
+<li>执行<code>$ npm install hexo-deployer-git --save</code>安装部署插件</li>
+<li>执行<code>$ hexo d -g</code>进行部署</li>
+<li>打开<code>http://your_user_name.github.io</code>察看效果</li>
+</ol>
+<p>ps. 新版本的hexo已经不再支持github，被新的git取代了。<br>pss. 过程中可能要求你调用这两个命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"chouunsoft@gmail.com"</span></span><br><span class="line">$ git config --global user.name <span class="string">"ChouUn"</span></span><br></pre></td></tr></table></figure>
+<p>psss. 为了避免命名空间冲突，每个用户对应唯一一个github.io，请对自己负责不要乱取名字</p>
+<h3 id="常用命令">常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 完整命令</span></span><br><span class="line">$ hexo new <span class="string">"My New Post"</span>    <span class="comment">#新建文章</span></span><br><span class="line">$ hexo new page <span class="string">"pageName"</span>  <span class="comment">#新建页面</span></span><br><span class="line">$ hexo generate             <span class="comment">#生成页面</span></span><br><span class="line">$ hexo server               <span class="comment">#运行服务</span></span><br><span class="line">$ hexo deploy               <span class="comment">#部署博客</span></span><br><span class="line">$ hexo clean                <span class="comment">#清除缓存</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 复合命令</span></span><br><span class="line">$ hexo server --generate    <span class="comment">#生成并运行</span></span><br><span class="line">$ hexo deploy --generate    <span class="comment">#生成并部署</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 缩写命令</span></span><br><span class="line">$ hexo n                    <span class="comment"># hexo new</span></span><br><span class="line">$ hexo g                    <span class="comment"># hexo generate</span></span><br><span class="line">$ hexo s                    <span class="comment"># hexo server</span></span><br><span class="line">$ hexo d                    <span class="comment"># hexo deploy</span></span><br><span class="line">$ hexo s -g                 <span class="comment"># hexo server -generate</span></span><br><span class="line">$ hexo d -g                 <span class="comment"># hexo deploy -generate</span></span><br></pre></td></tr></table></figure>
+<p>一般使用<code>$ hexo n</code>新建文章，然后<code>$ hexo s -g</code>实时察看效果，最后<code>$ hexo d -g</code>部署到github上。<br>ps. <code>$ hexo server -s</code>可以运行静态服务，以确认生成是否成功，如果有异步，<code>$ hexo clean</code>以后再<code>$ hexo d -g</code>一次。</p>
+<h3 id="标签插件">标签插件</h3><blockquote><p>They’re ported from Octopress and can help you insert specific contents in posts quickly.</p>
+<footer><strong>Tag Plugins | Hexo</strong><cite><a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="external">hexo.io/docs/tag-plugins.html</a></cite></footer></blockquote>
+<p>译：这些功能是沿袭Octopress，以便你快速插入特殊内容。</p>
+<ol>
+<li><p>对书籍的引用</p>
+<blockquote><p>露と落ち、露と消えにし、我が身かな、浪速のことも、夢のまた夢。</p>
+<footer><strong>Toyotomi Hideyoshi</strong><cite>辞世の句</cite></footer></blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote Toyotomi Hideyoshi, &#36766;&#19990;&#12398;&#21477; %&#125;&#10;&#38706;&#12392;&#33853;&#12385;&#12289;&#38706;&#12392;&#28040;&#12360;&#12395;&#12375;&#12289;&#25105;&#12364;&#36523;&#12363;&#12394;&#12289;&#28010;&#36895;&#12398;&#12371;&#12392;&#12418;&#12289;&#22818;&#12398;&#12414;&#12383;&#22818;&#12290;&#10;&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对网文的引用</p>
+<blockquote><p>[範例]【WB】減少洩漏、提高效率、數據系統<br>雖然我的系統很舊了，不過看最近在研究這東西的人還不少</p>
+<footer><strong>Weberkkk</strong><cite><a href="http://forums.wasabistudio.ca/viewtopic.php?t=23408" target="_blank" rel="external">forums.wasabistudio.ca/viewtopic.php?t=23408</a></cite></footer></blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote Weberkkk http://forums.wasabistudio.ca/viewtopic.php?t=23408 %&#125;&#10;[&#31684;&#20363;]&#12304;WB&#12305;&#28187;&#23569;&#27945;&#28431;&#12289;&#25552;&#39640;&#25928;&#29575;&#12289;&#25976;&#25818;&#31995;&#32113;&#10;&#38614;&#28982;&#25105;&#30340;&#31995;&#32113;&#24456;&#33290;&#20102;&#65292;&#19981;&#36942;&#30475;&#26368;&#36817;&#22312;&#30740;&#31350;&#36889;&#26481;&#35199;&#30340;&#20154;&#36996;&#19981;&#23569;&#10;&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码块</p>
+<figure class="highlight cpp"><figcaption><span>helloworld</span><a href="/code/helloworld.cpp">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"!!!Hello World!!!"</span> &lt;&lt; endl; <span class="comment">// prints !!!Hello World!!!</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;% include_code helloworld lang:cpp helloworld.cpp %&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="绑定域名">绑定域名</h3><blockquote><p>如果有自己的域名，在<code>\Hexo\source</code>内创建一个文件名为<code>CNAME</code>（没有后缀）的文件，在里面加入自己的域名，如：<code>xuzhenyang.com</code>，部署后就能在浏览器里进入自己的域名看到自己的博客啦~</p>
+<footer><strong>Hello Hexo | 飞行员手册</strong><cite><a href="http://idlepilot.com/2015/04/06/Hello%20Hexo/" target="_blank" rel="external">idlepilot.com/2015/04/06/Hello%20Hexo</a></cite></footer></blockquote>
+<p>CNAME文件，起到的只是一个跳转作用。此处利用chrome右键<code>审核元素 -&gt; Network</code>，勾上保留日志<code>Preserve log</code>，打开自己的blog，你会发现一个Method为GET、Status为301的文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Remote Address:103.245.222.133:80&#10;Request URL:http://chouun.github.io/&#10;Request Method:GET&#10;Status Code:301 Moved Permanently (from cache)&#10;&#10;Date:Fri, 07 Aug 2015 07:59:18 GMT&#10;Location:http://fateud.com/&#10;Server:GitHub.com</span><br></pre></td></tr></table></figure>
+<p>显然你需要一个自己的域名，不然填什么都是为别人做嫁衣。我的<code>fateud.com</code>是从狗爹(<a href="https://www.godaddy.com/" target="_blank" rel="external">GoDaddy</a>)上入的。</p>
+<ol>
+<li><code>control + R</code>输入<code>cmd</code>回车，输入<code>ping your_user_name.github.io</code>回车，得知自己ip是<em>103.245.222.133</em></li>
+<li>登录<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a>，添加你的域名，并添加两个A记录，名为<code>@</code>和<code>www</code>，记录值为ip，保存</li>
+<li>登录<a href="https://www.godaddy.com/" target="_blank" rel="external">GoDaddy</a>，点击My Account，选择你的域名，在<code>SETTINGS</code>里，管理<code>Nameservers</code>，选择<code>Custom</code>，添加记录<code>f1g1ns1.dnspod.net</code>和<code>f1g1ns2.dnspod.net</code></li>
+<li>修改CNAME，为你的域名，不需要<code>www</code>等开头，如<a href="https://github.com/ChouUn/chouun.github.io/blob/master/CNAME" target="_blank" rel="external"></a></li>
+<li>坐等解析更新，不用心急，可以ping你的域名，判断是否成功。</li>
+<li>有些人可能注意到了<code>mxbiz1.qq.com</code>之类的，网站邮件收发，我采用了腾讯的<a href="http://exmail.qq.com/" target="_blank" rel="external">企业邮箱</a></li>
+</ol>
+<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/dnspod.png">
+<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/ping.png">
+<h3 id="七牛图床">七牛图床</h3><p>图片容易拖慢博客的速度，加上github在国内访问时好时坏，同时为了方便博客的迁移，所以用上了七牛图床。七牛支持防盗链、日志，且自带处理功能，以完成水印、缩放、裁剪，甚至支持用户的深度定制。<br>每月免费额度：存储空间10GB、下载流量10GB、10万次PUT请求、100万次GET请求。不得不说是相当优厚的条件，还可以通过<a href="https://portal.qiniu.com/signup?code=3l9w67jqysksy" target="_blank" rel="external">七牛邀请</a>来获取额外额度。顺便提及一下「key-value 存储系统」。</p>
+<blockquote><p>Q：七牛云存储支持目录或文件夹概念么？<br>A：七牛云存储的服务端是一个 key-value 系统，而非树形结构，因此也没有“目录”或者“文件夹”的概念。<br>其中，value 是用户上传到七牛云存储的文件，key 是一个用户自定义的字符串，用于在服务端标识这个 value 这个文件。一个 key 对应一个 value，因此，在每个空间（Bucket）中，key 必须是唯一的。<br>key 中可以包含斜杠“/”，让你感觉起来像目录结构，比如 “a/b/c/d.txt” 这个 key，在服务端只对应一个文件，但它看起来像 a 目录下的 b 目录下的 c 目录下的文件 d.txt。实际上，服务端是不存在 a、b、c 三个目录的，也没法创建目录。</p>
+<footer><strong>Qiniu</strong><cite><a href="http://kb.qiniu.com/key-value-system" target="_blank" rel="external">kb.qiniu.com/key-value-system</a></cite></footer></blockquote>
+<ol>
+<li>执行<code>$ npm install hexo-qiniu-sync --save</code>安装七牛插件</li>
+<li>对七牛进行设置，详见<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">gyk001/hexo-qiniu-sync</a>；ak和sk参见<a href="https://portal.qiniu.com/setting/key" target="_blank" rel="external">密钥 - 账号设置 - 七牛云存储</a>，要注意空间不能是<code>private</code>的，被坑了很久</li>
+<li>运行<code>$ hexo qiniu s</code>进行第一次同步，<code>/hexo</code>下会出现一个与<code>local_dir</code>属性同名的文件夹，里面的分类你懂的</li>
+<li>在文章中使用<code><img title="图片标题" alt="图片说明" class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/exam.png"></code>标签插入图片<br>ps. 第二步中的<code>urlPrefix</code>因人而异，比如我是<code>http://7xjw62.com5.z0.glb.clouddn.com/</code>，所以你们别被坑了<br>pss. 因为对<code>$ hexo deploy</code>的支持尚有问题，我们需要手动进行上传..</li>
+</ol>
+<h3 id="更多信息">更多信息</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a><br><a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a><br><a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a><br><a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a><br><a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="external">Tag Plugins</a></p>
+<h2 id="编辑">编辑</h2><h3 id="安装Sublime">安装Sublime</h3><p>个人喜欢用稳定的<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime 2</a>，下载了官方原版（无限试用期）。</p>
+<h3 id="安装Package_Control">安装Package Control</h3><p>按下<code>Control + BackQuote</code>调出Console，键入一下代码并回车。所谓BackQuote就是<code>~</code>键中的反引号。</p>
+<ul>
+<li>sublime 2</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib2,os; pf=&#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), &#39;wb&#39; ).write( urllib2.urlopen( &#39;http://sublime.wbond.net/&#39; +pf.replace( &#39; &#39;,&#39;%20&#39; )).read()); print( &#39;Please restart Sublime Text to finish installation&#39;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>sublime 3</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &#39;wb&#39;).write(urllib.request.urlopen( &#39;http://sublime.wbond.net/&#39; + pf.replace(&#39; &#39;,&#39;%20&#39;)).read())</span><br></pre></td></tr></table></figure>
+<p>若是安装成功，重启后能在<code>Preferences -&gt; Package Settings</code>中找到<code>Package Control</code>。</p>
+<h3 id="安装Markdown_&amp;_Monokai">安装Markdown &amp; Monokai</h3><ol>
+<li>按下<code>Control + Shift + P</code>，键入<code>Package Control: install Package</code>回车，键入<code>Markdown Extended</code>回车，即可安装该Package。</li>
+<li>同样操作，安装<code>Monokai Extended</code>。</li>
+</ol>
+<h3 id="配置Sublime">配置Sublime</h3><ol>
+<li><p>打开<code>Preferences -&gt; Settings - User</code>，在一对<code>{}</code>内的开头添加以下语句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;color_scheme&#34;: &#34;Packages/Monokai Extended/Monokai Extended Bright.tmTheme&#34;,&#10;&#34;theme&#34;: &#34;Soda Dark.sublime-theme&#34;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>勾上<code>View -&gt; Syntax -&gt; Markdown Extended</code></p>
+</li>
+<li>重启之，随便开个<code>.md</code>文件看看高亮效果，下图仅供参考。</li>
+</ol>
+<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/sublime.png">
+<h3 id="Markdown语法">Markdown语法</h3><p>因为篇幅有限，对于md的语法部分，原谅我不予赘述。</p>
+<ol>
+<li>简体中文: <a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">http://wowubuntu.com/markdown/</a></li>
+<li>繁体中文: <a href="http://markdown.tw/" target="_blank" rel="external">http://markdown.tw/</a></li>
+<li>英文原版: <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">http://daringfireball.net/projects/markdown/syntax</a></li>
+<li>密集排版: <a href="http://www.applecho.com/markdown-guide/" target="_blank" rel="external">http://www.applecho.com/markdown-guide/</a></li>
+<li>飞行员版: <a href="http://idlepilot.com/2015/07/12/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" target="_blank" rel="external">http://idlepilot.com/2015/07/12/Markdown常用语法/</a></li>
+</ol>
+<h2 id="主题">主题</h2><blockquote>
+<p><a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman</a>是为<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman始于<a href="https://github.com/A-limon/pacman" target="_blank" rel="external">Pacman</a>修改而来。</p>
+</blockquote>
+<h3 id="安装">安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/wuchong/jacman.git themes/jacman</span><br></pre></td></tr></table></figure>
+<p><strong>Jacman 需要 Hexo 2.7 及以上版本</strong></p>
+<h3 id="启用">启用</h3><p>修改博客根目录下的配置文件<code>_config.yml</code>，把<code>theme</code>的值修改为 <code>jacman</code>.</p>
+<h3 id="配置">配置</h3><p>修改<code>/themes/jacman/_config.yml</code>中的配置。通过<a href="https://github.com/wuchong/jacman/wiki/%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97" target="_blank" rel="external">配置指南wiki</a>了解更多</p>
+<h3 id="公式">公式</h3><p>$\frac{\partial u}{\partial t}<br>= h^2 \left(<br>\frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}<br>\right)$<br>以上公式由以下代码生成，调用了$Mathjax$的接口</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\\frac&#123;\\partial u&#125;&#123;\\partial t&#125;&#10;= h^2 \\left(&#10;\\frac&#123;\\partial^2 u&#125;&#123;\\partial x^2&#125; +&#10;\\frac&#123;\\partial^2 u&#125;&#123;\\partial y^2&#125; +&#10;\\frac&#123;\\partial^2 u&#125;&#123;\\partial z^2&#125;&#10;\\right)$</span><br></pre></td></tr></table></figure>
+<p>此功能需要在配置里修改如下项<code>mathjax: true</code>，抑或在每个文章中手动添加。<br>用一对<code>$$</code>会单独占用一行，用一对<code>$</code>会作为内容的顺延。</p>
+<h3 id="评论">评论</h3><p>该主题自带disqus和duoshuo支持，把shortname填上去即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### Comment&#10;duoshuo_shortname: fateud ## e.g. wuchong   your duoshuo short name.&#10;disqus_shortname: chouun  ## e.g. wuchong   your disqus short name.</span><br></pre></td></tr></table></figure>
+<h3 id="支持">支持</h3><p>更多功能与信息请查阅：<a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman官网</a></p>
+<h2 id="参考">参考</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">文档 | Hexo</a><br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客 | 不如</a><br><a href="http://idlepilot.com/2015/04/06/Hello%20Hexo/" target="_blank" rel="external">Hello Hexo | 飞行员手册</a><br><a href="http://daringfireball.net/projects/markdown/syntax/" target="_blank" rel="external">Daring Fireball: Markdown Syntax Documentation</a><br><a href="http://code-tech.diandian.com/post/2012-11-10/40041958361" target="_blank" rel="external">配置Sublime Text使用Markdown，语法高亮,生成HTML_技术党</a><br><a href="http://lucifr.com/2011/08/31/sublime-text-2-tricks-and-tips/" target="_blank" rel="external">Sublime Text 2 入门及技巧 | Lucifr</a><br><a href="http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/" target="_blank" rel="external">MarkdownEditing：Sublime Text 2 的 Markdown 利器 | Lucifr</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>Welcome to <a href="http://hexo.io/">Hexo</a>! Check <a href="http://hexo.io/docs/">documentation</a> for more info.</p>
+</blockquote>
+<p>以上一行字，表明我转投了<a href="http://hexo.io/"><strong>Hexo</strong></a>的怀抱。</p>]]>
+    
+    </summary>
+    
+      <category term="blog" scheme="http://fateud.com/tags/blog/"/>
+    
+      <category term="github" scheme="http://fateud.com/tags/github/"/>
+    
+      <category term="hexo" scheme="http://fateud.com/tags/hexo/"/>
+    
+      <category term="markdown" scheme="http://fateud.com/tags/markdown/"/>
+    
+      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2015 ACM/ICPC Asia Regional Changchun Online]]></title>
@@ -163,172 +329,6 @@
       <category term="template" scheme="http://fateud.com/tags/template/"/>
     
       <category term="ACM/ICPC" scheme="http://fateud.com/categories/ACM-ICPC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello Hexo]]></title>
-    <link href="http://fateud.com/note-hexo/"/>
-    <id>http://fateud.com/note-hexo/</id>
-    <published>2015-09-10T08:06:10.757Z</published>
-    <updated>2015-09-10T08:06:10.757Z</updated>
-    <content type="html"><![CDATA[<blockquote>
-<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. </p>
-</blockquote>
-<p>以上一行字，表明我转投了<a href="http://hexo.io/" target="_blank" rel="external"><strong>Hexo</strong></a>的怀抱。</p>
-<a id="more"></a>
-<p>最初用的<a href="http://blog.csdn.net/y63308042" target="_blank" rel="external"><em>csdn</em></a>，感觉自由度过低（不能任意DIY），很是不爽；<br>后来用<a href="http://idlepilot.com/" target="_blank" rel="external"><em>飞行员</em></a>的衡天主机搭了个<a href="http://cn.wordpress.org/" target="_blank" rel="external"><em>WordPress</em></a>，然而维护太繁琐。<br>累觉不爱的我听从<a href="http://loli.be/" target="_blank" rel="external"><em>Smoogle</em></a>用了<a href="http://hexo.io/" target="_blank" rel="external"><em>Hexo</em></a>，现在想来静态blog也是极好。<br>用<a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>写博文，这才符合我这种屌丝码农的身份嘛……</p>
-<h2 id="绪论">绪论</h2><h3 id="Hexo是啥箇物事">Hexo是啥箇物事</h3><blockquote>
-<p>Hexo是一个快速、简洁且高效的博客框架。<br>Hexo使用<a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-<h3 id="Hexo由边个开发">Hexo由边个开发</h3><blockquote>
-<p>Hexo用<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>开发，作者是台湾大学生<a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>。</p>
-</blockquote>
-<h3 id="出现问题谁背锅">出现问题谁背锅</h3><blockquote>
-<p>如果您在使用过程中遇到问题，请查看<a href="https://hexo.io/zh-cn/docs/troubleshooting.html" target="_blank" rel="external">问题解答</a>，或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>、<a href="https://groups.google.com/group/hexo" target="_blank" rel="external">Google Group</a>上正面刚作者。</p>
-</blockquote>
-<h2 id="搭建">搭建</h2><h3 id="安装Node-js">安装Node.js</h3><p>到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js官网</a>下载<strong>相应平台</strong>的<a href="http://nodejs.org/download/" target="_blank" rel="external">最新版本</a>，安装之。</p>
-<h3 id="安装Git">安装Git</h3><blockquote>
-<ul>
-<li>Windows：下载并安装<a href="https://git-scm.com/download/win" target="_blank" rel="external">git</a>.</li>
-<li>Mac：使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>、<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a>或下载<a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a>。</li>
-<li>Linux (Ubuntu, Debian)：<code>$ sudo apt-get install git-core</code></li>
-<li>Linux (Fedora, Red Hat, CentOS)：<code>$ sudo yum install git-core</code></li>
-</ul>
-</blockquote>
-<h3 id="安装Hexo">安装Hexo</h3><p>笔者以Windows为例</p>
-<ol>
-<li>打开Git Bash，执行<code>$ npm install -g hexo</code></li>
-<li>用<code>$ cd</code>跟<code>$ ls</code>命令，进入一个文件夹作为Hexo的本地存储区域</li>
-<li>执行<code>$ hexo init</code></li>
-<li>执行<code>$ npm install</code></li>
-</ol>
-<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/cd&ls.png">
-<p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#10;&#9500;&#9472;&#9472; _config.yml&#10;&#9500;&#9472;&#9472; package.json&#10;&#9500;&#9472;&#9472; scaffolds&#10;&#9500;&#9472;&#9472; scripts&#10;&#9500;&#9472;&#9472; source&#10;&#9474;   &#9500;&#9472;&#9472; _drafts&#10;&#9474;   &#9492;&#9472;&#9472; _posts&#10;&#9492;&#9472;&#9472; themes</span><br></pre></td></tr></table></figure>
-<p>其实到这里已经差不多了，剩下的只是如何去编辑、查看、发布。</p>
-<h2 id="起飞">起飞</h2><h3 id="部署前戏">部署前戏</h3><ol>
-<li>修改<code>\_config.yml</code>的deploy部分，注意你在此处用的repository必须名为<code>your_user_name.github.io</code>（忽略大小写）</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git&#10;  repository: https://github.com/ChouUn/chouun.github.io.git&#10;  branch: master</span><br></pre></td></tr></table></figure>
-<ol>
-<li>执行<code>$ npm install hexo-deployer-git --save</code>安装部署插件</li>
-<li>执行<code>$ hexo d -g</code>进行部署</li>
-<li>打开<code>http://your_user_name.github.io</code>察看效果</li>
-</ol>
-<p>ps. 新版本的hexo已经不再支持github，被新的git取代了。<br>pss. 过程中可能要求你调用这两个命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"chouunsoft@gmail.com"</span></span><br><span class="line">$ git config --global user.name <span class="string">"ChouUn"</span></span><br></pre></td></tr></table></figure>
-<p>psss. 为了避免命名空间冲突，每个用户对应唯一一个github.io，请对自己负责不要乱取名字</p>
-<h3 id="常用命令">常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 完整命令</span></span><br><span class="line">$ hexo new <span class="string">"My New Post"</span>    <span class="comment">#新建文章</span></span><br><span class="line">$ hexo new page <span class="string">"pageName"</span>  <span class="comment">#新建页面</span></span><br><span class="line">$ hexo generate             <span class="comment">#生成页面</span></span><br><span class="line">$ hexo server               <span class="comment">#运行服务</span></span><br><span class="line">$ hexo deploy               <span class="comment">#部署博客</span></span><br><span class="line">$ hexo clean                <span class="comment">#清除缓存</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 复合命令</span></span><br><span class="line">$ hexo server --generate    <span class="comment">#生成并运行</span></span><br><span class="line">$ hexo deploy --generate    <span class="comment">#生成并部署</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 缩写命令</span></span><br><span class="line">$ hexo n                    <span class="comment"># hexo new</span></span><br><span class="line">$ hexo g                    <span class="comment"># hexo generate</span></span><br><span class="line">$ hexo s                    <span class="comment"># hexo server</span></span><br><span class="line">$ hexo d                    <span class="comment"># hexo deploy</span></span><br><span class="line">$ hexo s -g                 <span class="comment"># hexo server -generate</span></span><br><span class="line">$ hexo d -g                 <span class="comment"># hexo deploy -generate</span></span><br></pre></td></tr></table></figure>
-<p>一般使用<code>$ hexo n</code>新建文章，然后<code>$ hexo s -g</code>实时察看效果，最后<code>$ hexo d -g</code>部署到github上。<br>ps. <code>$ hexo server -s</code>可以运行静态服务，以确认生成是否成功，如果有异步，<code>$ hexo clean</code>以后再<code>$ hexo d -g</code>一次。</p>
-<h3 id="标签插件">标签插件</h3><blockquote><p>They’re ported from Octopress and can help you insert specific contents in posts quickly.</p>
-<footer><strong>Tag Plugins | Hexo</strong><cite><a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="external">hexo.io/docs/tag-plugins.html</a></cite></footer></blockquote>
-<p>译：这些功能是沿袭Octopress，以便你快速插入特殊内容。</p>
-<ol>
-<li><p>对书籍的引用</p>
-<blockquote><p>露と落ち、露と消えにし、我が身かな、浪速のことも、夢のまた夢。</p>
-<footer><strong>Toyotomi Hideyoshi</strong><cite>辞世の句</cite></footer></blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote Toyotomi Hideyoshi, &#36766;&#19990;&#12398;&#21477; %&#125;&#10;&#38706;&#12392;&#33853;&#12385;&#12289;&#38706;&#12392;&#28040;&#12360;&#12395;&#12375;&#12289;&#25105;&#12364;&#36523;&#12363;&#12394;&#12289;&#28010;&#36895;&#12398;&#12371;&#12392;&#12418;&#12289;&#22818;&#12398;&#12414;&#12383;&#22818;&#12290; &#10;&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对网文的引用</p>
-<blockquote><p>[範例]【WB】減少洩漏、提高效率、數據系統<br>雖然我的系統很舊了，不過看最近在研究這東西的人還不少</p>
-<footer><strong>Weberkkk</strong><cite><a href="http://forums.wasabistudio.ca/viewtopic.php?t=23408" target="_blank" rel="external">forums.wasabistudio.ca/viewtopic.php?t=23408</a></cite></footer></blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote Weberkkk http://forums.wasabistudio.ca/viewtopic.php?t=23408 %&#125;&#10;[&#31684;&#20363;]&#12304;WB&#12305;&#28187;&#23569;&#27945;&#28431;&#12289;&#25552;&#39640;&#25928;&#29575;&#12289;&#25976;&#25818;&#31995;&#32113;&#10;&#38614;&#28982;&#25105;&#30340;&#31995;&#32113;&#24456;&#33290;&#20102;&#65292;&#19981;&#36942;&#30475;&#26368;&#36817;&#22312;&#30740;&#31350;&#36889;&#26481;&#35199;&#30340;&#20154;&#36996;&#19981;&#23569;&#10;&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码块</p>
-<figure class="highlight cpp"><figcaption><span>helloworld</span><a href="/code/helloworld.cpp">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"!!!Hello World!!!"</span> &lt;&lt; endl; <span class="comment">// prints !!!Hello World!!!</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;% include_code helloworld lang:cpp helloworld.cpp %&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="绑定域名">绑定域名</h3><blockquote><p>如果有自己的域名，在<code>\Hexo\source</code>内创建一个文件名为<code>CNAME</code>（没有后缀）的文件，在里面加入自己的域名，如：<code>xuzhenyang.com</code>，部署后就能在浏览器里进入自己的域名看到自己的博客啦~</p>
-<footer><strong>Hello Hexo | 飞行员手册</strong><cite><a href="http://idlepilot.com/2015/04/06/Hello%20Hexo/" target="_blank" rel="external">idlepilot.com/2015/04/06/Hello%20Hexo</a></cite></footer></blockquote>
-<p>CNAME文件，起到的只是一个跳转作用。此处利用chrome右键<code>审核元素 -&gt; Network</code>，勾上保留日志<code>Preserve log</code>，打开自己的blog，你会发现一个Method为GET、Status为301的文件。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Remote Address:103.245.222.133:80&#10;Request URL:http://chouun.github.io/&#10;Request Method:GET&#10;Status Code:301 Moved Permanently (from cache)&#10;&#10;Date:Fri, 07 Aug 2015 07:59:18 GMT&#10;Location:http://fateud.com/&#10;Server:GitHub.com</span><br></pre></td></tr></table></figure>
-<p>显然你需要一个自己的域名，不然填什么都是为别人做嫁衣。我的<code>fateud.com</code>是从狗爹(<a href="https://www.godaddy.com/" target="_blank" rel="external">GoDaddy</a>)上入的。</p>
-<ol>
-<li><code>control + R</code>输入<code>cmd</code>回车，输入<code>ping your_user_name.github.io</code>回车，得知自己ip是<em>103.245.222.133</em></li>
-<li>登录<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a>，添加你的域名，并添加两个A记录，名为<code>@</code>和<code>www</code>，记录值为ip，保存</li>
-<li>登录<a href="https://www.godaddy.com/" target="_blank" rel="external">GoDaddy</a>，点击My Account，选择你的域名，在<code>SETTINGS</code>里，管理<code>Nameservers</code>，选择<code>Custom</code>，添加记录<code>f1g1ns1.dnspod.net</code>和<code>f1g1ns2.dnspod.net</code></li>
-<li>修改CNAME，为你的域名，不需要<code>www</code>等开头，如<a href="https://github.com/ChouUn/chouun.github.io/blob/master/CNAME" target="_blank" rel="external"></a></li>
-<li>坐等解析更新，不用心急，可以ping你的域名，判断是否成功。</li>
-<li>有些人可能注意到了<code>mxbiz1.qq.com</code>之类的，网站邮件收发，我采用了腾讯的<a href="http://exmail.qq.com/" target="_blank" rel="external">企业邮箱</a></li>
-</ol>
-<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/dnspod.png">
-<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/ping.png">
-<h3 id="七牛图床">七牛图床</h3><p>图片容易拖慢博客的速度，加上github在国内访问时好时坏，同时为了方便博客的迁移，所以用上了七牛图床。七牛支持防盗链、日志，且自带处理功能，以完成水印、缩放、裁剪，甚至支持用户的深度定制。<br>每月免费额度：存储空间10GB、下载流量10GB、10万次PUT请求、100万次GET请求。不得不说是相当优厚的条件，还可以通过<a href="https://portal.qiniu.com/signup?code=3l9w67jqysksy" target="_blank" rel="external">七牛邀请</a>来获取额外额度。顺便提及一下「key-value 存储系统」。</p>
-<blockquote><p>Q：七牛云存储支持目录或文件夹概念么？<br>A：七牛云存储的服务端是一个 key-value 系统，而非树形结构，因此也没有“目录”或者“文件夹”的概念。<br>其中，value 是用户上传到七牛云存储的文件，key 是一个用户自定义的字符串，用于在服务端标识这个 value 这个文件。一个 key 对应一个 value，因此，在每个空间（Bucket）中，key 必须是唯一的。<br>key 中可以包含斜杠“/”，让你感觉起来像目录结构，比如 “a/b/c/d.txt” 这个 key，在服务端只对应一个文件，但它看起来像 a 目录下的 b 目录下的 c 目录下的文件 d.txt。实际上，服务端是不存在 a、b、c 三个目录的，也没法创建目录。</p>
-<footer><strong>Qiniu</strong><cite><a href="http://kb.qiniu.com/key-value-system" target="_blank" rel="external">kb.qiniu.com/key-value-system</a></cite></footer></blockquote>
-<ol>
-<li>执行<code>$ npm install hexo-qiniu-sync --save</code>安装七牛插件</li>
-<li>对七牛进行设置，详见<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">gyk001/hexo-qiniu-sync</a>；ak和sk参见<a href="https://portal.qiniu.com/setting/key" target="_blank" rel="external">密钥 - 账号设置 - 七牛云存储</a>，要注意空间不能是<code>private</code>的，被坑了很久</li>
-<li>运行<code>$ hexo qiniu s</code>进行第一次同步，<code>/hexo</code>下会出现一个与<code>local_dir</code>属性同名的文件夹，里面的分类你懂的</li>
-<li>在文章中使用<code><img title="图片标题" alt="图片说明" class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/exam.png"></code>标签插入图片<br>ps. 第二步中的<code>urlPrefix</code>因人而异，比如我是<code>http://7xjw62.com5.z0.glb.clouddn.com/</code>，所以你们别被坑了<br>pss. 因为对<code>$ hexo deploy</code>的支持尚有问题，我们需要手动进行上传..</li>
-</ol>
-<h3 id="更多信息">更多信息</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a><br><a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a><br><a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a><br><a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a><br><a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="external">Tag Plugins</a></p>
-<h2 id="编辑">编辑</h2><h3 id="安装Sublime">安装Sublime</h3><p>个人喜欢用稳定的<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime 2</a>，下载了官方原版（无限试用期）。</p>
-<h3 id="安装Package_Control">安装Package Control</h3><p>按下<code>Control + BackQuote</code>调出Console，键入一下代码并回车。所谓BackQuote就是<code>~</code>键中的反引号。</p>
-<ul>
-<li>sublime 2</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib2,os; pf=&#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), &#39;wb&#39; ).write( urllib2.urlopen( &#39;http://sublime.wbond.net/&#39; +pf.replace( &#39; &#39;,&#39;%20&#39; )).read()); print( &#39;Please restart Sublime Text to finish installation&#39;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>sublime 3</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &#39;wb&#39;).write(urllib.request.urlopen( &#39;http://sublime.wbond.net/&#39; + pf.replace(&#39; &#39;,&#39;%20&#39;)).read())</span><br></pre></td></tr></table></figure>
-<p>若是安装成功，重启后能在<code>Preferences -&gt; Package Settings</code>中找到<code>Package Control</code>。</p>
-<h3 id="安装Markdown_&amp;_Monokai">安装Markdown &amp; Monokai</h3><ol>
-<li>按下<code>Control + Shift + P</code>，键入<code>Package Control: install Package</code>回车，键入<code>Markdown Extended</code>回车，即可安装该Package。</li>
-<li>同样操作，安装<code>Monokai Extended</code>。</li>
-</ol>
-<h3 id="配置Sublime">配置Sublime</h3><ol>
-<li><p>打开<code>Preferences -&gt; Settings - User</code>，在一对<code>{}</code>内的开头添加以下语句：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;color_scheme&#34;: &#34;Packages/Monokai Extended/Monokai Extended Bright.tmTheme&#34;,&#10;&#34;theme&#34;: &#34;Soda Dark.sublime-theme&#34;,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>勾上<code>View -&gt; Syntax -&gt; Markdown Extended</code></p>
-</li>
-<li>重启之，随便开个<code>.md</code>文件看看高亮效果，下图仅供参考。</li>
-</ol>
-<img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/sublime.png">
-<h3 id="Markdown语法">Markdown语法</h3><p>因为篇幅有限，对于md的语法部分，原谅我不予赘述。</p>
-<ol>
-<li>简体中文: <a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">http://wowubuntu.com/markdown/</a></li>
-<li>繁体中文: <a href="http://markdown.tw/" target="_blank" rel="external">http://markdown.tw/</a></li>
-<li>英文原版: <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">http://daringfireball.net/projects/markdown/syntax</a></li>
-<li>密集排版: <a href="http://www.applecho.com/markdown-guide/" target="_blank" rel="external">http://www.applecho.com/markdown-guide/</a></li>
-<li>飞行员版: <a href="http://idlepilot.com/2015/07/12/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" target="_blank" rel="external">http://idlepilot.com/2015/07/12/Markdown常用语法/</a></li>
-</ol>
-<h2 id="主题">主题</h2><blockquote>
-<p><a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman</a>是为<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman始于<a href="https://github.com/A-limon/pacman" target="_blank" rel="external">Pacman</a>修改而来。</p>
-</blockquote>
-<h3 id="安装">安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/wuchong/jacman.git themes/jacman</span><br></pre></td></tr></table></figure>
-<p><strong>Jacman 需要 Hexo 2.7 及以上版本</strong> </p>
-<h3 id="启用">启用</h3><p>修改博客根目录下的配置文件<code>_config.yml</code>，把<code>theme</code>的值修改为 <code>jacman</code>.</p>
-<h3 id="配置">配置</h3><p>修改<code>/themes/jacman/_config.yml</code>中的配置。通过<a href="https://github.com/wuchong/jacman/wiki/%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97" target="_blank" rel="external">配置指南wiki</a>了解更多</p>
-<h3 id="公式">公式</h3><p>$\frac{\partial u}{\partial t} = h^2 \left(<br>\frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}<br>\right)$<br>以上公式由以下代码生成，调用了$Mathjax$的接口</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\frac&#123;\partial u&#125;&#123;\partial t&#125; &#10;= h^2 \left( &#10;\frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +&#10;\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +&#10;\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;&#10;\right)$</span><br></pre></td></tr></table></figure>
-<p>此功能需要在配置里修改如下项<code>mathjax: true</code>，抑或在每个文章中手动添加。<br>用一对<code>$$</code>会单独占用一行，用一对<code>$</code>会作为内容的顺延。</p>
-<h3 id="评论">评论</h3><p>该主题自带disqus和duoshuo支持，把shortname填上去即可。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### Comment&#10;duoshuo_shortname: fateud ## e.g. wuchong   your duoshuo short name.&#10;disqus_shortname: chouun  ## e.g. wuchong   your disqus short name.</span><br></pre></td></tr></table></figure>
-<h3 id="支持">支持</h3><p>更多功能与信息请查阅：<a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman官网</a></p>
-<h2 id="参考">参考</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">文档 | Hexo</a><br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客 | 不如</a><br><a href="http://idlepilot.com/2015/04/06/Hello%20Hexo/" target="_blank" rel="external">Hello Hexo | 飞行员手册</a><br><a href="http://daringfireball.net/projects/markdown/syntax/" target="_blank" rel="external">Daring Fireball: Markdown Syntax Documentation</a><br><a href="http://code-tech.diandian.com/post/2012-11-10/40041958361" target="_blank" rel="external">配置Sublime Text使用Markdown，语法高亮,生成HTML_技术党</a><br><a href="http://lucifr.com/2011/08/31/sublime-text-2-tricks-and-tips/" target="_blank" rel="external">Sublime Text 2 入门及技巧 | Lucifr</a><br><a href="http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/" target="_blank" rel="external">MarkdownEditing：Sublime Text 2 的 Markdown 利器 | Lucifr</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<blockquote>
-<p>Welcome to <a href="http://hexo.io/">Hexo</a>! Check <a href="http://hexo.io/docs/">documentation</a> for more info. </p>
-</blockquote>
-<p>以上一行字，表明我转投了<a href="http://hexo.io/"><strong>Hexo</strong></a>的怀抱。</p>]]>
-    
-    </summary>
-    
-      <category term="blog" scheme="http://fateud.com/tags/blog/"/>
-    
-      <category term="github" scheme="http://fateud.com/tags/github/"/>
-    
-      <category term="hexo" scheme="http://fateud.com/tags/hexo/"/>
-    
-      <category term="markdown" scheme="http://fateud.com/tags/markdown/"/>
-    
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
@@ -534,7 +534,7 @@
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
     <published>2015-03-28T10:41:59.000Z</published>
-    <updated>2015-09-19T16:57:43.870Z</updated>
+    <updated>2015-09-20T02:25:41.033Z</updated>
     <content type="html"><![CDATA[<p>老实说了吧，这篇东西是个大坑，反正我根本没准备填。<br>你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。</p>
 <a id="more"></a>
 <h2 id="数论">数论</h2><h3 id="最大公约数(Greatest_Common_Divisor)">最大公约数(Greatest Common Divisor)</h3><p>某几个整数共有约数中最大的一个。</p>
@@ -543,9 +543,11 @@
 <p>证明:<br>令$r = gcd(a,b)$<br>则$r \mid a, r \mid b$<br>故$r \mid (a - b)$<br>引$r \mid (a - kb) \Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b) \Rightarrow r \mid (a \bmod b)$<br>故$gcd(a,b) \equiv gcd(b, a \bmod b)$</p>
 </blockquote>
 <h4 id="扩展欧几里得算法(Extended_Euclidean_Algorithm)">扩展欧几里得算法(Extended Euclidean Algorithm)</h4><h3 id="莫比乌斯函数(Möbius_Function)">莫比乌斯函数(Möbius Function)</h3><p>一般用$mu(n)$或者$\mu(n)$表示，是个积性函数(multiplicative function)<br>$\begin{eqnarray} \mu(n) = \begin{cases}<br>x = 1,      &amp; n = 1 \cr<br>x = (-1)^k, &amp; \text{if } n \text{ is the product of } k \text{ different primes} \cr<br>x = 0,         &amp; otherwise<br>\end{cases} \end{eqnarray}$</p>
-<h3 id="递推">递推</h3><h4 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h4><p>$a_{n} = a_{n-1}^2 - 2$<br>令 $a_{0} = x + \frac{1}{x}$<br>则 $a_{n} = x^{2^n} + \frac{1}{x^{2^n}}$</p>
+<h2 id="递推">递推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$a_{n} = a_{n-1}^2 - 2$<br>令 $a_{0} = x + \frac{1}{x}$<br>则 $a_{n} = x^{2^n} + \frac{1}{x^{2^n}}$</p>
 <h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$a_{n} = p a_{n-1} + q a_{n-2}$<br>特征方程 $x ^ 2 = px + q$，求得 $\alpha \beta$。<br>若 $\alpha \neq \beta$，则 $a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n$；<br>若 $\alpha = \beta$，则 $a_{n} = (c_{1} + n c_{2}) \alpha ^ n$。<br>求得 $c_{1}, c_{2}$，求得 $p, q$，即求得 $a_{n}$。</p>
-<h4 id="(a+√(b))^n">(a+√(b))^n</h4>]]></content>
+<h3 id="(a+√b)^n">(a+√b)^n</h3><p>$S_{n} = \lceil (a + \sqrt{b})^{n} \rceil $<br>构造 $(a + \sqrt{b})^{n} + (a - \sqrt{b})^{n}$<br>$\because 0 &lt; a - \sqrt{b} &lt; 1$，<br>且二项式展开、合并同类项后，只可能有 $\sqrt{b}^{2i} = b^i$<br>$\therefore S_{n} = (a + \sqrt{b})^{n} + (a - \sqrt{b})^{n}$<br>$S_{n} ((a + \sqrt{b}) + (a - \sqrt{b}))$<br>$ = (a + \sqrt{b})^{n+1} + (a - \sqrt{b})^{n+1} + (a + \sqrt{b})(a - \sqrt{b})((a + \sqrt{b})^{n-1} + (a - \sqrt{b})^{n-1})$<br>$ = S_{n+1} + (a ^ 2 - b) S_{n-1}$<br>移项得 $S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1}$</p>
+<p>也可以直接构造上一节“a[n] = p⋅a[n-1] + q⋅a[n-2]”的形式，<br>特征根 $a - \sqrt{b}, a + \sqrt{b}$，$p = 2a, q = b - a ^ 2$<br>轻松得 $S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1}$</p>
+]]></content>
     <summary type="html">
     <![CDATA[<p>老实说了吧，这篇东西是个大坑，反正我根本没准备填。<br>你们如果有靠谱的资料，可以贴在下面供我参考，谢谢。</p>]]>
     
