@@ -52,9 +52,10 @@
     <link href="http://fateud.com/note-vpn/"/>
     <id>http://fateud.com/note-vpn/</id>
     <published>2015-09-20T17:48:07.000Z</published>
-    <updated>2015-09-20T18:25:03.399Z</updated>
+    <updated>2015-09-20T18:27:03.415Z</updated>
     <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
 <footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
+<a id="more"></a>
 <h2 id="起因">起因</h2><p>萬惡的學校，一開學又開始慘無人道的十一點斷網，最近準備區域賽急需大量資料的我，完全無法接受慘痛的現實。<br>轉念一想，實驗室是通宵供電供網的，然而天天睡實驗室對身體不利，所以我決定通過代理來解決上網問題。</p>
 <h2 id="架設">架設</h2><p>我先回憶了上個學期架設vpn的過程，進行了同樣的步驟。</p>
 <p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
@@ -74,7 +75,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
-<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.]]>
+<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>]]>
+    
     </summary>
     
       <category term="L2TP" scheme="http://fateud.com/tags/L2TP/"/>

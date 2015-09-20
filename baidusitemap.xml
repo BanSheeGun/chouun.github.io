@@ -3,16 +3,18 @@
 
     
   <url>
-    <loc>http://fateud.com/note-math/</loc>
-    <lastmod>2015-09-20T18:25:31.960Z</lastmod>
+    <loc>http://fateud.com/note-vpn/</loc>
+    <lastmod>2015-09-20T18:27:03.415Z</lastmod>
     <data>
         <display>
-        <title>残龙的数学笔记</title>
-        <pubTime>2015-09-20T18:25:31.960Z</pubTime>
+        <title>架設一個L2TP協議的簡易vpn</title>
+        <pubTime>2015-09-20T17:48:07.000Z</pubTime>
         
-        <tag>數論 </tag>
+        <tag>L2TP </tag>
          
-        <tag>遞推 </tag>
+        <tag>vpn </tag>
+         
+        <tag>網絡 </tag>
          
          
            
@@ -25,18 +27,16 @@
 
     
   <url>
-    <loc>http://fateud.com/note-vpn/</loc>
-    <lastmod>2015-09-20T18:25:03.399Z</lastmod>
+    <loc>http://fateud.com/note-math/</loc>
+    <lastmod>2015-09-20T18:25:31.960Z</lastmod>
     <data>
         <display>
-        <title>架設一個L2TP協議的簡易vpn</title>
-        <pubTime>2015-09-20T17:48:07.000Z</pubTime>
+        <title>残龙的数学笔记</title>
+        <pubTime>2015-09-20T18:25:31.960Z</pubTime>
         
-        <tag>L2TP </tag>
+        <tag>數論 </tag>
          
-        <tag>vpn </tag>
-         
-        <tag>網絡 </tag>
+        <tag>遞推 </tag>
          
          
            
