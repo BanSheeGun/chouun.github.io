@@ -39,6 +39,8 @@ namespace csl
     typedef _Tp* pointer;
     typedef _Tp& reference;
 
+    typedef _graph_node<_Tp>* iterator;
+
     typedef _graph_node<_Tp>  _Node;
     typedef _graph_node<_Tp>* _Link;
     typedef graph<_Tp>        _Self;

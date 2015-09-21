@@ -19,7 +19,7 @@ namespace csl {
   template <typename _Tp>
   struct graph {
     typedef _Tp  value_type, *pointer, &reference;
-    typedef _graph_node<_Tp>  _Node, *_Link;
+    typedef _graph_node<_Tp>  _Node, *_Link, *iterator;
     typedef std::size_t size_type;
     void m_add_edge(size_type from, size_type to, const value_type& data) {
       _Link node = m_data.data() + m_size++;
