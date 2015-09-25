@@ -3,7 +3,7 @@
 
 #ifndef DISCRETE_H_
 #define DISCRETE_H_
-#define DISCRETE_H_VERSION 20150822L
+#define DISCRETE_H_VERSION 20150926L
 
 #include <vector>
 #include <bits/stl_algo.h>
@@ -43,8 +43,12 @@ namespace csl
     size_type
     query(const _Tp& __x) const
     {
-      return std::lower_bound(m_data.begin(), m_data.end(), __x) - m_data.begin() + 1;
+      return std::lower_bound(m_data.begin(), m_data.end(), __x) - m_data.begin();
     }
+
+    _Tp
+    operator [] (size_type __x) const
+    { return m_data[__x]; }
 
     // modifiers.
     inline void
@@ -54,9 +58,7 @@ namespace csl
     template <typename _InputIterator>
     inline void
     insert(_InputIterator first, _InputIterator last)
-    {
-      m_data.insert(m_data.end(), first, last);
-    }
+    {m_data.insert(m_data.end(), first, last); }
 
   };
 

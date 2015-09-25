@@ -5,19 +5,30 @@
 #define CSL_ALGO_H_
 #define CSL_ALGO_H_VERSION 20150917L
 
+#include <cmath>
 #include <vector>
+#include <bits/stl_function.h>
 
 namespace csl
 {
+  static double M_EPS = 1e-8;
+
+  // 符号
+  inline int
+  sgn(double __x)
+  { return std::fabs(__x) < M_EPS ? 0 : (__x < 0 ? -1 : 1); }
+
+  // 比较
+  inline int
+  cmp(double a, double b)
+  { return sgn(a - b); }
 
   template <typename _Tp>
   struct less : public std::binary_function<_Tp, _Tp, _Tp>
   {
     _Tp
     operator () (const _Tp& __x, const _Tp& __y) const
-    {
-      return __x < __y ? __x : __y;
-    }
+    { return __x < __y ? __x : __y; }
   };
 
   template <typename _Tp>
@@ -25,9 +36,7 @@ namespace csl
   {
     _Tp
     operator () (const _Tp& __x, const _Tp& __y) const
-    {
-      return __x > __y ? __x : __y;
-    }
+    { return __x > __y ? __x : __y; }
   };
 
   namespace euler

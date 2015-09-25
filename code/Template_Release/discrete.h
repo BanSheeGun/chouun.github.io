@@ -2,7 +2,7 @@
 // Copyright : fateud.com
 #ifndef DISCRETE_H_
 #define DISCRETE_H_
-#define DISCRETE_H_VERSION 20150822L
+#define DISCRETE_H_VERSION 20150926L
 #include <vector>
 #include <bits/stl_algo.h>
 namespace csl {
@@ -21,7 +21,9 @@ namespace csl {
     void reserve(size_type __n)
     { m_data.reserve(__n); }
     size_type query(const _Tp& __x) const
-    { return std::lower_bound(m_data.begin(), m_data.end(), __x) - m_data.begin() + 1; }
+    { return std::lower_bound(m_data.begin(), m_data.end(), __x) - m_data.begin(); }
+    _Tp operator [] (size_type __x) const
+    { return m_data[__x]; }
     inline void insert(_Tp __x)
     { m_data.push_back(__x); }
     template <typename _InputIterator>

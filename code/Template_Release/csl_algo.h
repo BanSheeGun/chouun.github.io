@@ -5,6 +5,11 @@
 #define CSL_ALGO_H_VERSION 20150917L
 #include <vector>
 namespace csl {
+  static double M_EPS = 1e-8;
+  inline int sgn(double __x)
+  { return fabs(__x) < M_EPS ? 0 : (__x < 0 ? -1 : 1); }
+  inline int cmp(double a, double b)
+  { return sgn(a - b); }
   template <typename _Tp>
   struct less : public std::binary_function<_Tp, _Tp, _Tp> {
     _Tp operator () (const _Tp& __x, const _Tp& __y) const
@@ -17,7 +22,7 @@ namespace csl {
   };
   namespace euler {
     std::vector<std::size_t> phi, div, prm;
-    void build(int __n) {
+    void build(std::size_t __n) {
       phi.assign(__n, 0); div.assign(__n, 0);
       prm.reserve(__n >> 3); prm.clear(); phi[1] = 1;
       for (std::size_t i = 2; i < __n; ++i) {

@@ -1,5 +1,5 @@
 /*
- *  20150904L
+ *  20150926L
  *
  *  struct discrete
  *
@@ -31,5 +31,8 @@
  *  元素访问：
  *  query(const _Tp& __x) : size_type
  *    查询元素 __x 的排行
+ *
+ *  operator [] (size_type __x) const : _Tp
+ *    查询排行 __x 的元素
  *
  */

@@ -3,11 +3,15 @@
 
 #ifndef GEOMETRY_H_
 #define GEOMETRY_H_
-#define GEOMETRY_H_VERSION
+#define GEOMETRY_H_VERSION 20150924L
 
-#include <math.h>
 #include <algorithm>
 #include <vector>
+
+#ifndef CSL_ALGO_H_
+#pragma message("need : csl_algo.h");
+#include <csl_algo.h>
+#endif
 
 /*
  *  20150821L
@@ -58,25 +62,10 @@
 
 namespace csl
 {
-  static double M_EPS = 1e-8;
-
-  // 符号
-  inline int
-  sgn(double __x)
-  { return fabs(__x) < M_EPS ? 0 : (__x < 0 ? -1 : 1); }
-
-  // 比较
-  inline int
-  cmp(double a, double b)
-  { return sgn(a - b); }
-
   // 点
   struct point
   {
-    point()
-    : x(), y() { }
-
-    point(double __x, double __y)
+    point(double __x = 0, double __y = 0)
     : x(__x), y(__y) { }
 
     double x;
@@ -93,7 +82,7 @@ namespace csl
 
   double
   operator * (const point& a, const point& b)
-  { return a.x * b.x - a.y * b.y; }
+  { return a.x * b.x + a.y * b.y; }
 
   bool
   operator < (const point& a, const point& b)
@@ -173,9 +162,7 @@ namespace csl
   p2line(const point& p, const line& l)
   {
     double t = ((p - l.s) * (l.e - l.s)) / ((l.e - l.s) * (l.e - l.s));
-    return point(
-        l.s.x + (l.e.x - l.s.x) * t,
-        l.s.y + (l.e.y - l.s.y) * t);
+    return point(l.s.x + (l.e.x - l.s.x) * t, l.s.y + (l.e.y - l.s.y) * t);
   }
 
   //@ 点到线段最近的点
@@ -184,14 +171,9 @@ namespace csl
   {
     double t = ((p - l.s) * (l.e - l.s)) / ((l.e - l.s) * (l.e - l.s));
     if (t >= 0 && t <= 1)
-      return point(
-          l.s.x + (l.e.x - l.s.x) * t,
-          l.s.y + (l.e.y - l.s.y) * t);
+      return point( l.s.x + (l.e.x - l.s.x) * t, l.s.y + (l.e.y - l.s.y) * t);
     else
-      if (dist(p, l.s) < dist(p, l.e))
-        return l.s;
-      else
-        return l.e;
+      return dist(p, l.s) < dist(p, l.e) ? l.s : l.e;
   }
 
   //@ 计算多边形面积
@@ -273,7 +255,7 @@ namespace csl
   static point graham_T;
 
   bool
-  graham_cmp(point p1,point p2)
+  graham_cmp(point p1, point p2)
   {
     double tmp = (p1 - graham_T) ^ (p2 - graham_T);
     if (sgn(tmp) > 0)
@@ -300,6 +282,29 @@ namespace csl
       res[m++] = res[i];
     }
     res.resize(m);
+    return res;
+  }
+
+  double
+  bound_rect(const point p[], int n)
+  {
+    double res = 1e30;
+    for (int i = 0; i < n; ++i) {
+      point p1 = p[i+1] - p[i];
+      double min1 = 1e30, max1 = -1e30;
+      double min2 = 1e30, max2 = -1e30;
+      for (int j = 0; j < n; ++j) {
+        point p2 = p[j];
+        double tmp1 = + (p1 ^ p2);
+        double tmp2 = - (p1 * p2);
+        if (min1 > tmp1) min1 = tmp1;
+        if (max1 < tmp1) max1 = tmp1;
+        if (min2 > tmp2) min2 = tmp2;
+        if (max2 < tmp2) max2 = tmp2;
+      }
+      double tmp = (max1 - min1) * (max2 - min2) / (p1.x* p1.x + p1.y * p1.y);
+      if (res > tmp) res = tmp;
+    }
     return res;
   }
 

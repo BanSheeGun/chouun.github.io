@@ -15,7 +15,7 @@ namespace csl {
     typedef csl::matrix<_Tp> _Self;
     matrix() : m_data(), m_h(), m_w() { }
     matrix(const _Self& __x) { *this = __x; }
-    matrix(size_type __h, size_type __w) : m_data(container(__h*__w)), m_h(__h), m_w(__w) { }
+    matrix(size_type __h, size_type __w) : m_data(__h*__w), m_h(__h), m_w(__w) { }
     static _Self identity(size_type __n) {
       _Self __res(__n, __n);
       for (size_type i = 0; i < __n; ++i) __res[i][i] = value_type(1);

@@ -29,7 +29,7 @@ namespace csl
     { *this = __x; }
 
     matrix(size_type __h, size_type __w)
-    : m_data(container(__h*__w)), m_h(__h), m_w(__w) { }
+    : m_data(__h * __w), m_h(__h), m_w(__w) { }
 
     static _Self
     identity(size_type __n)

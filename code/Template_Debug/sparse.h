@@ -6,6 +6,7 @@
 #define SPARSE_H_VERSION 20150904L
 
 #include <vector>
+
 #ifndef CSL_ALGO_H_
 #pragma message("need : csl_algo.h");
 #include <csl_algo.h>
