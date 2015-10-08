@@ -4,7 +4,7 @@
 #define DISCRETE_H_
 #define DISCRETE_H_VERSION 20150926L
 #include <vector>
-#include <bits/stl_algo.h>
+#include <algorithm>
 namespace csl {
   template <typename _Tp>
   struct discrete {

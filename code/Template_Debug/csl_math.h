@@ -3,7 +3,7 @@
 
 #ifndef CSL_MATH_H_
 #define CSL_MATH_H_
-#define CSL_MATH_H_VERSION 20150918L
+#define CSL_MATH_H_VERSION 20151008L
 
 namespace csl
 {
@@ -28,6 +28,11 @@ namespace csl
     }
     return x = 1, y = 0, a;
   }
+
+  template <typename _Tp>
+  inline _Tp
+  lcm(_Tp a, _Tp b)
+  { return a / gcd(a,b) * b; }
 
   template <typename _Tp>
   inline _Tp

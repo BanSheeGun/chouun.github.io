@@ -6,7 +6,7 @@
 #define DISCRETE_H_VERSION 20150926L
 
 #include <vector>
-#include <bits/stl_algo.h>
+#include <algorithm>
 
 namespace csl
 {
@@ -58,7 +58,7 @@ namespace csl
     template <typename _InputIterator>
     inline void
     insert(_InputIterator first, _InputIterator last)
-    {m_data.insert(m_data.end(), first, last); }
+    { m_data.insert(m_data.end(), first, last); }
 
   };
 

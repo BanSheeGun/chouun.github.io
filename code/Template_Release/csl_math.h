@@ -2,7 +2,7 @@
 // Copyright : fateud.com
 #ifndef CSL_MATH_H_
 #define CSL_MATH_H_
-#define CSL_MATH_H_VERSION 20150918L
+#define CSL_MATH_H_VERSION 20151008L
 namespace csl {
   template <typename _Tp>
   inline _Tp gcd(_Tp a, _Tp b)
@@ -10,6 +10,9 @@ namespace csl {
   template <typename _Tp>
   _Tp gcd(_Tp a, _Tp b, _Tp& x, _Tp& y)
   { if (b) { _Tp r=gcd(b,a%b,y,x); return y=y-a/b*x,r; } return x=1,y=0,a; }
+  template <typename _Tp>
+  inline _Tp lcm(_Tp a, _Tp b)
+  { return a / gcd(a,b) * b; }
   template <typename _Tp>
   inline _Tp mul(_Tp a, _Tp b, const _Tp m)
   { _Tp c=0; for (a%=m; b; b>>=1,a=(a<<1)%m) if (b&1) c=(c+a)%m; return c; }

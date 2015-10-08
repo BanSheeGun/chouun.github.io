@@ -1,5 +1,5 @@
 /*
- *  20150820L
+ *  20151008L
  *
  *  template <typename _Tp>
  *  gcd(_Tp a, _Tp b) : _Tp
@@ -8,6 +8,10 @@
  *  template <typename _Tp>
  *  gcd(_Tp a, _Tp b, _Tp& x, _Tp& y) : _Tp
  *    返回 a 和 b 的最大公约数, 且满足 ax + by = 1
+ *
+ *  template <typename _Tp>
+ *  lcm(_Tp a, _Tp b) : _Tp
+ *    返回 a 和 b 的最小公倍数
  *
  *  template <typename _Tp, typename _Key>
  *  pow(_Tp c, _Tp n, _Key k) : _Tp

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/acm/index.html</loc>
+    <lastmod>2015-10-08T10:57:30.329Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/note-turtle/</loc>
     <lastmod>2015-10-07T07:48:18.649Z</lastmod>
   </url>
@@ -24,11 +29,6 @@
   <url>
     <loc>http://fateud.com/code-template/</loc>
     <lastmod>2015-09-21T08:18:41.049Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fateud.com/acm/index.html</loc>
-    <lastmod>2015-09-20T18:30:11.934Z</lastmod>
   </url>
   
   <url>
