@@ -3,7 +3,7 @@
 
 #ifndef GAUSS_H_
 #define GAUSS_H_
-#define GAUSS_H_VERSION 20151007L
+#define GAUSS_H_VERSION 20151011L
 
 #include <vector>
 
@@ -19,12 +19,13 @@
 
 namespace csl
 {
+  // for matrix of normal type
   template <typename _Tp>
   class gauss
   {
   public :
     typedef _Tp value_type;
-    typedef std::size_t size_type;
+    typedef int size_type;
 
     size_type dim;
     size_type equ;
@@ -110,6 +111,7 @@ namespace csl
 
   };
 
+  // for matrix of boolean
   template <>
   class gauss<bool>
   {

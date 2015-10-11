@@ -3,24 +3,19 @@
 
 #ifndef CSL_STD_H_
 #define CSL_STD_H_
-#define CSL_STD_H_VERSION 20150814L
-//#pragma message("csl_std.h : loading")
+#define CSL_STD_H_VERSION 20150930L
 
 #define _USE_MATH_DEFINES
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef std::pair<int,int>  pii;
-
-//@ 64-bit Integer
 typedef long long           ll;
 typedef unsigned long long  ull;
 
 #ifdef _WIN32
-//#pragma message("csl_std.h : output of 64-bit int is %I64d")
 #define i64         "%I64d"
 #else
-//#pragma message("csl_std.h : output of 64-bit int is %lld")
 #define i64         "%lld"
 #endif /* _WIN32 */
 
