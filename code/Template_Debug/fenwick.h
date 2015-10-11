@@ -4,7 +4,7 @@
 
 #ifndef FENWICK_H_
 #define FENWICK_H_
-#define FENWICK_H_VERSION 20150823L
+#define FENWICK_H_VERSION 20150928L
 
 #include <vector>
 #include <functional>
@@ -44,8 +44,11 @@ namespace csl
           m_data[j] = m_func(m_data[j], m_data[i]);
     }
 
-    // element access.
+    size_type
+    size() const
+    { return m_data.size(); }
 
+    // element access.
     value_type
     query(size_type __x, value_type __res = value_type())  const
     {
@@ -63,6 +66,17 @@ namespace csl
     }
 
   };
+
+  std::size_t search(fenwick_tree<int>& f, int x) {
+    if (f.query(f.size() - 1) < x) return -1;
+    std::size_t res = 0;
+    for (int i = 1 << 20; i > 0 && x > 0; i >>= 1) {
+      if (res + i >= f.size()) continue;
+      if (x <= f.m_data[res + i]) continue;
+      x -= f.m_data[res += i];
+    }
+    return res + 1;
+  }
 
 } // namespace csl
 

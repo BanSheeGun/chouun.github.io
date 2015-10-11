@@ -2,7 +2,7 @@
 // Copyright : fateud.com
 #ifndef CSL_STD_H_
 #define CSL_STD_H_
-#define CSL_STD_H_VERSION 20150814L
+#define CSL_STD_H_VERSION 20150930L
 #define _USE_MATH_DEFINES
 #include <bits/stdc++.h>
 using namespace std;

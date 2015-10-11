@@ -45,7 +45,7 @@ namespace csl
       __x = _Tp();
       for (register bool __vf = 0, __sf = 0; true; ++ptr)
       {
-        if (*ptr >= '0' && *ptr <= '9')
+        if (isdigit(*ptr))
           __x = (__x << 3) + (__x << 1) + *ptr - '0', __vf = 1;
         else if (__vf)
         {

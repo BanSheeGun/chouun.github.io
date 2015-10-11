@@ -7,7 +7,7 @@
 
 #include <cmath>
 #include <vector>
-#include <bits/stl_function.h>
+#include <functional>
 
 namespace csl
 {
@@ -39,9 +39,10 @@ namespace csl
     { return __x > __y ? __x : __y; }
   };
 
-  namespace euler
+  namespace prime
   {
     std::vector<std::size_t> phi;
+    std::vector<int> mu;
     std::vector<std::size_t> div;
     std::vector<std::size_t> prm;
 
@@ -49,15 +50,18 @@ namespace csl
     build(std::size_t __n)
     {
       phi.assign(__n, 0);
+      mu.assign(__n, 0);
       div.assign(__n, 0);
       prm.reserve(__n >> 3);
       prm.clear();
       phi[1] = 1;
+      mu[1] = 1;
       for (std::size_t i = 2; i < __n; ++i)
       {
         if (!div[i])
         {
           phi[i] = i - 1;
+          mu[i] = -1;
           div[i] = i;
           prm.push_back(i);
         }
@@ -66,14 +70,21 @@ namespace csl
           if (double(i) * prm[j] >= __n) break;
           div[i * prm[j]] = prm[j];
           if (i % prm[j] == 0)
-          { phi[i * prm[j]] = phi[i] * prm[j]; break; }
+          {
+            phi[i * prm[j]] = phi[i] * prm[j];
+            mu[i * prm[j]] = 0;
+            break;
+          }
           else
-          { phi[i * prm[j]] = phi[i] * (prm[j] - 1); }
+          {
+            phi[i * prm[j]] = phi[i] * (prm[j] - 1);
+            mu[i * prm[j]] = -mu[i];
+          }
         }
       }
     }
 
-  } // namespace euler
+  } // namespace prime
 
   template <typename _Tp, typename _Comp >
   std::size_t isomorph_min(_Tp* data, std::size_t size, _Comp comp)

@@ -3,7 +3,7 @@
 // Copyright : fateud.com
 #ifndef FENWICK_H_
 #define FENWICK_H_
-#define FENWICK_H_VERSION 20150823L
+#define FENWICK_H_VERSION 20150928L
 #include <vector>
 #include <functional>
 #ifndef lowbit
@@ -24,6 +24,8 @@ namespace csl {
         if ((j = i + lowbit(i)) <= p_size)
           m_data[j] = m_func(m_data[j], m_data[i]);
     }
+    size_type size() const
+    { return m_data.size(); }
     value_type query(size_type __x, value_type __res = value_type())  const {
       for (; __x > 0; __x -= lowbit(__x)) __res = m_func(__res, m_data[__x]);
       return __res;
@@ -35,5 +37,14 @@ namespace csl {
     std::vector<value_type> m_data;
     const _Op               m_func;
   };
+  std::size_t search(fenwick_tree<int>& f, int x) {
+    if (f.query(f.size() - 1) < x) return -1;
+    std::size_t res = 0;
+    for (int i = 1 << 20; i > 0 && x > 0; i >>= 1) {
+      if (res + i >= f.size()) continue;
+      if (x > f.m_data[res + i]) x -= f.m_data[res += i];
+    }
+    return res + 1;
+  }
 } // namespace csl
 #endif /* FENWICK_H_ */
