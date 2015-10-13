@@ -67,13 +67,8 @@ namespace csl
       }
 
       // 无解
-      for (size_type i = r; i < equ; ++i) {
-        if (csl::sgn(mat[i][c]))
-        {
-          dim = -1;
-          return;
-        }
-      }
+      for (size_type i = r; i < equ; ++i)
+        if (csl::sgn(mat[i][c])) { dim = -1; return; }
 
       // 无穷解
       if (r < var)
@@ -89,12 +84,11 @@ namespace csl
           // 求出变元
           value_type tmp = mat[i][var];
           for (size_type j = 0; j < var; ++j)
-            if (csl::sgn(mat[i][j]) && j != idx) tmp -= mat[i][j] * ans[j];
-          ans[idx] = tmp / mat[i][idx];
-          free[idx] = 0;
+            if (csl::sgn(mat[i][j]) && j != idx)
+              tmp -= mat[i][j] * ans[j];
+          ans[idx] = tmp / mat[i][idx], free[idx] = 0;
         }
-        dim = var - r;
-        return;
+        dim = var - r; return;
       }
 
       // 唯一解
@@ -105,8 +99,7 @@ namespace csl
           if (csl::sgn(mat[i][j])) tmp -= mat[i][j] * ans[j];
         ans[i] = tmp / mat[i][i];
       }
-      dim = 0;
-      return;
+      dim = 0; return;
     }
 
   };
@@ -147,11 +140,10 @@ namespace csl
         if (!mat[r][c]) continue;
 
         // 消元
-        for (size_type i = r + 1; i < equ; ++i) {
+        for (size_type i = r + 1; i < equ; ++i)
           if (mat[i][c])
             for (size_type j = c; j <= var; ++j)
               mat[i][j] ^= mat[r][j];
-        }
         ++r;
       }
 
@@ -173,9 +165,9 @@ namespace csl
           // 求出变元
           value_type tmp = mat[i][var];
           for (size_type j = 0; j < var; ++j)
-            if (mat[i][j] && j != idx) tmp ^= mat[i][j] * ans[j];
-          ans[idx] = tmp;
-          free[idx] = 0;
+            if (mat[i][j] && j != idx)
+              tmp ^= mat[i][j] * ans[j];
+          ans[idx] = tmp, free[idx] = 0;
         }
         dim = var - r; return;
       }

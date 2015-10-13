@@ -3,7 +3,7 @@
 
 #ifndef FOURIER_H_
 #define FOURIER_H_
-#define FOURIER_H_VERSION 20151012L
+#define FOURIER_H_VERSION 20151013L
 
 #include <vector>
 
@@ -22,6 +22,14 @@ namespace csl
     typedef std::size_t size_type;
     typedef std::vector<value_type> container;
 
+    /**
+     * g ^ (P - 1) = 1 (mod P)
+     * P            g
+     * 786433       10
+     * 2113929217   5
+     * 1811939329   13
+     * 2130706433   3
+     */
     fourier(size_type n, value_type _P, value_type _g)
     : P(_P), g(_g)
     {
@@ -33,6 +41,9 @@ namespace csl
       for (int i = 0; i <= K; ++i) w[1][i] = w[0][K-i];
     }
 
+    /**
+     * Functor of Convolution
+     */
     container
     operator () (const container& a, const container& b) const
     {
@@ -53,14 +64,6 @@ namespace csl
   private :
     container w[2];
     size_type K;
-    /**
-     * g ^ (P - 1) = 1 (mod P)
-     * P            g
-     * 786433       10
-     * 2113929217   5
-     * 1811939329   13
-     * 2130706433   3
-     */
     value_type P;
     value_type g;
 

@@ -49,9 +49,11 @@ namespace csl
   /**
    * divide and conquer algorithms
    */
-  template <typename _Val, typename _Key, typename _Mod, typename _Op1, typename _Op2>
+  template <typename _Val, typename _Key, typename _Mod,
+            typename _Op1, typename _Op2>
   inline _Val
-  dnc(_Val c, _Val n, _Key k, const _Mod m, const _Op1& op1, const _Op2& op2)
+  dnc(_Val c, _Val n, _Key k, const _Mod m,
+      const _Op1& op1, const _Op2& op2)
   {
     for (n = op2(n, m); k; n = op2(op1(n, n), m), k >>= 1)
       if (k & 1) c = op2(op1(c, n), m);
@@ -70,7 +72,8 @@ namespace csl
   template <typename _Val>
   inline _Val
   mul(_Val a, _Val b, const _Val m)
-  { return dnc(_Val(), a, b, m, std::plus<_Val>(), std::modulus<_Val>()); }
+  { return dnc(_Val(), a, b, m,
+               std::plus<_Val>(), std::modulus<_Val>()); }
 
   template <typename _Val, typename _Key>
   inline _Val
@@ -80,7 +83,8 @@ namespace csl
   template <typename _Val, typename _Key>
   inline _Val
   pow(_Val c, _Val n, _Key k, const _Val m)
-  { return dnc(c, n, k, m, std::multiplies<_Val>(), std::modulus<_Val>()); }
+  { return dnc(c, n, k, m,
+               std::multiplies<_Val>(), std::modulus<_Val>()); }
 
   template <typename _Val>
   inline _Val
