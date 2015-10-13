@@ -5,8 +5,13 @@
 #define CSL_MATH_H_
 #define CSL_MATH_H_VERSION 20151008L
 
+#include <functional>
+
 namespace csl
 {
+  /**
+   * greatest common divisor
+   */
   template <typename _Tp>
   inline _Tp
   gcd(_Tp a, _Tp b)
@@ -18,6 +23,10 @@ namespace csl
     return a;
   }
 
+  /**
+   * extended Euclidean algorithm
+   * solve ax + by = gcd(a,b)
+   */
   template <typename _Tp>
   _Tp
   gcd(_Tp a, _Tp b, _Tp& x, _Tp& y)
@@ -29,43 +38,55 @@ namespace csl
     return x = 1, y = 0, a;
   }
 
+  /**
+   * least common multiple
+   */
   template <typename _Tp>
   inline _Tp
   lcm(_Tp a, _Tp b)
   { return a / gcd(a,b) * b; }
 
-  template <typename _Tp>
-  inline _Tp
-  mul(_Tp a, _Tp b, const _Tp m)
+  /**
+   * divide and conquer algorithms
+   */
+  template <typename _Val, typename _Key, typename _Mod, typename _Op1, typename _Op2>
+  inline _Val
+  dnc(_Val c, _Val n, _Key k, const _Mod m, const _Op1& op1, const _Op2& op2)
   {
-    _Tp c = 0;
-    for (a %= m; b; b >>= 1, a = (a << 1) % m)
-      if (b & 1) c = (c + a) % m;
+    for (n = op2(n, m); k; n = op2(op1(n, n), m), k >>= 1)
+      if (k & 1) c = op2(op1(c, n), m);
     return c;
   }
+
+  template <typename _Val, typename _Key, typename _Op>
+  inline _Val
+  dnc(_Val c, _Val n, _Key k, const _Op& op)
+  {
+    for (; k; n = op(n, n), k >>= 1)
+      if (k & 1) c = op(c, n);
+    return c;
+  }
+
+  template <typename _Val>
+  inline _Val
+  mul(_Val a, _Val b, const _Val m)
+  { return dnc(_Val(), a, b, m, std::plus<_Val>(), std::modulus<_Val>()); }
 
   template <typename _Val, typename _Key>
   inline _Val
   pow(_Val c, _Val n, const _Key k)
-  {
-    for (; k; n = n * n, k >>= 1)
-      if (k & 1) c = c * n;
-    return c;
-  }
+  { return dnc(c, n, k, std::multiplies<_Val>()); }
 
   template <typename _Val, typename _Key>
   inline _Val
   pow(_Val c, _Val n, _Key k, const _Val m)
-  {
-    for (n %= m; k; n = n * n % m, k >>= 1)
-      if (k & 1) c = c * n % m;
-    return c;
-  }
+  { return dnc(c, n, k, m, std::multiplies<_Val>(), std::modulus<_Val>()); }
 
-  template <typename _Val, typename _Key>
+  template <typename _Val>
   inline _Val
-  inv(_Val x, const _Key m)
-  { return csl::pow(_Val(1), x, m - 2, m); }
+  inv(_Val x, const _Val m)
+  { return pow(_Val(1), x, m-2, m); }
+
 } // namespace csl
 
 #endif /* CSL_MATH_H_ */

@@ -14,13 +14,13 @@ namespace csl {
       std::sort(m_data.begin(), m_data.end());
       m_data.resize(std::unique(m_data.begin(), m_data.end()) - m_data.begin());
     }
-    void clear()
+    inline void clear()
     { m_data.clear(); }
-    size_type size() const
+    inline size_type size() const
     { return m_data.size(); }
-    void reserve(size_type __n)
+    inline void reserve(size_type __n)
     { m_data.reserve(__n); }
-    size_type query(const _Tp& __x) const
+    inline size_type query(const _Tp& __x) const
     { return std::lower_bound(m_data.begin(), m_data.end(), __x) - m_data.begin(); }
     _Tp operator [] (size_type __x) const
     { return m_data[__x]; }
