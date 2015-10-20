@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命运 / 无尽长夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-10-20T06:54:21.187Z</updated>
+  <updated>2015-10-20T12:08:59.418Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://fateud.com/icpc2015-ccos/"/>
     <id>http://fateud.com/icpc2015-ccos/</id>
     <published>2015-10-17T02:59:08.000Z</published>
-    <updated>2015-10-20T06:54:21.187Z</updated>
+    <updated>2015-10-20T12:08:59.418Z</updated>
     <content type="html"><![CDATA[<h2 id="引言">引言</h2><p>因爲我的愚蠢，坑了H，最後才出5題，只拿了銀。<br>這麼一看，是不是與<a href="/icpc2015-ccol">2015 ACM/ICPC Asia Regional Changchun Online</a>情與貌，略相似。我不長記性啊。</p>
 <a id="more"></a>
 <h2 id="隊名">隊名</h2><p>中文隊名：冷酷的奴隸主<br>英文隊名：Grim Patron<br>出處是「爐石傳說」中的一張卡牌，效果是受到不致死的傷害能分裂出同樣一個3/3的分身。<br>寓意不是屠場，而是奮鬥；其實主要是因爲「卞」和「颼颼」喜歡爐石，我就想了這樣一個名字。</p>
@@ -32,7 +32,7 @@
 <img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/icpc2015-ccos/storefront.png?imageView2/2/w/269">
 <p>打開房門，第一感覺就是狹窄。好歹是三人間，鎮海的蛟川就高大上多了，你們好歹是省會= =。<br>房間裏連熱水壺都沒，只有熱水瓶去接水。<br>寫字檯上還有個電視。液晶？想多了。方方正正一個大箱子。現在已經被我們安置在桌下了，騰空間。</p>
 <img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/icpc2015-ccos/room.png?imageView2/2/w/269">
-<h2 id="制服">制服</h2><p>然後就是展示制服了，聽說ccpc是粉紅色的，笑cry。<br>我們的充其量也就是個校服，還是「無印良品」，連個logo都沒，這讓我如何穿出去吹逼。<br>看來這個鍋又要給沒有贊助商了。<br>下圖是不願透露正臉的帥氣的「颼颼」學長。</p>
+<h2 id="制服">制服</h2><p>然後就是展示制服了，聽說ccpc是粉紅色的，笑cry。<br>我們的充其量也就是個校服，還是「無印良品」，連個logo都沒。<br>你不印學校標識也就算了，連acm的標識都懶得弄上去，這讓我如何穿出去吹逼。<br>看來這個鍋又要給沒有贊助商了。<br>下圖是不願透露正臉的帥氣的「颼颼」學長。</p>
 <img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/icpc2015-ccos/member.png?imageView2/2/w/269">
 <p>晚上就是幸福的遊戲時間，因爲網絡不好，我們只能打war3rpg。<br>比如《術士戰爭》兩個人追着一個懟，導致「颼颼」險些棄坑。</p>
 <h2 id="面基">面基</h2><p>第二天清晨，初中學弟便來面基了，多年未見甚是想念他們，聊了很多、很久。<br>不過小學弟的住宿環境似乎比我們還差，真是喜聞樂見。<br>下面就是駐紮在他們天花板上的瓢蟲，土語叫「花大姐」。</p>
@@ -257,7 +257,7 @@
     <link href="http://fateud.com/note-vpn/"/>
     <id>http://fateud.com/note-vpn/</id>
     <published>2015-09-20T17:48:07.000Z</published>
-    <updated>2015-10-07T07:44:28.434Z</updated>
+    <updated>2015-10-20T12:34:49.379Z</updated>
     <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
 <footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
 <a id="more"></a>
@@ -266,7 +266,8 @@
 <p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
 <p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
 <p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
-<h2 id="路由">路由</h2><p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
+<h2 id="路由">路由</h2><p>// 警告：这一部分内容不一定有用</p>
+<p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
 <p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
 <ol>
 <li>TCP 1723 端口：PPTP協議連接端口</li>

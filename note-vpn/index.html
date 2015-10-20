@@ -19,7 +19,7 @@ ChouUnuser.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
 <meta property="og:description" content="|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。
 ChouUnuser.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">
-<meta property="og:updated_time" content="2015-10-07T07:44:28.434Z">
+<meta property="og:updated_time" content="2015-10-20T12:34:49.379Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="架設一個L2TP協議的簡易vpn">
 <meta name="twitter:description" content="|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。
@@ -111,7 +111,8 @@ ChouUnuser.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">
 <p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
 <p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
 <p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
-<h2 id="路由">路由</h2><p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
+<h2 id="路由">路由</h2><p>// 警告：这一部分内容不一定有用</p>
+<p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
 <p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
 <ol>
 <li>TCP 1723 端口：PPTP協議連接端口</li>
