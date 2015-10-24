@@ -1,0 +1,100 @@
+var FindProxyForURL = function(init, profiles) {
+    return function(url, host) {
+        "use strict";
+        var result = init, scheme = url.substr(0, url.indexOf(":"));
+        do {
+            result = profiles[result];
+            if (typeof result === "function") result = result(url, host, scheme);
+        } while (typeof result !== "string" || result.charCodeAt(0) === 43);
+        return result;
+    };
+}("+\u81ea\u52a8\u5207\u6362", {
+    "+\u81ea\u52a8\u5207\u6362": function(url, host, scheme) {
+        "use strict";
+        if (/^google\.com$/.test(host)) return "+ShadowSocks";
+        if (/^amazonaws\.com$/.test(host)) return "+ShadowSocks";
+        if (/^s3\.amazonaws\.com$/.test(host)) return "+ShadowSocks";
+        if (/^github-cloud\.s3\.amazonaws\.com$/.test(host)) return "+ShadowSocks";
+        if (/^github\.com$/.test(host)) return "+ShadowSocks";
+        if (/^angularjs\.org$/.test(host)) return "+ShadowSocks";
+        if (/^dmm365\.com$/.test(host)) return "+ShadowSocks";
+        if (/^twitter\.com$/.test(host)) return "+ShadowSocks";
+        if (/^blogspot\.com$/.test(host)) return "+ShadowSocks";
+        if (/^googlevideo\.com$/.test(host)) return "+ShadowSocks";
+        if (/^ytimg\.com$/.test(host)) return "+ShadowSocks";
+        if (/^cursecdn\.com$/.test(host)) return "+ShadowSocks";
+        if (/^hearthpwn\.com$/.test(host)) return "+ShadowSocks";
+        if (/^curse\.com$/.test(host)) return "+ShadowSocks";
+        if (/^fbcdn\.net$/.test(host)) return "+ShadowSocks";
+        if (/^facebook\.com$/.test(host)) return "+ShadowSocks";
+        if (/^battle\.net$/.test(host)) return "+ShadowSocks";
+        if (/^ytenx\.org$/.test(host)) return "+ShadowSocks";
+        if (/^googlecode\.com$/.test(host)) return "+ShadowSocks";
+        if (/^googleapis\.com$/.test(host)) return "+ShadowSocks";
+        if (/^google\.com\.tw$/.test(host)) return "+ShadowSocks";
+        if (/^github\.com$/.test(host)) return "+ShadowSocks";
+        if (/^google\.com\.hk$/.test(host)) return "+ShadowSocks";
+        if (/^gstatic\.com$/.test(host)) return "+ShadowSocks";
+        if (/^google\.com$/.test(host)) return "+ShadowSocks";
+        if (/^googleusercontent\.com$/.test(host)) return "+ShadowSocks";
+        if (/^blogblog\.com$/.test(host)) return "+ShadowSocks";
+        if (/^google-code-prettify\.googlecode\.com$/.test(host)) return "+ShadowSocks";
+        if (/^blogger\.com$/.test(host)) return "+ShadowSocks";
+        if (/^akamaihd\.net$/.test(host)) return "+ShadowSocks";
+        if (/^logdown\.io$/.test(host)) return "+ShadowSocks";
+        if (/^gigacircle\.com$/.test(host)) return "+ShadowSocks";
+        if (/^yimg\.com$/.test(host)) return "+ShadowSocks";
+        if (/^mathurl\.com$/.test(host)) return "+ShadowSocks";
+        if (/^codechef\.com$/.test(host)) return "+ShadowSocks";
+        if (/^smdmfnow\.com$/.test(host)) return "+ShadowSocks";
+        if (/^ok1024\.info$/.test(host)) return "+ShadowSocks";
+        if (/^avatars3\.githubusercontent\.com$/.test(host)) return "+ShadowSocks";
+        if (/^baylor\.edu$/.test(host)) return "+ShadowSocks";
+        if (/^disqus\.com$/.test(host)) return "+ShadowSocks";
+        if (/^s-msft\.com$/.test(host)) return "+ShadowSocks";
+        if (/^aspnetcdn\.com$/.test(host)) return "+ShadowSocks";
+        if (/^amazonaws\.com$/.test(host)) return "+ShadowSocks";
+        if (/^imgur\.com$/.test(host)) return "+ShadowSocks";
+        if (/^sstatic\.net$/.test(host)) return "+ShadowSocks";
+        if (/^wikipedia\.org$/.test(host)) return "+ShadowSocks";
+        if (/^byvoid\.com$/.test(host)) return "+ShadowSocks";
+        if (/^jquery\.com$/.test(host)) return "+ShadowSocks";
+        if (/^imgclick\.net$/.test(host)) return "+ShadowSocks";
+        if (/^doujinlife\.com$/.test(host)) return "+ShadowSocks";
+        if (/^imgdrive\.co$/.test(host)) return "+ShadowSocks";
+        if (/^shotimg\.org$/.test(host)) return "+ShadowSocks";
+        if (/^megaimage\.org$/.test(host)) return "+ShadowSocks";
+        if (/^imagedecode\.com$/.test(host)) return "+ShadowSocks";
+        if (/^rawgit\.com$/.test(host)) return "+ShadowSocks";
+        if (/^githubusercontent\.com$/.test(host)) return "+ShadowSocks";
+        if (/^spoj\.com$/.test(host)) return "+ShadowSocks";
+        if (/^phncdn\.com$/.test(host)) return "+ShadowSocks";
+        if (/^mega\.co\.nz$/.test(host)) return "+ShadowSocks";
+        if (/^tumblr\.com$/.test(host)) return "+ShadowSocks";
+        if (/^blogspot\.tw$/.test(host)) return "+ShadowSocks";
+        if (/^forvo\.com$/.test(host)) return "+ShadowSocks";
+        if (/^disquscdn\.com$/.test(host)) return "+ShadowSocks";
+        if (/^hexo\.io$/.test(host)) return "+ShadowSocks";
+        if (/^594sgk\.com$/.test(host)) return "+ShadowSocks";
+        if (/^eclipse\.org$/.test(host)) return "+ShadowSocks";
+        if (/^dropboxstatic\.com$/.test(host)) return "+ShadowSocks";
+        if (/^ifdream\.net$/.test(host)) return "+ShadowSocks";
+        if (/^google-analytics\.com$/.test(host)) return "+ShadowSocks";
+        if (/^imgtrex\.com$/.test(host)) return "+ShadowSocks";
+        if (/^233\.wiki$/.test(host)) return "+ShadowSocks";
+        if (/^wikimedia\.org$/.test(host)) return "+ShadowSocks";
+        if (/^wikibooks\.org$/.test(host)) return "+ShadowSocks";
+        if (/^fonts\.googleapis\.com$/.test(host)) return "+ShadowSocks";
+        if (/^imgmega\.com$/.test(host)) return "+ShadowSocks";
+        if (/^linkbucks\.com$/.test(host)) return "+ShadowSocks";
+        if (/^hentaianimedownloads\.com$/.test(host)) return "+ShadowSocks";
+        if (/^dlsite\.jp$/.test(host)) return "+ShadowSocks";
+        return "+__ruleListOf_\u81ea\u52a8\u5207\u6362";
+    },
+    "+__ruleListOf_\u81ea\u52a8\u5207\u6362": "DIRECT",
+    "+ShadowSocks": function(url, host, scheme) {
+        "use strict";
+        if (host === "[::1]" || host === "localhost" || host === "127.0.0.1") return "DIRECT";
+        return "SOCKS5 127.0.0.1:1080; SOCKS 127.0.0.1:1080";
+    }
+});
