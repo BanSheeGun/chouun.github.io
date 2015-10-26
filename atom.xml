@@ -4,9 +4,9 @@
   <title><![CDATA[Fate / Unlimited Darkness]]></title>
   <subtitle><![CDATA[命运 / 无尽长夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://fateud.com//"/>
-  <updated>2015-10-20T12:08:59.418Z</updated>
-  <id>http://fateud.com//</id>
+  <link href="http://blog.fateud.com//"/>
+  <updated>2015-10-25T14:44:52.083Z</updated>
+  <id>http://blog.fateud.com//</id>
   
   <author>
     <name><![CDATA[ChouUn]]></name>
@@ -16,11 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[每日一摘]]></title>
+    <link href="http://blog.fateud.com/note-excerpt/"/>
+    <id>http://blog.fateud.com/note-excerpt/</id>
+    <published>2015-10-25T14:44:52.083Z</published>
+    <updated>2015-10-25T14:44:52.083Z</updated>
+    <content type="html"><![CDATA[<p>20151025</p>
+<p>水深則流緩，人貴則語遲。</p>
+<p>20151012</p>
+<p>人吃土一輩，土吃人一回。</p>
+<p>20151010</p>
+<p>三毛：刻意去找的東西，往往是找不到的。天下萬物的來和去，都有他的時間。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>20151025</p>
+<p>水深則流緩，人貴則語遲。</p>
+<p>20151012</p>
+<p>人吃土一輩，土吃人一回。</p>
+<p>20151010</p>
+<p>三毛：刻意去找的東西，往往是找不到的。天下萬物的來和去，都有他的時間。</p>
+]]>
+    </summary>
+    
+      <category term="摘錄" scheme="http://blog.fateud.com/tags/%E6%91%98%E9%8C%84/"/>
+    
+      <category term="筆記" scheme="http://blog.fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[2015 ACM/ICPC Asia Regional Changchun OnSite]]></title>
-    <link href="http://fateud.com/icpc2015-ccos/"/>
-    <id>http://fateud.com/icpc2015-ccos/</id>
+    <link href="http://blog.fateud.com/icpc2015-ccos/"/>
+    <id>http://blog.fateud.com/icpc2015-ccos/</id>
     <published>2015-10-17T02:59:08.000Z</published>
-    <updated>2015-10-20T12:08:59.418Z</updated>
+    <updated>2015-10-20T14:21:59.370Z</updated>
     <content type="html"><![CDATA[<h2 id="引言">引言</h2><p>因爲我的愚蠢，坑了H，最後才出5題，只拿了銀。<br>這麼一看，是不是與<a href="/icpc2015-ccol">2015 ACM/ICPC Asia Regional Changchun Online</a>情與貌，略相似。我不長記性啊。</p>
 <a id="more"></a>
 <h2 id="隊名">隊名</h2><p>中文隊名：冷酷的奴隸主<br>英文隊名：Grim Patron<br>出處是「爐石傳說」中的一張卡牌，效果是受到不致死的傷害能分裂出同樣一個3/3的分身。<br>寓意不是屠場，而是奮鬥；其實主要是因爲「卞」和「颼颼」喜歡爐石，我就想了這樣一個名字。</p>
@@ -58,18 +87,18 @@
     
     </summary>
     
-      <category term="現場賽" scheme="http://fateud.com/tags/%E7%8F%BE%E5%A0%B4%E8%B3%BD/"/>
+      <category term="現場賽" scheme="http://blog.fateud.com/tags/%E7%8F%BE%E5%A0%B4%E8%B3%BD/"/>
     
-      <category term="長春賽區" scheme="http://fateud.com/tags/%E9%95%B7%E6%98%A5%E8%B3%BD%E5%8D%80/"/>
+      <category term="長春賽區" scheme="http://blog.fateud.com/tags/%E9%95%B7%E6%98%A5%E8%B3%BD%E5%8D%80/"/>
     
-      <category term="ACM/ICPC" scheme="http://fateud.com/categories/ACM-ICPC/"/>
+      <category term="ACM/ICPC" scheme="http://blog.fateud.com/categories/ACM-ICPC/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[殘龍的數學筆記]]></title>
-    <link href="http://fateud.com/note-math/"/>
-    <id>http://fateud.com/note-math/</id>
+    <link href="http://blog.fateud.com/note-math/"/>
+    <id>http://blog.fateud.com/note-math/</id>
     <published>2015-10-14T16:13:51.774Z</published>
     <updated>2015-10-14T16:13:51.774Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
@@ -102,43 +131,18 @@
     
     </summary>
     
-      <category term="數論" scheme="http://fateud.com/tags/%E6%95%B8%E8%AB%96/"/>
+      <category term="數論" scheme="http://blog.fateud.com/tags/%E6%95%B8%E8%AB%96/"/>
     
-      <category term="遞推" scheme="http://fateud.com/tags/%E9%81%9E%E6%8E%A8/"/>
+      <category term="遞推" scheme="http://blog.fateud.com/tags/%E9%81%9E%E6%8E%A8/"/>
     
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[每日一摘]]></title>
-    <link href="http://fateud.com/note-excerpt/"/>
-    <id>http://fateud.com/note-excerpt/</id>
-    <published>2015-10-12T14:49:05.670Z</published>
-    <updated>2015-10-12T14:49:05.670Z</updated>
-    <content type="html"><![CDATA[<p>20151012</p>
-<p>諺語：人吃土一輩，土吃人一回</p>
-<p>20151010</p>
-<p>三毛：刻意去找的東西，往往是找不到的。天下萬物的來和去，都有他的時間。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>20151012</p>
-<p>諺語：人吃土一輩，土吃人一回</p>
-<p>20151010</p>
-<p>三毛：刻意去找的東西，往往是找不到的。天下萬物的來和去，都有他的時間。</p>
-]]>
-    </summary>
-    
-      <category term="摘錄" scheme="http://fateud.com/tags/%E6%91%98%E9%8C%84/"/>
-    
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+      <category term="筆記" scheme="http://blog.fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2015 Astar Contest - Round 2A]]></title>
-    <link href="http://fateud.com/astar2015-round2a/"/>
-    <id>http://fateud.com/astar2015-round2a/</id>
+    <link href="http://blog.fateud.com/astar2015-round2a/"/>
+    <id>http://blog.fateud.com/astar2015-round2a/</id>
     <published>2015-09-25T16:23:50.000Z</published>
     <updated>2015-09-25T17:49:01.227Z</updated>
     <content type="html"><![CDATA[<h2 id="引言">引言</h2><p>在一直沒有寫出能正常運行的平衡樹模板，這個坑拖了很久（然而是取巧的）。<br>還有一個就是魔方，之前打了27的表發現還要考慮色向和，怎麼都wa簡直崩潰。</p>
@@ -180,18 +184,18 @@
     
     </summary>
     
-      <category term="百度之星" scheme="http://fateud.com/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/"/>
+      <category term="百度之星" scheme="http://blog.fateud.com/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/"/>
     
-      <category term="網絡賽" scheme="http://fateud.com/tags/%E7%B6%B2%E7%B5%A1%E8%B3%BD/"/>
+      <category term="網絡賽" scheme="http://blog.fateud.com/tags/%E7%B6%B2%E7%B5%A1%E8%B3%BD/"/>
     
-      <category term="ACM/ICPC" scheme="http://fateud.com/categories/ACM-ICPC/"/>
+      <category term="ACM/ICPC" scheme="http://blog.fateud.com/categories/ACM-ICPC/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[代码模板（长期更新）]]></title>
-    <link href="http://fateud.com/code-template/"/>
-    <id>http://fateud.com/code-template/</id>
+    <link href="http://blog.fateud.com/code-template/"/>
+    <id>http://blog.fateud.com/code-template/</id>
     <published>2015-09-21T08:18:41.049Z</published>
     <updated>2015-09-21T08:18:41.049Z</updated>
     <content type="html"><![CDATA[<p>不管你信不信，反正这个页面是炸了。<br>如果不及时补上，会产生一片虚空，继而演变成黑洞。<br>然后像抽水马桶一样，把整个博客吸进去。</p>
@@ -242,20 +246,20 @@
     
     </summary>
     
-      <category term="bestcoder" scheme="http://fateud.com/tags/bestcoder/"/>
+      <category term="bestcoder" scheme="http://blog.fateud.com/tags/bestcoder/"/>
     
-      <category term="codeforces" scheme="http://fateud.com/tags/codeforces/"/>
+      <category term="codeforces" scheme="http://blog.fateud.com/tags/codeforces/"/>
     
-      <category term="template" scheme="http://fateud.com/tags/template/"/>
+      <category term="template" scheme="http://blog.fateud.com/tags/template/"/>
     
-      <category term="ACM/ICPC" scheme="http://fateud.com/categories/ACM-ICPC/"/>
+      <category term="ACM/ICPC" scheme="http://blog.fateud.com/categories/ACM-ICPC/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[架設一個L2TP協議的簡易vpn]]></title>
-    <link href="http://fateud.com/note-vpn/"/>
-    <id>http://fateud.com/note-vpn/</id>
+    <link href="http://blog.fateud.com/note-vpn/"/>
+    <id>http://blog.fateud.com/note-vpn/</id>
     <published>2015-09-20T17:48:07.000Z</published>
     <updated>2015-10-20T12:34:49.379Z</updated>
     <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
@@ -285,20 +289,20 @@
     
     </summary>
     
-      <category term="L2TP" scheme="http://fateud.com/tags/L2TP/"/>
+      <category term="L2TP" scheme="http://blog.fateud.com/tags/L2TP/"/>
     
-      <category term="vpn" scheme="http://fateud.com/tags/vpn/"/>
+      <category term="vpn" scheme="http://blog.fateud.com/tags/vpn/"/>
     
-      <category term="網絡" scheme="http://fateud.com/tags/%E7%B6%B2%E7%B5%A1/"/>
+      <category term="網絡" scheme="http://blog.fateud.com/tags/%E7%B6%B2%E7%B5%A1/"/>
     
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+      <category term="筆記" scheme="http://blog.fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hello Hexo]]></title>
-    <link href="http://fateud.com/note-hexo/"/>
-    <id>http://fateud.com/note-hexo/</id>
+    <link href="http://blog.fateud.com/note-hexo/"/>
+    <id>http://blog.fateud.com/note-hexo/</id>
     <published>2015-09-20T01:56:39.101Z</published>
     <updated>2015-09-20T01:56:39.101Z</updated>
     <content type="html"><![CDATA[<blockquote>
@@ -449,22 +453,22 @@
     
     </summary>
     
-      <category term="blog" scheme="http://fateud.com/tags/blog/"/>
+      <category term="blog" scheme="http://blog.fateud.com/tags/blog/"/>
     
-      <category term="github" scheme="http://fateud.com/tags/github/"/>
+      <category term="github" scheme="http://blog.fateud.com/tags/github/"/>
     
-      <category term="hexo" scheme="http://fateud.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://blog.fateud.com/tags/hexo/"/>
     
-      <category term="markdown" scheme="http://fateud.com/tags/markdown/"/>
+      <category term="markdown" scheme="http://blog.fateud.com/tags/markdown/"/>
     
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+      <category term="筆記" scheme="http://blog.fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2015 ACM/ICPC Asia Regional Changchun Online]]></title>
-    <link href="http://fateud.com/icpc2015-ccol/"/>
-    <id>http://fateud.com/icpc2015-ccol/</id>
+    <link href="http://blog.fateud.com/icpc2015-ccol/"/>
+    <id>http://blog.fateud.com/icpc2015-ccol/</id>
     <published>2015-09-18T12:29:30.000Z</published>
     <updated>2015-09-19T17:18:33.408Z</updated>
     <content type="html"><![CDATA[<h2 id="引言">引言</h2><p>すみません、すみません、すみません、<br>因爲我的愚蠢，坑了1010，最後才出6道。</p>
@@ -541,18 +545,18 @@
     
     </summary>
     
-      <category term="網絡賽" scheme="http://fateud.com/tags/%E7%B6%B2%E7%B5%A1%E8%B3%BD/"/>
+      <category term="網絡賽" scheme="http://blog.fateud.com/tags/%E7%B6%B2%E7%B5%A1%E8%B3%BD/"/>
     
-      <category term="長春賽區" scheme="http://fateud.com/tags/%E9%95%B7%E6%98%A5%E8%B3%BD%E5%8D%80/"/>
+      <category term="長春賽區" scheme="http://blog.fateud.com/tags/%E9%95%B7%E6%98%A5%E8%B3%BD%E5%8D%80/"/>
     
-      <category term="ACM/ICPC" scheme="http://fateud.com/categories/ACM-ICPC/"/>
+      <category term="ACM/ICPC" scheme="http://blog.fateud.com/categories/ACM-ICPC/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[紀念世界反法西斯戰爭勝利70週年閱兵式]]></title>
-    <link href="http://fateud.com/note-antifascism/"/>
-    <id>http://fateud.com/note-antifascism/</id>
+    <link href="http://blog.fateud.com/note-antifascism/"/>
+    <id>http://blog.fateud.com/note-antifascism/</id>
     <published>2015-09-03T04:27:40.000Z</published>
     <updated>2015-09-06T23:17:50.687Z</updated>
     <content type="html"><![CDATA[<div style="text-align:center;"><img class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-antifascism/sen-cin-paoq-tzeu.png"><br>無論毀譽參半<br>曾談笑風生的他 終究露出了疲態<br>那個詼諧搞怪的「蛤蛤」<br></div>
@@ -575,22 +579,22 @@
     
     </summary>
     
-      <category term="反法西斯" scheme="http://fateud.com/tags/%E5%8F%8D%E6%B3%95%E8%A5%BF%E6%96%AF/"/>
+      <category term="反法西斯" scheme="http://blog.fateud.com/tags/%E5%8F%8D%E6%B3%95%E8%A5%BF%E6%96%AF/"/>
     
-      <category term="木村成彥" scheme="http://fateud.com/tags/%E6%9C%A8%E6%9D%91%E6%88%90%E5%BD%A5/"/>
+      <category term="木村成彥" scheme="http://blog.fateud.com/tags/%E6%9C%A8%E6%9D%91%E6%88%90%E5%BD%A5/"/>
     
-      <category term="西決" scheme="http://fateud.com/tags/%E8%A5%BF%E6%B1%BA/"/>
+      <category term="西決" scheme="http://blog.fateud.com/tags/%E8%A5%BF%E6%B1%BA/"/>
     
-      <category term="閱兵" scheme="http://fateud.com/tags/%E9%96%B1%E5%85%B5/"/>
+      <category term="閱兵" scheme="http://blog.fateud.com/tags/%E9%96%B1%E5%85%B5/"/>
     
-      <category term="雜記" scheme="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+      <category term="雜記" scheme="http://blog.fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[不存在上帝，因而人類沒有救贖]]></title>
-    <link href="http://fateud.com/note-turtle/"/>
-    <id>http://fateud.com/note-turtle/</id>
+    <link href="http://blog.fateud.com/note-turtle/"/>
+    <id>http://blog.fateud.com/note-turtle/</id>
     <published>2015-08-23T05:44:14.000Z</published>
     <updated>2015-10-11T05:16:29.429Z</updated>
     <content type="html"><![CDATA[<h3 id="題記">題記</h3><blockquote><p>|8.23| 不存在上帝，因而人类没有救赎</p>
@@ -632,16 +636,16 @@
     
     </summary>
     
-      <category term="人性" scheme="http://fateud.com/tags/%E4%BA%BA%E6%80%A7/"/>
+      <category term="人性" scheme="http://blog.fateud.com/tags/%E4%BA%BA%E6%80%A7/"/>
     
-      <category term="雜記" scheme="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+      <category term="雜記" scheme="http://blog.fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[餘姚珠璣]]></title>
-    <link href="http://fateud.com/note-pearl/"/>
-    <id>http://fateud.com/note-pearl/</id>
+    <link href="http://blog.fateud.com/note-pearl/"/>
+    <id>http://blog.fateud.com/note-pearl/</id>
     <published>2015-08-03T04:03:41.000Z</published>
     <updated>2015-09-08T23:43:27.899Z</updated>
     <content type="html"><![CDATA[<p>筆者母語是吳語太湖片臨紹小片餘姚話，包括餘姚（不含東部河姆渡等鎮）、慈溪（不含東部觀海衛等鎮）。<br>這個擬音採樣的對象是郊區音，相對城區而言有所損益，記錄的音值也偏中派點。<br>ps. 挖坑待填，有建議請回復</p>
@@ -713,22 +717,22 @@
     
     </summary>
     
-      <category term="方音" scheme="http://fateud.com/tags/%E6%96%B9%E9%9F%B3/"/>
+      <category term="方音" scheme="http://blog.fateud.com/tags/%E6%96%B9%E9%9F%B3/"/>
     
-      <category term="語言學" scheme="http://fateud.com/tags/%E8%AA%9E%E8%A8%80%E5%AD%B8/"/>
+      <category term="語言學" scheme="http://blog.fateud.com/tags/%E8%AA%9E%E8%A8%80%E5%AD%B8/"/>
     
-      <category term="音韻學" scheme="http://fateud.com/tags/%E9%9F%B3%E9%9F%BB%E5%AD%B8/"/>
+      <category term="音韻學" scheme="http://blog.fateud.com/tags/%E9%9F%B3%E9%9F%BB%E5%AD%B8/"/>
     
-      <category term="餘姚" scheme="http://fateud.com/tags/%E9%A4%98%E5%A7%9A/"/>
+      <category term="餘姚" scheme="http://blog.fateud.com/tags/%E9%A4%98%E5%A7%9A/"/>
     
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+      <category term="筆記" scheme="http://blog.fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[亡语]]></title>
-    <link href="http://fateud.com/note-leave/"/>
-    <id>http://fateud.com/note-leave/</id>
+    <link href="http://blog.fateud.com/note-leave/"/>
+    <id>http://blog.fateud.com/note-leave/</id>
     <published>2015-04-13T07:36:26.000Z</published>
     <updated>2015-08-28T13:50:50.915Z</updated>
     <content type="html"><![CDATA[<p>就在此时，忽然收到我妈的消息，阿太也走了。</p>
@@ -741,9 +745,9 @@
     
     </summary>
     
-      <category term="伤离别" scheme="http://fateud.com/tags/%E4%BC%A4%E7%A6%BB%E5%88%AB/"/>
+      <category term="伤离别" scheme="http://blog.fateud.com/tags/%E4%BC%A4%E7%A6%BB%E5%88%AB/"/>
     
-      <category term="雜記" scheme="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+      <category term="雜記" scheme="http://blog.fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
     
   </entry>
   
