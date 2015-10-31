@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://fateud.com/note-math/index.html">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
 <meta property="og:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
-<meta property="og:updated_time" content="2015-10-14T16:13:51.774Z">
+<meta property="og:updated_time" content="2015-10-30T02:58:29.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="殘龍的數學筆記">
 <meta name="twitter:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
@@ -87,7 +87,7 @@
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-14T16:13:51.774Z" itemprop="datePublished"> 发表于 2015-10-15</time>
+    <time datetime="2015-10-30T02:58:29.711Z" itemprop="datePublished"> 发表于 2015-10-30</time>
     
   </p>
 </header>
@@ -114,7 +114,7 @@
 <h3 id="莫比烏斯函數">莫比烏斯函數</h3><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_function</a></p>
 <p>莫比烏斯函數 (Möbius Function)：<br>一般用 $ mu(n) $ 或者 $ \mu(n) $ 表示，是個積性函數 (multiplicative function)。<br>$ \begin{eqnarray}<br>\mu(n) =<br>  \begin{cases}<br>  x = 1,      &amp; n = 1 \cr<br>  x = (-1)^k, &amp; \text{if } n \text{ is the product of } k \text{ different primes} \cr<br>  x = 0,         &amp; otherwise<br>  \end{cases}<br>\end{eqnarray} $</p>
 <h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
-<p>中國剩餘定理 (Chinese Remainder Theorem)：<br>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} (\bmod m_{i}) $，求 $ S $<br>先看 $ S \equiv a_{i} (\bmod m_{i}) $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 (\bmod m_{i}) $，$ \forall j \neq i, M_{i}x \equiv 0 (\bmod m_{j}) $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} (\bmod m_{i}) $，$ S = \sum a_{i}M_{i}x_{i} (\bmod M)$</p>
+<p>中國剩餘定理 (Chinese Remainder Theorem)：<br>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} (\bmod m_{i}) $，求 $ S $<br>先看 $ S \equiv a_{i} (\bmod m_{i}) $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 (\bmod m_{i}) $，$ \forall j \neq i, M_{i}x \equiv 0 (\bmod m_{j}) $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} (\bmod m_{i}) $，$ S = \sum a_{i}M_{i}x_{i} (\bmod M)$</p>
 <h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
 <h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = px + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
 <h3 id="(a+√b)^n">(a+√b)^n</h3><p>$ S_{n} = \lceil (a + \sqrt{b}) ^ {n} \rceil $<br>構造 $ (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ \because 0 &lt; a - \sqrt{b} &lt; 1 $，<br>且二項式展開、合併同類項後，只可能有 $ \sqrt{b} ^ {2i} = b ^ i $<br>$ \therefore S_{n} = (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ S_{n} ⋅ ((a + \sqrt{b}) + (a - \sqrt{b})) $<br>$ =<br>(a + \sqrt{b}) ^ {n+1} +<br>(a - \sqrt{b}) ^ {n+1} +<br>(a + \sqrt{b}) (a - \sqrt{b}) ((a + \sqrt{b}) ^ {n-1} + (a - \sqrt{b}) ^ {n-1}) $<br>$ = S_{n+1} + (a ^ 2 - b) S_{n-1} $<br>移項得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
@@ -159,19 +159,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/icpc2015-ccos/" title="2015 ACM/ICPC Asia Regional Changchun OnSite">
-  <strong>上一篇：</strong><br/>
-  <span>
-  2015 ACM/ICPC Asia Regional Changchun OnSite</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/astar2015-round2a/"  title="2015 Astar Contest - Round 2A">
+<a href="/note-excerpt/"  title="每日一摘">
  <strong>下一篇：</strong><br/> 
- <span>2015 Astar Contest - Round 2A
+ <span>每日一摘
 </span>
 </a>
 </div>

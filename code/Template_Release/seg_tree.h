@@ -25,7 +25,7 @@ namespace csl {
         m_data[i] = m_func(m_data[i<<1], m_data[i<<1^1]);
     }
     value_type query(size_type l, size_type r,
-                     value_type res = value_type())  const {
+                     value_type res = value_type()) const {
       for(++r; l && l + (l & -l) <= r; l += l & -l)
         res = m_func(res, m_data[(m_size + l) / (l & -l)]);
       for(; l < r; r -= r & -r)
