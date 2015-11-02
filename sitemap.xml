@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/note-vpn/</loc>
+    <lastmod>2015-11-02T14:59:26.572Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/note-math/</loc>
     <lastmod>2015-10-30T02:58:29.711Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://fateud.com/icpc2015-ccos/</loc>
     <lastmod>2015-10-20T14:21:59.370Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fateud.com/note-vpn/</loc>
-    <lastmod>2015-10-20T12:34:49.379Z</lastmod>
   </url>
   
   <url>

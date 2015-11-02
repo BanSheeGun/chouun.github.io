@@ -3,6 +3,30 @@
 
     
   <url>
+    <loc>http://fateud.com/note-vpn/</loc>
+    <lastmod>2015-11-02T14:59:26.572Z</lastmod>
+    <data>
+        <display>
+        <title>架設一個L2TP協議的簡易vpn</title>
+        <pubTime>2015-11-02T14:59:26.572Z</pubTime>
+        
+        <tag>L2TP </tag>
+         
+        <tag>vpn </tag>
+         
+        <tag>網絡 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://fateud.com/note-math/</loc>
     <lastmod>2015-10-30T02:58:29.711Z</lastmod>
     <data>
@@ -61,30 +85,6 @@
            
              
               <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://fateud.com/note-vpn/</loc>
-    <lastmod>2015-10-20T12:34:49.379Z</lastmod>
-    <data>
-        <display>
-        <title>架設一個L2TP協議的簡易vpn</title>
-        <pubTime>2015-09-20T17:48:07.000Z</pubTime>
-        
-        <tag>L2TP </tag>
-         
-        <tag>vpn </tag>
-         
-        <tag>網絡 </tag>
-         
-         
-           
-             
-              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
           
         </display>
     </data>

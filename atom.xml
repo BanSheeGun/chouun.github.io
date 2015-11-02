@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命运 / 无尽长夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-10-30T02:58:29.711Z</updated>
+  <updated>2015-11-02T14:59:26.572Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[架設一個L2TP協議的簡易vpn]]></title>
+    <link href="http://fateud.com/note-vpn/"/>
+    <id>http://fateud.com/note-vpn/</id>
+    <published>2015-11-02T14:59:26.572Z</published>
+    <updated>2015-11-02T14:59:26.572Z</updated>
+    <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
+<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
+<a id="more"></a>
+<h2 id="起因">起因</h2><p>又值開學季，慘無人道的十一點斷網不速而來，最近準備區域賽、急需大量資料的我，無法接受慘痛的現實。<br>轉念一想，實驗室是通宵供電供網的，然而天天睡實驗室對身體不利，所以我決定通過代理來解決上網問題。</p>
+<h2 id="架設">架設</h2><p>我先回憶了上個學期架設vpn的過程，進行了同樣的步驟。</p>
+<p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
+<p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
+<p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
+<h2 id="路由">路由</h2><p>// 警告：這一部分已經驗證非關鍵作用，請無視</p>
+<p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
+<p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
+<ol>
+<li>TCP 1723 端口：PPTP協議連接端口</li>
+<li>UDP 1701 端口：L2TP協議連接端口</li>
+<li>UDP 500 端口：Internet密鑰交換(IKE) - 用戶數據報協議</li>
+<li>UDP 4500 端口：IPsec NAT-T</li>
+<li>TCP/UDP 50 端口：封裝式安全協議(ESP) - Internet協議(IP)協議</li>
+</ol>
+<p>然後嘗試著訪問百度，哇哦！還是血崩…</p>
+<h2 id="尾聲">尾聲</h2><p>我原以爲要跟上次一樣不了了之了，結果chrome虎軀一震，竟然連上了，真是xnmbyy！<br>測試了一下Google，秒連，說明並不是錯覺。也懶得糾結這麼多了，能上就好。</p>
+<h2 id="UPD">UPD</h2><p>聽說11月以後，通過撥號仍能上內網，但是子網掩碼默認是四個255，導致我無法ping通機房。<br>我用netsh命令改成了255.255.255.0，靜候11點斷電斷網，保佑。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
+<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>]]>
+    
+    </summary>
+    
+      <category term="L2TP" scheme="http://fateud.com/tags/L2TP/"/>
+    
+      <category term="vpn" scheme="http://fateud.com/tags/vpn/"/>
+    
+      <category term="網絡" scheme="http://fateud.com/tags/%E7%B6%B2%E7%B5%A1/"/>
+    
+      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[殘龍的數學筆記]]></title>
@@ -252,49 +296,6 @@
       <category term="template" scheme="http://fateud.com/tags/template/"/>
     
       <category term="ACM/ICPC" scheme="http://fateud.com/categories/ACM-ICPC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[架設一個L2TP協議的簡易vpn]]></title>
-    <link href="http://fateud.com/note-vpn/"/>
-    <id>http://fateud.com/note-vpn/</id>
-    <published>2015-09-20T17:48:07.000Z</published>
-    <updated>2015-10-20T12:34:49.379Z</updated>
-    <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
-<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
-<a id="more"></a>
-<h2 id="起因">起因</h2><p>又值開學季，慘無人道的十一點斷網不速而來，最近準備區域賽、急需大量資料的我，無法接受慘痛的現實。<br>轉念一想，實驗室是通宵供電供網的，然而天天睡實驗室對身體不利，所以我決定通過代理來解決上網問題。</p>
-<h2 id="架設">架設</h2><p>我先回憶了上個學期架設vpn的過程，進行了同樣的步驟。</p>
-<p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
-<p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
-<p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
-<h2 id="路由">路由</h2><p>// 警告：这一部分内容不一定有用</p>
-<p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
-<p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
-<ol>
-<li>TCP 1723 端口：PPTP協議連接端口</li>
-<li>UDP 1701 端口：L2TP協議連接端口</li>
-<li>UDP 500 端口：Internet密鑰交換(IKE) - 用戶數據報協議</li>
-<li>UDP 4500 端口：IPsec NAT-T</li>
-<li>TCP/UDP 50 端口：封裝式安全協議(ESP) - Internet協議(IP)協議</li>
-</ol>
-<p>然後嘗試著訪問百度，哇哦！還是血崩…</p>
-<h2 id="尾聲">尾聲</h2><p>我原以爲要跟上次一樣不了了之了，結果chrome虎軀一震，竟然連上了，真是xnmbyy！<br>測試了一下Google，秒連，說明並不是錯覺。也懶得糾結這麼多了，能上就好。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
-<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>]]>
-    
-    </summary>
-    
-      <category term="L2TP" scheme="http://fateud.com/tags/L2TP/"/>
-    
-      <category term="vpn" scheme="http://fateud.com/tags/vpn/"/>
-    
-      <category term="網絡" scheme="http://fateud.com/tags/%E7%B6%B2%E7%B5%A1/"/>
-    
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
