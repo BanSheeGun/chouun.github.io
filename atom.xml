@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命运 / 无尽长夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-02T14:59:26.572Z</updated>
+  <updated>2015-11-02T15:01:15.007Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[架設一個L2TP協議的簡易vpn]]></title>
     <link href="http://fateud.com/note-vpn/"/>
     <id>http://fateud.com/note-vpn/</id>
-    <published>2015-11-02T14:59:26.572Z</published>
-    <updated>2015-11-02T14:59:26.572Z</updated>
+    <published>2015-11-02T15:01:15.007Z</published>
+    <updated>2015-11-02T15:01:15.007Z</updated>
     <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
 <footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
 <a id="more"></a>
@@ -41,7 +41,7 @@
 </ol>
 <p>然後嘗試著訪問百度，哇哦！還是血崩…</p>
 <h2 id="尾聲">尾聲</h2><p>我原以爲要跟上次一樣不了了之了，結果chrome虎軀一震，竟然連上了，真是xnmbyy！<br>測試了一下Google，秒連，說明並不是錯覺。也懶得糾結這麼多了，能上就好。</p>
-<h2 id="UPD">UPD</h2><p>聽說11月以後，通過撥號仍能上內網，但是子網掩碼默認是四個255，導致我無法ping通機房。<br>我用netsh命令改成了255.255.255.0，靜候11點斷電斷網，保佑。</p>
+<h2 id="UPD">UPD</h2><p>聽說11月以後，通過撥號仍能上內網，但是子網掩碼默認是四個255，導致我無法ping通機房。<br>我用netsh命令改成了255.255.255.0，還是可以連vpn的，靜候11點斷電斷網，保佑。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
