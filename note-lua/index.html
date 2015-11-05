@@ -21,7 +21,7 @@ Lua is a powerful, fast, lightweight, embeddable scripting language.Lua combines
 <meta property="og:description" content="關於Lua的官方定義：
 
 Lua is a powerful, fast, lightweight, embeddable scripting language.Lua combines simple procedural syntax with powerful data description constructs based on associative arrays and extensi">
-<meta property="og:updated_time" content="2015-11-05T13:39:19.932Z">
+<meta property="og:updated_time" content="2015-11-05T13:41:12.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lua學習筆記">
 <meta name="twitter:description" content="關於Lua的官方定義：
@@ -93,7 +93,7 @@ Lua is a powerful, fast, lightweight, embeddable scripting language.Lua combines
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-05T13:39:19.932Z" itemprop="datePublished"> 发表于 2015-11-05</time>
+    <time datetime="2015-11-05T13:41:12.825Z" itemprop="datePublished"> 发表于 2015-11-05</time>
     
   </p>
 </header>
@@ -111,7 +111,7 @@ Lua is a powerful, fast, lightweight, embeddable scripting language.Lua combines
 <p><strong>Lua</strong> is a powerful, fast, lightweight, embeddable <strong>scripting language</strong>.<br><strong>Lua</strong> combines simple procedural syntax with powerful data description constructs based on associative arrays and extensible semantics. Lua is <strong>dynamically typed</strong>, runs by interpreting bytecode for a register-based <strong>virtual machine</strong>, and has automatic memory management with incremental garbage collection, making it ideal for configuration, scripting, and rapid prototyping.</p>
 </blockquote>
 <p>別的我就不多安利了</p>
-<p>[TOC]</p>
+<a id="more"></a>
 <h2 id="type">type</h2><h3 id="table">table</h3><p>table是類似class的hash_map，由data和method兩部分組成。簡而言之，數據和行爲是分離的，後者在Lua中稱爲metatable。<br>metatable有很多特有的鍵，在此我們粗暴的認爲特有鍵類似c++中的操作符，它們的值一般爲function或table。</p>
 <h4 id="setmetatable">setmetatable</h4><p>我們可以通過setmetatable來賦予table不同的動作。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;&#125;              <span class="comment">-- 普通的table</span></span><br><span class="line">mt = &#123;&#125;             <span class="comment">-- metatable</span></span><br><span class="line"><span class="built_in">setmetatable</span>(t, mt) <span class="comment">-- 设定mt为t的metatable</span></span><br><span class="line"><span class="built_in">getmetatable</span>(t)     <span class="comment">-- 返回mt</span></span><br></pre></td></tr></table></figure>

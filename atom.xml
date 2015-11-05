@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-05T13:39:19.932Z</updated>
+  <updated>2015-11-05T13:41:12.825Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,14 +19,14 @@
     <title><![CDATA[Lua學習筆記]]></title>
     <link href="http://fateud.com/note-lua/"/>
     <id>http://fateud.com/note-lua/</id>
-    <published>2015-11-05T13:39:19.932Z</published>
-    <updated>2015-11-05T13:39:19.932Z</updated>
+    <published>2015-11-05T13:41:12.825Z</published>
+    <updated>2015-11-05T13:41:12.825Z</updated>
     <content type="html"><![CDATA[<p>關於Lua的<a href="http://www.lua.org/about.html" target="_blank" rel="external">官方定義</a>：</p>
 <blockquote>
 <p><strong>Lua</strong> is a powerful, fast, lightweight, embeddable <strong>scripting language</strong>.<br><strong>Lua</strong> combines simple procedural syntax with powerful data description constructs based on associative arrays and extensible semantics. Lua is <strong>dynamically typed</strong>, runs by interpreting bytecode for a register-based <strong>virtual machine</strong>, and has automatic memory management with incremental garbage collection, making it ideal for configuration, scripting, and rapid prototyping.</p>
 </blockquote>
 <p>別的我就不多安利了</p>
-<p>[TOC]</p>
+<a id="more"></a>
 <h2 id="type">type</h2><h3 id="table">table</h3><p>table是類似class的hash_map，由data和method兩部分組成。簡而言之，數據和行爲是分離的，後者在Lua中稱爲metatable。<br>metatable有很多特有的鍵，在此我們粗暴的認爲特有鍵類似c++中的操作符，它們的值一般爲function或table。</p>
 <h4 id="setmetatable">setmetatable</h4><p>我們可以通過setmetatable來賦予table不同的動作。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;&#125;              <span class="comment">-- 普通的table</span></span><br><span class="line">mt = &#123;&#125;             <span class="comment">-- metatable</span></span><br><span class="line"><span class="built_in">setmetatable</span>(t, mt) <span class="comment">-- 设定mt为t的metatable</span></span><br><span class="line"><span class="built_in">getmetatable</span>(t)     <span class="comment">-- 返回mt</span></span><br></pre></td></tr></table></figure>
@@ -60,9 +60,12 @@
 
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>關於Lua的<a href="http://www.lua.org/about.html" target="_blank" rel="external">官方定義</a>：</p>
+    <![CDATA[<p>關於Lua的<a href="http://www.lua.org/about.html">官方定義</a>：</p>
 <blockquote>
-<p><strong>Lua</strong> is a powe]]>
+<p><strong>Lua</strong> is a powerful, fast, lightweight, embeddable <strong>scripting language</strong>.<br><strong>Lua</strong> combines simple procedural syntax with powerful data description constructs based on associative arrays and extensible semantics. Lua is <strong>dynamically typed</strong>, runs by interpreting bytecode for a register-based <strong>virtual machine</strong>, and has automatic memory management with incremental garbage collection, making it ideal for configuration, scripting, and rapid prototyping.</p>
+</blockquote>
+<p>別的我就不多安利了</p>]]>
+    
     </summary>
     
       <category term="Lua" scheme="http://fateud.com/tags/Lua/"/>
