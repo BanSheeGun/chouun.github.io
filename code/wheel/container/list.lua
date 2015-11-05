@@ -120,3 +120,12 @@ while i ~= p:back() do
   print(i:valueOf())
   i = i:next()
 end
+
+--[[
+length : 4
+45
+23
+true
+table: 0042ABB8
+[Finished in 0.379s]
+]]
