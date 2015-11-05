@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-05T13:41:12.825Z</updated>
+  <updated>2015-11-05T13:43:26.050Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[Lua學習筆記]]></title>
     <link href="http://fateud.com/note-lua/"/>
     <id>http://fateud.com/note-lua/</id>
-    <published>2015-11-05T13:41:12.825Z</published>
-    <updated>2015-11-05T13:41:12.825Z</updated>
+    <published>2015-11-05T13:43:26.050Z</published>
+    <updated>2015-11-05T13:43:26.050Z</updated>
     <content type="html"><![CDATA[<p>關於Lua的<a href="http://www.lua.org/about.html" target="_blank" rel="external">官方定義</a>：</p>
 <blockquote>
 <p><strong>Lua</strong> is a powerful, fast, lightweight, embeddable <strong>scripting language</strong>.<br><strong>Lua</strong> combines simple procedural syntax with powerful data description constructs based on associative arrays and extensible semantics. Lua is <strong>dynamically typed</strong>, runs by interpreting bytecode for a register-based <strong>virtual machine</strong>, and has automatic memory management with incremental garbage collection, making it ideal for configuration, scripting, and rapid prototyping.</p>
