@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/note-lua/</loc>
+    <lastmod>2015-11-05T13:39:19.932Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/note-vpn/</loc>
     <lastmod>2015-11-02T15:23:58.604Z</lastmod>
   </url>

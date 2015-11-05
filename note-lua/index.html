@@ -4,23 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>殘龍的數學筆記 | Fate / Unlimited Darkness</title>
+    <title>Lua學習筆記 | Fate / Unlimited Darkness</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="ChouUn">
     
 
     
-    <meta name="description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
+    <meta name="description" content="關於Lua的官方定義：
+
+Lua is a powerful, fast, lightweight, embeddable scripting language.Lua combines simple procedural syntax with powerful data description constructs based on associative arrays and extensi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="殘龍的數學筆記">
-<meta property="og:url" content="http://fateud.com/note-math/index.html">
+<meta property="og:title" content="Lua學習筆記">
+<meta property="og:url" content="http://fateud.com/note-lua/index.html">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
-<meta property="og:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
-<meta property="og:updated_time" content="2015-10-30T02:58:29.711Z">
+<meta property="og:description" content="關於Lua的官方定義：
+
+Lua is a powerful, fast, lightweight, embeddable scripting language.Lua combines simple procedural syntax with powerful data description constructs based on associative arrays and extensi">
+<meta property="og:updated_time" content="2015-11-05T13:39:19.932Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="殘龍的數學筆記">
-<meta name="twitter:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
+<meta name="twitter:title" content="Lua學習筆記">
+<meta name="twitter:description" content="關於Lua的官方定義：
+
+Lua is a powerful, fast, lightweight, embeddable scripting language.Lua combines simple procedural syntax with powerful data description constructs based on associative arrays and extensi">
 <link rel="publisher" href="117134980329222155883">
 
     
@@ -80,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/note-math/" title="殘龍的數學筆記" itemprop="url">殘龍的數學筆記</a>
+      <a href="/note-lua/" title="Lua學習筆記" itemprop="url">Lua學習筆記</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-30T02:58:29.711Z" itemprop="datePublished"> 发表于 2015-10-30</time>
+    <time datetime="2015-11-05T13:39:19.932Z" itemprop="datePublished"> 发表于 2015-11-05</time>
     
   </p>
 </header>
@@ -96,34 +102,47 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#數論"><span class="toc-number">1.</span> <span class="toc-text">數論</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最大公約數"><span class="toc-number">1.1.</span> <span class="toc-text">最大公約數</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#歐幾里德算法"><span class="toc-number">1.1.1.</span> <span class="toc-text">歐幾里德算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#擴展歐幾里德算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">擴展歐幾里德算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#莫比烏斯函數"><span class="toc-number">1.2.</span> <span class="toc-text">莫比烏斯函數</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中國剩餘定理"><span class="toc-number">1.3.</span> <span class="toc-text">中國剩餘定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遞推"><span class="toc-number">2.</span> <span class="toc-text">遞推</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_a[n-1]^2_-_2"><span class="toc-number">2.1.</span> <span class="toc-text">a[n] = a[n-1]^2 - 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]"><span class="toc-number">2.2.</span> <span class="toc-text">a[n] = p⋅a[n-1] + q⋅a[n-2]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#(a+√b)^n"><span class="toc-number">2.3.</span> <span class="toc-text">(a+√b)^n</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮點"><span class="toc-number">3.</span> <span class="toc-text">浮點</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#卡翰求和算法"><span class="toc-number">3.1.</span> <span class="toc-text">卡翰求和算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#牛頓迭代法"><span class="toc-number">3.2.</span> <span class="toc-text">牛頓迭代法</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#type"><span class="toc-number">1.</span> <span class="toc-text">type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#table"><span class="toc-number">1.1.</span> <span class="toc-text">table</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setmetatable"><span class="toc-number">1.1.1.</span> <span class="toc-text">setmetatable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#__index與__newindex"><span class="toc-number">1.1.2.</span> <span class="toc-text">__index與__newindex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#__tostring"><span class="toc-number">1.1.3.</span> <span class="toc-text">__tostring</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#operator"><span class="toc-number">1.1.4.</span> <span class="toc-text">operator</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function"><span class="toc-number">1.2.</span> <span class="toc-text">function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wheel"><span class="toc-number">2.</span> <span class="toc-text">wheel</span></a></li></ol>
 		
 		</div>
 		
-		<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
-<a id="more"></a>
-<h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
-<p>最大公約數 (Greatest Common Divisor)</p>
-<h4 id="歐幾里德算法">歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euclidean_algorithm</a></p>
-<p>歐幾里德算法 (Euclidean Algorithm)：<br>$ \begin{eqnarray} gcd(a,b) = \begin{cases}<br>a,                  &amp; b = 0 \cr<br>gcd(b, a \bmod b), &amp; otherwise<br>\end{cases} \end{eqnarray} $</p>
+		<p>關於Lua的<a href="http://www.lua.org/about.html" target="_blank" rel="external">官方定義</a>：</p>
 <blockquote>
-<p>證:<br> 令 $ r = gcd(a,b) $<br> 則 $ r \mid a, r \mid b $<br> 故 $ r \mid (a - b) $<br> 引 $ r \mid (a - kb) \Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b) \Rightarrow r \mid (a \bmod b) $<br> 故 $ gcd(a,b) \equiv gcd(b, a \bmod b) $</p>
+<p><strong>Lua</strong> is a powerful, fast, lightweight, embeddable <strong>scripting language</strong>.<br><strong>Lua</strong> combines simple procedural syntax with powerful data description constructs based on associative arrays and extensible semantics. Lua is <strong>dynamically typed</strong>, runs by interpreting bytecode for a register-based <strong>virtual machine</strong>, and has automatic memory management with incremental garbage collection, making it ideal for configuration, scripting, and rapid prototyping.</p>
 </blockquote>
-<h4 id="擴展歐幾里德算法">擴展歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a></p>
-<p>擴展歐幾里德算法 (Extended Euclidean Algorithm)</p>
-<h3 id="莫比烏斯函數">莫比烏斯函數</h3><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_function</a></p>
-<p>莫比烏斯函數 (Möbius Function)：<br>一般用 $ mu(n) $ 或者 $ \mu(n) $ 表示，是個積性函數 (multiplicative function)。<br>$ \begin{eqnarray}<br>\mu(n) =<br>  \begin{cases}<br>  x = 1,      &amp; n = 1 \cr<br>  x = (-1)^k, &amp; \text{if } n \text{ is the product of } k \text{ different primes} \cr<br>  x = 0,         &amp; otherwise<br>  \end{cases}<br>\end{eqnarray} $</p>
-<h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
-<p>中國剩餘定理 (Chinese Remainder Theorem)：<br>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} (\bmod m_{i}) $，求 $ S $<br>先看 $ S \equiv a_{i} (\bmod m_{i}) $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 (\bmod m_{i}) $，$ \forall j \neq i, M_{i}x \equiv 0 (\bmod m_{j}) $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} (\bmod m_{i}) $，$ S = \sum a_{i}M_{i}x_{i} (\bmod M)$</p>
-<h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
-<h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = px + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
-<h3 id="(a+√b)^n">(a+√b)^n</h3><p>$ S_{n} = \lceil (a + \sqrt{b}) ^ {n} \rceil $<br>構造 $ (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ \because 0 &lt; a - \sqrt{b} &lt; 1 $，<br>且二項式展開、合併同類項後，只可能有 $ \sqrt{b} ^ {2i} = b ^ i $<br>$ \therefore S_{n} = (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ S_{n} ⋅ ((a + \sqrt{b}) + (a - \sqrt{b})) $<br>$ =<br>(a + \sqrt{b}) ^ {n+1} +<br>(a - \sqrt{b}) ^ {n+1} +<br>(a + \sqrt{b}) (a - \sqrt{b}) ((a + \sqrt{b}) ^ {n-1} + (a - \sqrt{b}) ^ {n-1}) $<br>$ = S_{n+1} + (a ^ 2 - b) S_{n-1} $<br>移項得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
-<p>也可以直接構造上一節 “a[n] = p⋅a[n-1] + q⋅a[n-2]” 的形式，<br>特徵根 $ a - \sqrt{b}, a + \sqrt{b} $，$ p = 2a, q = b - a ^ 2 $<br>輕鬆得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
-<h2 id="浮點">浮點</h2><h3 id="卡翰求和算法">卡翰求和算法</h3><p><a href="https://en.wikipedia.org/wiki/Kahan_summation_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Kahan_summation_algorithm</a></p>
-<p>對浮點序列求 $ \sum a_i $ 減小過程中的誤差</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="title">KahanSum</span><span class="params">(input)</span></span></span><br><span class="line">  <span class="tag">var</span> sum = <span class="number">0.0</span></span><br><span class="line">  <span class="tag">var</span> c = <span class="number">0.0</span></span><br><span class="line">  <span class="keyword">for</span> <span class="tag">i</span> = <span class="number">1</span> to <span class="tag">input</span><span class="class">.length</span> do</span><br><span class="line">    <span class="tag">var</span> y = <span class="tag">input</span>[i] - c</span><br><span class="line">    <span class="tag">var</span> t = sum + y</span><br><span class="line">    c = (t - sum) - y</span><br><span class="line">    sum = t</span><br><span class="line">  return sum</span><br></pre></td></tr></table></figure>
-<h3 id="牛頓迭代法">牛頓迭代法</h3><p><a href="https://en.wikipedia.org/wiki/Newton%27s_method" target="_blank" rel="external">https://en.wikipedia.org/wiki/Newton%27s_method</a></p>
-<p>對 $ \sqrt{S} $ 構造 $ f(x) = x ^ 2 - S = 0 $<br>有 $ x_{n+1}<br>= x_{n} - \frac{ f(x_{n}) }{ f’(x_{n}) }<br>= x_{n} - \frac{ x_{n}^{2} - S }{ 2x_{n} }<br>= \frac{1}{2} (x_{n} + \frac{S}{x_{n}}) $</p>
+<p>別的我就不多安利了</p>
+<p>[TOC]</p>
+<h2 id="type">type</h2><h3 id="table">table</h3><p>table是類似class的hash_map，由data和method兩部分組成。簡而言之，數據和行爲是分離的，後者在Lua中稱爲metatable。<br>metatable有很多特有的鍵，在此我們粗暴的認爲特有鍵類似c++中的操作符，它們的值一般爲function或table。</p>
+<h4 id="setmetatable">setmetatable</h4><p>我們可以通過setmetatable來賦予table不同的動作。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;&#125;              <span class="comment">-- 普通的table</span></span><br><span class="line">mt = &#123;&#125;             <span class="comment">-- metatable</span></span><br><span class="line"><span class="built_in">setmetatable</span>(t, mt) <span class="comment">-- 设定mt为t的metatable</span></span><br><span class="line"><span class="built_in">getmetatable</span>(t)     <span class="comment">-- 返回mt</span></span><br></pre></td></tr></table></figure>
+<p>以上代碼可以縮略爲：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="__index與__newindex">__index與__newindex</h4><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">other = &#123;&#125;</span><br><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123; __newindex = other &#125;)</span><br><span class="line">t.foo = <span class="number">3</span></span><br><span class="line">t.foo     <span class="comment">-- nil</span></span><br><span class="line">other.foo <span class="comment">-- 3</span></span><br><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123; __index = other &#125;)</span><br><span class="line">t.foo     <span class="comment">-- 3</span></span><br><span class="line">other.foo <span class="comment">-- 3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>__index</code>類似於<code>[]</code>操作符</li>
+<li><code>__newindex</code>類似於<code>[]=</code>操作符</li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123;</span><br><span class="line">  __newindex = <span class="function"><span class="keyword">function</span><span class="params">(t, key, value)</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(value) == <span class="string">"number"</span> <span class="keyword">then</span></span><br><span class="line">      <span class="built_in">rawset</span>(t, key, value * value)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">rawset</span>(t, key, value)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">t.foo = <span class="string">"foo"</span></span><br><span class="line">t.foo <span class="comment">-- "foo"</span></span><br><span class="line">t.bar = <span class="number">4</span></span><br><span class="line">t.bar <span class="comment">-- 16</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>rawget</code>和<code>rawset</code>可以避免調用重載後的操作符（__index和__newindex）</li>
+</ul>
+<h4 id="__tostring">__tostring</h4><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">setmetatable</span>(&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123;</span><br><span class="line">  __tostring = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, v <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span> sum = sum + v <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Sum: "</span> .. sum</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(t) <span class="comment">-- prints out "Sum: 6"</span></span><br></pre></td></tr></table></figure>
+<h4 id="operator">operator</h4><p>運算符只能是函數</p>
+<ul>
+<li>__add</li>
+<li>__sub</li>
+<li>__mul</li>
+<li>__div</li>
+<li>__mod</li>
+<li>__unm</li>
+<li>__concat</li>
+<li>__eq</li>
+<li>__lt</li>
+<li>__le</li>
+</ul>
+<h3 id="function">function</h3><p>一個機智的計數器</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">InitCounter</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">local</span> i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">newCounter1 = InitCounter()</span><br><span class="line"><span class="built_in">print</span>(newCounter1()) <span class="comment">-- 1</span></span><br><span class="line"><span class="built_in">print</span>(newCounter1()) <span class="comment">-- 2</span></span><br><span class="line">newCounter2 = InitCounter()</span><br><span class="line"><span class="built_in">print</span>(newCounter2()) <span class="comment">-- 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="wheel">wheel</h2><p>德堪邀請我入坑，考慮了一下還是可行的。<br>現在手頭還沒拿到項目，所以自己造輪子玩。</p>
+
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -137,7 +156,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/數論/">數論</a><a href="/tags/遞推/">遞推</a>
+  <span></span> <a href="/tags/Lua/">Lua</a><a href="/tags/編程語言/">編程語言</a>
   </div>
 
 </div>
@@ -146,7 +165,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://fateud.com/note-math/" data-title="殘龍的數學筆記 | Fate / Unlimited Darkness" data-tsina="null" class="share clearfix">
+	  <div data-url="http://fateud.com/note-lua/" data-title="Lua學習筆記 | Fate / Unlimited Darkness" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -159,19 +178,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/note-vpn/" title="架設一個L2TP協議的簡易vpn">
-  <strong>上一篇：</strong><br/>
-  <span>
-  架設一個L2TP協議的簡易vpn</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/note-excerpt/"  title="每日一摘">
+<a href="/note-vpn/"  title="架設一個L2TP協議的簡易vpn">
  <strong>下一篇：</strong><br/> 
- <span>每日一摘
+ <span>架設一個L2TP協議的簡易vpn
 </span>
 </a>
 </div>
@@ -192,7 +203,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#數論"><span class="toc-number">1.</span> <span class="toc-text">數論</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最大公約數"><span class="toc-number">1.1.</span> <span class="toc-text">最大公約數</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#歐幾里德算法"><span class="toc-number">1.1.1.</span> <span class="toc-text">歐幾里德算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#擴展歐幾里德算法"><span class="toc-number">1.1.2.</span> <span class="toc-text">擴展歐幾里德算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#莫比烏斯函數"><span class="toc-number">1.2.</span> <span class="toc-text">莫比烏斯函數</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中國剩餘定理"><span class="toc-number">1.3.</span> <span class="toc-text">中國剩餘定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遞推"><span class="toc-number">2.</span> <span class="toc-text">遞推</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_a[n-1]^2_-_2"><span class="toc-number">2.1.</span> <span class="toc-text">a[n] = a[n-1]^2 - 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]"><span class="toc-number">2.2.</span> <span class="toc-text">a[n] = p⋅a[n-1] + q⋅a[n-2]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#(a+√b)^n"><span class="toc-number">2.3.</span> <span class="toc-text">(a+√b)^n</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮點"><span class="toc-number">3.</span> <span class="toc-text">浮點</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#卡翰求和算法"><span class="toc-number">3.1.</span> <span class="toc-text">卡翰求和算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#牛頓迭代法"><span class="toc-number">3.2.</span> <span class="toc-text">牛頓迭代法</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#type"><span class="toc-number">1.</span> <span class="toc-text">type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#table"><span class="toc-number">1.1.</span> <span class="toc-text">table</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setmetatable"><span class="toc-number">1.1.1.</span> <span class="toc-text">setmetatable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#__index與__newindex"><span class="toc-number">1.1.2.</span> <span class="toc-text">__index與__newindex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#__tostring"><span class="toc-number">1.1.3.</span> <span class="toc-text">__tostring</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#operator"><span class="toc-number">1.1.4.</span> <span class="toc-text">operator</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function"><span class="toc-number">1.2.</span> <span class="toc-text">function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wheel"><span class="toc-number">2.</span> <span class="toc-text">wheel</span></a></li></ol>
  
   </div>
 

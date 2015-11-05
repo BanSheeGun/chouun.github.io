@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-02T15:23:58.604Z</updated>
+  <updated>2015-11-05T13:39:19.932Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Lua學習筆記]]></title>
+    <link href="http://fateud.com/note-lua/"/>
+    <id>http://fateud.com/note-lua/</id>
+    <published>2015-11-05T13:39:19.932Z</published>
+    <updated>2015-11-05T13:39:19.932Z</updated>
+    <content type="html"><![CDATA[<p>關於Lua的<a href="http://www.lua.org/about.html" target="_blank" rel="external">官方定義</a>：</p>
+<blockquote>
+<p><strong>Lua</strong> is a powerful, fast, lightweight, embeddable <strong>scripting language</strong>.<br><strong>Lua</strong> combines simple procedural syntax with powerful data description constructs based on associative arrays and extensible semantics. Lua is <strong>dynamically typed</strong>, runs by interpreting bytecode for a register-based <strong>virtual machine</strong>, and has automatic memory management with incremental garbage collection, making it ideal for configuration, scripting, and rapid prototyping.</p>
+</blockquote>
+<p>別的我就不多安利了</p>
+<p>[TOC]</p>
+<h2 id="type">type</h2><h3 id="table">table</h3><p>table是類似class的hash_map，由data和method兩部分組成。簡而言之，數據和行爲是分離的，後者在Lua中稱爲metatable。<br>metatable有很多特有的鍵，在此我們粗暴的認爲特有鍵類似c++中的操作符，它們的值一般爲function或table。</p>
+<h4 id="setmetatable">setmetatable</h4><p>我們可以通過setmetatable來賦予table不同的動作。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;&#125;              <span class="comment">-- 普通的table</span></span><br><span class="line">mt = &#123;&#125;             <span class="comment">-- metatable</span></span><br><span class="line"><span class="built_in">setmetatable</span>(t, mt) <span class="comment">-- 设定mt为t的metatable</span></span><br><span class="line"><span class="built_in">getmetatable</span>(t)     <span class="comment">-- 返回mt</span></span><br></pre></td></tr></table></figure>
+<p>以上代碼可以縮略爲：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="__index與__newindex">__index與__newindex</h4><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">other = &#123;&#125;</span><br><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123; __newindex = other &#125;)</span><br><span class="line">t.foo = <span class="number">3</span></span><br><span class="line">t.foo     <span class="comment">-- nil</span></span><br><span class="line">other.foo <span class="comment">-- 3</span></span><br><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123; __index = other &#125;)</span><br><span class="line">t.foo     <span class="comment">-- 3</span></span><br><span class="line">other.foo <span class="comment">-- 3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>__index</code>類似於<code>[]</code>操作符</li>
+<li><code>__newindex</code>類似於<code>[]=</code>操作符</li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123;</span><br><span class="line">  __newindex = <span class="function"><span class="keyword">function</span><span class="params">(t, key, value)</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(value) == <span class="string">"number"</span> <span class="keyword">then</span></span><br><span class="line">      <span class="built_in">rawset</span>(t, key, value * value)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">rawset</span>(t, key, value)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">t.foo = <span class="string">"foo"</span></span><br><span class="line">t.foo <span class="comment">-- "foo"</span></span><br><span class="line">t.bar = <span class="number">4</span></span><br><span class="line">t.bar <span class="comment">-- 16</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>rawget</code>和<code>rawset</code>可以避免調用重載後的操作符（__index和__newindex）</li>
+</ul>
+<h4 id="__tostring">__tostring</h4><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">setmetatable</span>(&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123;</span><br><span class="line">  __tostring = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, v <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span> sum = sum + v <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Sum: "</span> .. sum</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(t) <span class="comment">-- prints out "Sum: 6"</span></span><br></pre></td></tr></table></figure>
+<h4 id="operator">operator</h4><p>運算符只能是函數</p>
+<ul>
+<li>__add</li>
+<li>__sub</li>
+<li>__mul</li>
+<li>__div</li>
+<li>__mod</li>
+<li>__unm</li>
+<li>__concat</li>
+<li>__eq</li>
+<li>__lt</li>
+<li>__le</li>
+</ul>
+<h3 id="function">function</h3><p>一個機智的計數器</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">InitCounter</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">local</span> i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">newCounter1 = InitCounter()</span><br><span class="line"><span class="built_in">print</span>(newCounter1()) <span class="comment">-- 1</span></span><br><span class="line"><span class="built_in">print</span>(newCounter1()) <span class="comment">-- 2</span></span><br><span class="line">newCounter2 = InitCounter()</span><br><span class="line"><span class="built_in">print</span>(newCounter2()) <span class="comment">-- 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="wheel">wheel</h2><p>德堪邀請我入坑，考慮了一下還是可行的。<br>現在手頭還沒拿到項目，所以自己造輪子玩。</p>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>關於Lua的<a href="http://www.lua.org/about.html" target="_blank" rel="external">官方定義</a>：</p>
+<blockquote>
+<p><strong>Lua</strong> is a powe]]>
+    </summary>
+    
+      <category term="Lua" scheme="http://fateud.com/tags/Lua/"/>
+    
+      <category term="編程語言" scheme="http://fateud.com/tags/%E7%B7%A8%E7%A8%8B%E8%AA%9E%E8%A8%80/"/>
+    
+      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[架設一個L2TP協議的簡易vpn]]></title>
