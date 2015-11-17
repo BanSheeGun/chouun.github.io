@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://fateud.com/note-math/index.html">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
 <meta property="og:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
-<meta property="og:updated_time" content="2015-11-17T06:18:41.039Z">
+<meta property="og:updated_time" content="2015-11-17T12:25:42.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="殘龍的數學筆記">
 <meta name="twitter:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
@@ -87,7 +87,7 @@
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-17T06:18:41.039Z" itemprop="datePublished"> 发表于 2015-11-17</time>
+    <time datetime="2015-11-17T12:25:42.368Z" itemprop="datePublished"> 发表于 2015-11-17</time>
     
   </p>
 </header>
@@ -111,7 +111,7 @@
 <p>這部分內容姑且放在Möbius的前面，至於原因再說。<br>根據wiki容斥原理還可以這樣定義：</p>
 <p>$ g(A) = \sum\limits_{S : S \subseteq A} f(S) $<br>$ f(A) = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) $</p>
 <p>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。<br>以下是學到的證明方式：</p>
-<p>$ \begin{align*}<br> &amp; g(A) = \sum\limits_{S : S \subseteq A} f(S) \\<br> &amp; \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) \\<br> &amp; = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} \sum\limits_{T : T \subseteq S} f(T) \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{R : R \subseteq A - T} (-1)^{|R|} \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{k = 0}^{|A - T|} C_{|A - T|}^{k} (-1)^k \\<br> &amp; = \sum\limits_{T : T \subsetneqq A} f(T) (1 + (-1))^{|A - T|} + \sum\limits_{T : T \subseteqq A} f(T) (-1)^0 \\<br> &amp; = 0 + f(A) \\<br> &amp; = f(A) \\<br>\end{align*} $</p>
+<p>$ \begin{align*}<br> &amp; g(A) = \sum\limits_{S : S \subseteq A} f(S) \\<br> &amp; \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) \\<br> &amp; = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} \sum\limits_{T : T \subseteq S} f(T) \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{R : R \subseteq A - T} (-1)^{|R|} \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{k = 0}^{|A - T|} \binom{|A - T|}{k} (-1)^k \\<br> &amp; = \sum\limits_{T : T \subsetneqq A} f(T) (1 + (-1))^{|A - T|} + \sum\limits_{T : T \subseteqq A} f(T) (-1)^0 \\<br> &amp; = 0 + f(A) \\<br> &amp; = f(A) \\<br>\end{align*} $</p>
 <h3 id="莫比烏斯函數">莫比烏斯函數</h3><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_function</a></p>
 <p>一般用 $ mu(n) $ 或者 $ \mu(n) $ 表示，是個積性函數 (<a href="https://en.wikipedia.org/wiki/Multiplicative_function" target="_blank" rel="external">multiplicative function</a>)。</p>
 <p>$ \begin{eqnarray}<br>\mu(n) =<br>  \begin{cases}<br>  1,      &amp; n = 1 \cr<br>  (-1)^k, &amp; \text{if } n \text{ is the product of } k \text{ different primes} \cr<br>  0,         &amp; otherwise<br>  \end{cases}<br>\end{eqnarray} $</p>
