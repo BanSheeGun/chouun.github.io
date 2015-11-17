@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-17T05:59:29.962Z</updated>
+  <updated>2015-11-17T06:04:43.487Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-11-17T05:59:29.962Z</published>
-    <updated>2015-11-17T05:59:29.962Z</updated>
+    <published>2015-11-17T06:04:43.487Z</published>
+    <updated>2015-11-17T06:04:43.487Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -32,7 +32,7 @@
 <p>這部分內容姑且放在Möbius的前面，至於原因再說。<br>根據wiki容斥原理還可以這樣定義：</p>
 <p>$ g(A) = \sum\limits_{S : S \subseteq A} f(S) $<br>$ f(A) = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) $</p>
 <p>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。<br>以下是學到的證明方式：</p>
-<p>$ \begin{align*}<br> &amp; g(A) = \sum\limits_{S : S \subseteq A} f(S) \\<br> &amp; \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) \\<br> &amp; = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} \sum\limits_{T : T \subseteq S} f(T) \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{R : R \subseteq A - T} (-1)^{|R|} \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{k = 0}^{|A - T|} C_{|A - T|}^{k} (-1)^k \\<br> &amp; = \sum\limits_{T : T \subsetneqq A} f(T) (1 + (-1))^{|A - T|}<br> &amp; + \sum\limits_{T : T \subseteqq A} f(T) (-1)^0 \\<br> &amp; = 0 + f(A) \\<br> &amp; = f(A) \\<br>\end{align*} $</p>
+<p>$ \begin{align*}<br> &amp; g(A) = \sum\limits_{S : S \subseteq A} f(S) \\<br> &amp; \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) \\<br> &amp; = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} \sum\limits_{T : T \subseteq S} f(T) \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{R : R \subseteq A - T} (-1)^{|R|} \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{k = 0}^{|A - T|} C_{|A - T|}^{k} (-1)^k \\<br> &amp; = \sum\limits_{T : T \subsetneqq A} f(T) (1 + (-1))^{|A - T|} + \sum\limits_{T : T \subseteqq A} f(T) (-1)^0 \\<br> &amp; = 0 + f(A) \\<br> &amp; = f(A) \\<br>\end{align*} $</p>
 <h3 id="莫比烏斯函數">莫比烏斯函數</h3><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_function</a></p>
 <p>一般用 $ mu(n) $ 或者 $ \mu(n) $ 表示，是個積性函數 (<a href="https://en.wikipedia.org/wiki/Multiplicative_function" target="_blank" rel="external">multiplicative function</a>)。</p>
 <p>$ \begin{eqnarray}<br>\mu(n) =<br>  \begin{cases}<br>  x = 1,      &amp; n = 1 \cr<br>  x = (-1)^k, &amp; \text{if } n \text{ is the product of } k \text{ different primes} \cr<br>  x = 0,         &amp; otherwise<br>  \end{cases}<br>\end{eqnarray} $</p>
