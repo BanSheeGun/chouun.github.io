@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-18T17:50:59.161Z</updated>
+  <updated>2015-11-18T18:14:37.301Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-11-18T17:50:59.161Z</published>
-    <updated>2015-11-18T17:50:59.161Z</updated>
+    <published>2015-11-18T18:14:37.301Z</published>
+    <updated>2015-11-18T18:14:37.301Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -32,12 +32,11 @@
 <p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} (\bmod m_{i}) $，求 $ S $</p>
 <p>先看 $ S \equiv a_{i} (\bmod m_{i}) $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 (\bmod m_{i}) $，$ \forall j \neq i, M_{i}x \equiv 0 (\bmod m_{j}) $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} (\bmod m_{i}) $，$ S = \sum a_{i}M_{i}x_{i} (\bmod M)$</p>
 <h3 id="容斥原理">容斥原理</h3><p><a href="https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle" target="_blank" rel="external">https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle</a></p>
-<p>這部分內容姑且放在Möbius的前面，至於原因再說。</p>
-<p>根據wiki容斥原理還可以這樣定義：<br>$ g(A) = \sum\limits_{S : S \subseteq A} f(S) $<br>$ f(A) = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) $</p>
-<p>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。</p>
+<p>這部分內容姑且放在反演的前面，給讀者壓壓驚。<br>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。</p>
+<p>定義：<br>$ g(A) = \sum\limits_{S : S \subseteq A} f(S) $<br>$ f(A) = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) $</p>
 <p>證明：<br>$ \begin{align*}<br> &amp; \because g(A) = \sum\limits_{S : S \subseteq A} f(S) \\<br> &amp; \therefore \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) \\<br> &amp; = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} \sum\limits_{T : T \subseteq S} f(T) \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{R : R \subseteq A - T} (-1)^{|R|} \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{k = 0}^{|A - T|} \binom{|A - T|}{k} (-1)^k \\<br> &amp; = \sum\limits_{T : T \subsetneqq A} f(T) (1 + (-1))^{|A - T|} + \sum\limits_{T : T \subseteqq A} f(T) (-1)^0 \\<br> &amp; = 0 + f(A) \\<br> &amp; = f(A) \\<br>\end{align*} $</p>
 <h3 id="積性函數">積性函數</h3><p><a href="https://en.wikipedia.org/wiki/Multiplicative_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_function</a></p>
-<p>性質：$ f(1) = 1 $ 且 $ \forall gcd(a,b) = 1, f(ab) = f(a) f(b) $<br>當 $ \forall a,b $ 都滿足 $ f(ab) = f(a) f(b) $ 時，稱爲<a href="https://en.wikipedia.org/wiki/Completely_multiplicative_function" target="_blank" rel="external">完全積性函數</a>。</p>
+<p>定義：<br>$ f(1) = 1 $ 且 $ \forall gcd(a,b) = 1, f(ab) = f(a) f(b) $<br>當 $ \forall a,b $ 都滿足 $ f(ab) = f(a) f(b) $ 時，稱爲<a href="https://en.wikipedia.org/wiki/Completely_multiplicative_function" target="_blank" rel="external">完全積性函數</a>。</p>
 <ul>
 <li>$ Id_{k}(n) $ : $ Id_{k}(n) = n^k $ 完全積性<ul>
 <li>$k = 0$ 時，有 $ 1(n) = 1 $</li>
@@ -46,7 +45,8 @@
 </li>
 <li>$ \epsilon(n) $ : $ \epsilon(n) = \begin{cases} 1, &amp; n = 1 \cr 0, &amp; \text{otherwise} \end{cases} $</li>
 </ul>
-<h4 id="狄利克雷卷積">狄利克雷卷積</h4><p>定義：$ (f * g)(n) = \sum\limits_{d|n} f(d)g(\frac{n}{d}) $</p>
+<h4 id="狄利克雷卷積">狄利克雷卷積</h4><p><a href="https://en.wikipedia.org/wiki/Dirichlet_convolution" target="_blank" rel="external">https://en.wikipedia.org/wiki/Dirichlet_convolution</a></p>
+<p>定義：<br>$ (f * g)(n) = \sum\limits_{d|n} f(d)g(\frac{n}{d}) $</p>
 <ul>
 <li>交換律：$ f * g = g * f $</li>
 <li>結合律：$ (f * g) * h = f * (g * h) $</li>
@@ -62,8 +62,8 @@
 <p>一般用 $ mu(n) $ 或者 $ \mu(n) $ 表示，是個不完全積性函數。</p>
 <p>若 $ n = \prod\limits_{i = 1}^{m} p_i^{k_i} $，<br>則 $ \mu(n) = \begin{cases}<br>1,      &amp; n = 1 \cr<br>0,      &amp; \exists k_i &gt; 1 \cr<br>(-1)^m, &amp; \text{otherwise}<br>\end{cases} $</p>
 <h4 id="反演">反演</h4><p>$ \sum\limits_{d|n} \phi(d) = Id(n) \Rightarrow \phi * 1 = Id $<br>$ \sum\limits_{d|n} \mu(d) = \epsilon(n) \Rightarrow \mu * 1 = \epsilon $</p>
-<p>莫比烏斯反演：<br>$ \begin{align*}<br> &amp; \because \mu * 1 = \epsilon \\<br> &amp; \therefore \phi(n) \\<br> &amp; = \sum\limits_{i = 1}^{n} \epsilon(gcd(i,n)) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | gcd(i,n)} \mu(d) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | i \wedge d | n} \mu(d) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \frac{n}{d} \\<br> &amp; = (\mu * Id)(n)<br>\end{align*} $</p>
-<p>如 $ \mu * Id = \phi $，$ \phi * 1 = Id $；<br>又如 $ \mu * 1 = \epsilon $，$ \epsilon * 1 = 1 $；<br>容易得出 $ \mu * f = g $，$ g * 1 = f $</p>
+<p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula" target="_blank" rel="external">莫比烏斯反演</a>：<br>$ \begin{align*}<br> &amp; \because \mu * 1 = \epsilon \\<br> &amp; \therefore \phi(n) \\<br> &amp; = \sum\limits_{i = 1}^{n} \epsilon(gcd(i,n)) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | gcd(i,n)} \mu(d) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | i \wedge d | n} \mu(d) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \frac{n}{d} \\<br> &amp; = (\mu * Id)(n)<br>\end{align*} $</p>
+<p>如 $ \mu * Id = \phi $，$ \phi * 1 = Id $；<br>又 $ \mu * 1 = \epsilon $，$ \epsilon * 1 = 1 $；<br>顯然能得出一般化的式子 $ \mu * f = g $，$ g * 1 = f $</p>
 <p>證明：<br>$ \begin{align*}<br> &amp; \because g * 1 = f \\<br> &amp; \therefore (\mu * f)(n) \\<br> &amp; = \sum\limits_{d | n} \mu(d) f(\frac{n}{d}) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \sum\limits_{d’ | \frac{n}{d}} g(d’) \\<br> &amp; = \sum\limits_{d’ | n} g(d’) \sum\limits_{d | \frac{n}{d’}} \mu(d) \\<br> &amp; = \sum\limits_{d’ | n} g(d’) \epsilon(d) \\<br> &amp; = g(n)<br>\end{align*} $</p>
 <h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
 <h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = px + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
