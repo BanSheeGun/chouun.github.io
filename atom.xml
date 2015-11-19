@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-19T07:02:38.677Z</updated>
+  <updated>2015-11-19T07:04:22.828Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-11-19T07:02:38.677Z</published>
-    <updated>2015-11-19T07:02:38.677Z</updated>
+    <published>2015-11-19T07:04:22.828Z</published>
+    <updated>2015-11-19T07:04:22.828Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -67,7 +67,7 @@
 <p>按這思路，顯然得證 $ \sum\limits_{i = 1}^{n} i \epsilon(gcd(i,n)) = \frac{n}{2} (\mu * 1 + \mu * Id)(n) = \frac{n}{2} (\epsilon + \phi)(n) $</p>
 <h4 id="一般的反演公式">一般的反演公式</h4><p>如 $ \phi * 1 = Id $，$ \mu * Id = \phi $；<br>又 $ \epsilon * 1 = 1 $，$ \mu * 1 = \epsilon $；<br>顯然能得出一般化的式子 $ f * 1 = F $，$ \mu * F = f $</p>
 <p>證明：<br>$ \begin{align*}<br> &amp; \because f * 1 = F \\<br> &amp; \therefore (\mu * F)(n) \\<br> &amp; = \sum\limits_{d | n} \mu(d) F(\frac{n}{d}) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \sum\limits_{d’ | \frac{n}{d}} f(d’) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \sum\limits_{d | \frac{n}{d’}} \mu(d) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \epsilon(d) \\<br> &amp; = f(n)<br>\end{align*} $</p>
-<h4 id="二項式反演">二項式反演</h4><p>對於 $ 0 ^ n $ 的二項式展開：<br>$ \sum\limits_{i = 0}^{n} (-1)^i \binom{n}{i} = (1 + (-1))^{n} $<br>然後是個組合數學的小trick：<br>$ \because \binom{n}{i} \binom{i}{k} = \frac{n!}{(n-i)!} \frac{1}{k!(i-k)!} = \frac{n!}{k!(n-k)!} \frac{(n-k)!}{(n-i)!(i-k)!} = \binom{n}{k} \binom{n-k}{i-k} $</p>
+<h4 id="二項式反演">二項式反演</h4><p>對於 $ 0 ^ n $ 的二項式展開：<br>$ \sum\limits_{i = 0}^{n} (-1)^i \binom{n}{i} = (1 + (-1))^{n} $<br>然後是個組合數學的小trick：<br>$ \binom{n}{i} \binom{i}{k} = \frac{n!}{(n-i)!} \frac{1}{k!(i-k)!} = \frac{n!}{k!(n-k)!} \frac{(n-k)!}{(n-i)!(i-k)!} = \binom{n}{k} \binom{n-k}{i-k} $</p>
 <p>既然都這樣惹，再隨便推導下二項式的反演吧。<br>$ \begin{align*}<br> &amp; \because F(n) = \sum\limits_{i = 0}^{n} \binom{n}{k} f(i) \\<br> &amp; \therefore \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} F(i) \\<br> &amp; = \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} \sum\limits_{k = 0}^{i} \binom{i}{k} f(k) \\<br> &amp; = \sum\limits_{k = 0}^{n} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n}{i} \binom{i}{k} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n-k}{n-i} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) (1 + (-1))^{n - k} \\<br> &amp; = 0 + f(n) = f(n)<br>\end{align*} $</p>
 <h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
 <h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = px + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
