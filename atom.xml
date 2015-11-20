@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-11-19T07:08:18.868Z</updated>
+  <updated>2015-11-20T01:13:45.479Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-11-19T07:08:18.868Z</published>
-    <updated>2015-11-19T07:08:18.868Z</updated>
+    <published>2015-11-20T01:13:45.479Z</published>
+    <updated>2015-11-20T01:13:45.479Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -64,9 +64,10 @@
 <h3 id="反演公式">反演公式</h3><h4 id="莫比烏斯反演">莫比烏斯反演</h4><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula</a></p>
 <p>$ \sum\limits_{d|n} \phi(d) = Id(n) \Rightarrow \phi * 1 = Id $<br>$ \sum\limits_{d|n} \mu(d) = \epsilon(n) \Rightarrow \mu * 1 = \epsilon $</p>
 <p>$ \begin{align*}<br> &amp; \because \mu * 1 = \epsilon \\<br> &amp; \therefore \phi(n) \\<br> &amp; = \sum\limits_{i = 1}^{n} \epsilon(gcd(i,n)) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | gcd(i,n)} \mu(d) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | i \wedge d | n} \mu(d) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \frac{n}{d} \\<br> &amp; = (\mu * Id)(n)<br>\end{align*} $</p>
-<p>按這思路，顯然得證 $ \sum\limits_{i = 1}^{n} i \epsilon(gcd(i,n)) = \frac{n}{2} (\mu * 1 + \mu * Id)(n) = \frac{n}{2} (\epsilon + \phi)(n) $</p>
-<p>如 $ \phi * 1 = Id $，$ \mu * Id = \phi $；<br>又 $ \epsilon * 1 = 1 $，$ \mu * 1 = \epsilon $；<br>顯然能得出一般化的莫比烏斯反演公式 $ f * 1 = F $，$ \mu * F = f $</p>
+<p>按這思路，顯然得證 $ \sum\limits_{i = 1}^{n} i \epsilon(gcd(i,n)) = \frac{n}{2} (\mu * 1 + \mu * Id)(n) = \frac{n}{2} (\epsilon + \phi)(n) $，即[1,n]中與n互質的數之和。</p>
+<p>如 $ \phi * 1 = Id $，$ \mu * Id = \phi $；<br>又 $ \epsilon * 1 = 1 $，$ \mu * 1 = \epsilon $；<br>顯然能得出莫比烏斯反演公式 $ f * 1 = F $，$ \mu * F = f $</p>
 <p>證明：<br>$ \begin{align*}<br> &amp; \because f * 1 = F \\<br> &amp; \therefore (\mu * F)(n) \\<br> &amp; = \sum\limits_{d | n} \mu(d) F(\frac{n}{d}) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \sum\limits_{d’ | \frac{n}{d}} f(d’) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \sum\limits_{d | \frac{n}{d’}} \mu(d) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \epsilon(d) \\<br> &amp; = f(n)<br>\end{align*} $</p>
+<p>結論：<br>$ F(n) = \sum\limits_{d | n} f(d) $<br>$ f(n) = \sum\limits_{d | n} \mu(\frac{n}{d}) F(d) $</p>
 <h4 id="二項式反演">二項式反演</h4><p>對於 $ 0 ^ n $ 的二項式展開：<br>$ \sum\limits_{i = 0}^{n} (-1)^i \binom{n}{i} = (1 + (-1))^{n} $<br>然後是個組合數學的小trick：<br>$ \binom{n}{i} \binom{i}{k} = \frac{n!}{(n-i)!} \frac{1}{k!(i-k)!} = \frac{n!}{k!(n-k)!} \frac{(n-k)!}{(n-i)!(i-k)!} = \binom{n}{k} \binom{n-k}{i-k} $</p>
 <p>既然都這樣惹，再隨便推導下二項式的反演吧。<br>$ \begin{align*}<br> &amp; \because F(n) = \sum\limits_{i = 0}^{n} \binom{n}{k} f(i) \\<br> &amp; \therefore \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} F(i) \\<br> &amp; = \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} \sum\limits_{k = 0}^{i} \binom{i}{k} f(k) \\<br> &amp; = \sum\limits_{k = 0}^{n} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n}{i} \binom{i}{k} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n-k}{n-i} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) (1 + (-1))^{n - k} \\<br> &amp; = 0 + f(n) = f(n)<br>\end{align*} $</p>
 <h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
