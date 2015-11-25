@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/acm/traning.html</loc>
+    <lastmod>2015-11-25T08:26:57.946Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fateud.com/about/note.html</loc>
+    <lastmod>2015-11-25T08:21:18.462Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/note-math/</loc>
-    <lastmod>2015-11-20T01:22:31.491Z</lastmod>
+    <lastmod>2015-11-24T11:10:36.177Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fateud.com/note-excerpt/</loc>
+    <lastmod>2015-11-22T08:11:30.180Z</lastmod>
   </url>
   
   <url>
@@ -14,11 +29,6 @@
   <url>
     <loc>http://fateud.com/note-vpn/</loc>
     <lastmod>2015-11-02T15:23:58.604Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fateud.com/note-excerpt/</loc>
-    <lastmod>2015-10-28T12:54:09.939Z</lastmod>
   </url>
   
   <url>

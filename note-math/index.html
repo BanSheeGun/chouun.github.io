@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://fateud.com/note-math/index.html">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
 <meta property="og:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
-<meta property="og:updated_time" content="2015-11-20T01:22:31.491Z">
+<meta property="og:updated_time" content="2015-11-24T11:10:36.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="殘龍的數學筆記">
 <meta name="twitter:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
@@ -87,7 +87,7 @@
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-20T01:22:31.491Z" itemprop="datePublished"> 发表于 2015-11-20</time>
+    <time datetime="2015-11-24T11:10:36.177Z" itemprop="datePublished"> 发表于 2015-11-24</time>
     
   </p>
 </header>
@@ -149,7 +149,7 @@
 <h4 id="二項式反演">二項式反演</h4><p>對於 $ 0 ^ n $ 的二項式展開：<br>$ \sum\limits_{i = 0}^{n} (-1)^i \binom{n}{i} = (1 + (-1))^{n} $<br>然後是個組合數學的小trick：<br>$ \binom{n}{i} \binom{i}{k} = \frac{n!}{(n-i)!} \frac{1}{k!(i-k)!} = \frac{n!}{k!(n-k)!} \frac{(n-k)!}{(n-i)!(i-k)!} = \binom{n}{k} \binom{n-k}{i-k} $</p>
 <p>既然都這樣惹，再隨便推導下二項式的反演吧。<br>$ \begin{align*}<br> &amp; \because F(n) = \sum\limits_{i = 0}^{n} \binom{n}{k} f(i) \\<br> &amp; \therefore \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} F(i) \\<br> &amp; = \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} \sum\limits_{k = 0}^{i} \binom{i}{k} f(k) \\<br> &amp; = \sum\limits_{k = 0}^{n} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n}{i} \binom{i}{k} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n-k}{n-i} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) (1 + (-1))^{n - k} \\<br> &amp; = 0 + f(n) = f(n)<br>\end{align*} $</p>
 <h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
-<h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = px + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
+<h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = p x + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
 <h3 id="(a+√b)^n">(a+√b)^n</h3><p>$ S_{n} = \lceil (a + \sqrt{b}) ^ {n} \rceil $<br>構造 $ (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ \because 0 &lt; a - \sqrt{b} &lt; 1 $，<br>且二項式展開、合併同類項後，只可能有 $ \sqrt{b} ^ {2i} = b ^ i $<br>$ \therefore S_{n} = (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ S_{n} ⋅ ((a + \sqrt{b}) + (a - \sqrt{b})) $<br>$ =<br>(a + \sqrt{b}) ^ {n+1} +<br>(a - \sqrt{b}) ^ {n+1} +<br>(a + \sqrt{b}) (a - \sqrt{b}) ((a + \sqrt{b}) ^ {n-1} + (a - \sqrt{b}) ^ {n-1}) $<br>$ = S_{n+1} + (a ^ 2 - b) S_{n-1} $<br>移項得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
 <p>也可以直接構造上一節 “a[n] = p⋅a[n-1] + q⋅a[n-2]” 的形式，<br>特徵根 $ a - \sqrt{b}, a + \sqrt{b} $，$ p = 2a, q = b - a ^ 2 $<br>輕鬆得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
 <h2 id="浮點">浮點</h2><h3 id="卡翰求和算法">卡翰求和算法</h3><p><a href="https://en.wikipedia.org/wiki/Kahan_summation_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Kahan_summation_algorithm</a></p>
@@ -194,9 +194,9 @@
  
 
 <div class="next">
-<a href="/note-lua/"  title="Lua學習筆記">
+<a href="/note-excerpt/"  title="每日一摘">
  <strong>下一篇：</strong><br/> 
- <span>Lua學習筆記
+ <span>每日一摘
 </span>
 </a>
 </div>

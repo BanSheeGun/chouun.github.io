@@ -2,17 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+    
+    
   <url>
     <loc>http://fateud.com/note-math/</loc>
-    <lastmod>2015-11-20T01:22:31.491Z</lastmod>
+    <lastmod>2015-11-24T11:10:36.177Z</lastmod>
     <data>
         <display>
         <title>殘龍的數學筆記</title>
-        <pubTime>2015-11-20T01:22:31.491Z</pubTime>
+        <pubTime>2015-11-24T11:10:36.177Z</pubTime>
         
         <tag>數論 </tag>
          
         <tag>遞推 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-excerpt/</loc>
+    <lastmod>2015-11-22T08:11:30.180Z</lastmod>
+    <data>
+        <display>
+        <title>每日一摘</title>
+        <pubTime>2015-11-22T08:11:30.180Z</pubTime>
+        
+        <tag>摘錄 </tag>
          
          
            
@@ -59,26 +81,6 @@
         <tag>vpn </tag>
          
         <tag>網絡 </tag>
-         
-         
-           
-             
-              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://fateud.com/note-excerpt/</loc>
-    <lastmod>2015-10-28T12:54:09.939Z</lastmod>
-    <data>
-        <display>
-        <title>每日一摘</title>
-        <pubTime>2015-10-28T12:54:09.939Z</pubTime>
-        
-        <tag>摘錄 </tag>
          
          
            
