@@ -54,10 +54,8 @@ namespace csl {
       *__s = 0;
     }
 
-  }
-  ;
-// namespace fastio
+  } // namespace fastio
 
-}// namespace csl
+} // namespace csl
 
 #endif /* FASTIO_H_ */
