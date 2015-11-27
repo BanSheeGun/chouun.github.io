@@ -49,9 +49,7 @@ namespace csl {
     }
 
     inline void nextStr(char* __s) {
-      for(; *ptr; ++__s, ++ptr)
-        *__s = *ptr;
-      *__s = 0;
+      for(; (*__s = *ptr); ++__s, ++ptr);
     }
 
   } // namespace fastio
