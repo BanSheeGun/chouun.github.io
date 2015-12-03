@@ -40,16 +40,16 @@ namespace csl {
       return *this;
     }
 
-    _Self operator +(_Self b) {
+    _Self operator +(_Self b) const {
       return _Self(*this) += std::move(b);
     }
-    _Self operator -(_Self b) {
+    _Self operator -(_Self b) const {
       return _Self(*this) -= std::move(b);
     }
-    _Self operator *(_Self b) {
+    _Self operator *(_Self b) const {
       return _Self(*this) *= std::move(b);
     }
-    _Self operator /(_Self b) {
+    _Self operator /(_Self b) const {
       return _Self(*this) /= std::move(b);
     }
 

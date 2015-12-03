@@ -18,12 +18,6 @@ namespace csl {
     matrix() :
         data(), h(), w() {
     }
-    matrix(const _Self& x) {
-      *this = x;
-    }
-    matrix(_Self&& x) {
-      *this = std::move(x);
-    }
     matrix(size_type h,size_type w) :
         data(h * w), h(h), w(w) {
     }
