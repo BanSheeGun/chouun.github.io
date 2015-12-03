@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/note-hexo/</loc>
+    <lastmod>2015-12-03T06:19:47.873Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/about/note.html</loc>
-    <lastmod>2015-12-01T12:46:45.228Z</lastmod>
+    <lastmod>2015-12-03T04:28:19.189Z</lastmod>
   </url>
   
   <url>
     <loc>http://fateud.com/acm/traning.html</loc>
-    <lastmod>2015-11-28T11:10:43.887Z</lastmod>
+    <lastmod>2015-12-03T04:28:12.556Z</lastmod>
   </url>
   
   <url>
@@ -64,11 +69,6 @@
   <url>
     <loc>http://fateud.com/code-template/</loc>
     <lastmod>2015-09-21T08:18:41.049Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fateud.com/note-hexo/</loc>
-    <lastmod>2015-09-20T01:56:39.101Z</lastmod>
   </url>
   
   <url>

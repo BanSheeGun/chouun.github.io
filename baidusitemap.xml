@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://fateud.com/note-hexo/</loc>
+    <lastmod>2015-12-03T06:19:47.873Z</lastmod>
+    <data>
+        <display>
+        <title>Hello Hexo</title>
+        <pubTime>2015-12-03T06:19:47.873Z</pubTime>
+        
+        <tag>blog </tag>
+         
+        <tag>github </tag>
+         
+        <tag>hexo </tag>
+         
+        <tag>markdown </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -177,32 +203,6 @@
            
              
               <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://fateud.com/note-hexo/</loc>
-    <lastmod>2015-09-20T01:56:39.101Z</lastmod>
-    <data>
-        <display>
-        <title>Hello Hexo</title>
-        <pubTime>2015-09-20T01:56:39.101Z</pubTime>
-        
-        <tag>blog </tag>
-         
-        <tag>github </tag>
-         
-        <tag>hexo </tag>
-         
-        <tag>markdown </tag>
-         
-         
-           
-             
-              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
           
         </display>
     </data>
