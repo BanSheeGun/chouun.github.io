@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fateud.com/note-math/</loc>
+    <lastmod>2015-12-03T15:57:06.508Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fateud.com/note-hexo/</loc>
     <lastmod>2015-12-03T06:19:47.873Z</lastmod>
   </url>
@@ -14,11 +19,6 @@
   <url>
     <loc>http://fateud.com/acm/traning.html</loc>
     <lastmod>2015-12-03T04:28:12.556Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fateud.com/note-math/</loc>
-    <lastmod>2015-11-24T11:10:36.177Z</lastmod>
   </url>
   
   <url>
