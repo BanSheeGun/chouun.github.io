@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://fateud.com/note-math/index.html">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
 <meta property="og:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
-<meta property="og:updated_time" content="2015-12-19T02:22:39.876Z">
+<meta property="og:updated_time" content="2015-12-19T02:23:09.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="殘龍的數學筆記">
 <meta name="twitter:description" content="老實說了吧，這篇東西是個大坑，反正我根本沒準備填。你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。">
@@ -87,7 +87,7 @@
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-12-19T02:22:39.876Z" itemprop="datePublished"> 发表于 2015-12-19</time>
+    <time datetime="2015-12-19T02:23:09.284Z" itemprop="datePublished"> 发表于 2015-12-19</time>
     
   </p>
 </header>
@@ -114,7 +114,7 @@
 <h4 id="乘法逆元">乘法逆元</h4><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
 <p>若 $ax \equiv 1 (\bmod p)$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x (\bmod p)$。</p>
 <p>若 $b | a$，則：$\frac{a}{b} \bmod p = \frac{a \bmod pb}{b}$</p>
-<p>證明：<br>$ \begin{align*}<br> &amp; \frac{a}{b} \equiv y \pmod{p} \\<br> &amp; \Rightarrow \frac{a}{b} = px + y \\<br> &amp; \Rightarrow a = pbx + by \\<br> &amp; \Rightarrow a \bmod pb = by \\<br> &amp; \Rightarrow \frac{a \bmod pb}{b} = y \\<br> &amp; \Rightarrow \frac{a}{b} \bmod p = \frac{a \bmod pb}{b} \\<br>\end{align*} $</p>
+<p>證明：<br>$ \begin{align*}<br> &amp; \because \frac{a}{b} \equiv y \pmod{p} \\<br> &amp; \Rightarrow \frac{a}{b} = px + y \\<br> &amp; \Rightarrow a = pbx + by \\<br> &amp; \Rightarrow a \bmod pb = by \\<br> &amp; \Rightarrow \frac{a \bmod pb}{b} = y \\<br> &amp; \therefore \frac{a}{b} \bmod p = \frac{a \bmod pb}{b} \\<br>\end{align*} $</p>
 <p>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 (\bmod p)$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$</p>
 <h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
 <p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} \pmod{m_{i}} $，求 $ S $</p>
