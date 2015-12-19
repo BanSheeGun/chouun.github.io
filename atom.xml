@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-19T02:48:01.677Z</updated>
+  <updated>2015-12-19T02:49:36.869Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-12-19T02:48:01.677Z</published>
-    <updated>2015-12-19T02:48:01.677Z</updated>
+    <published>2015-12-19T02:49:36.869Z</published>
+    <updated>2015-12-19T02:49:36.869Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -39,7 +39,7 @@
 <p>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 \pmod{p}$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$</p>
 <h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
 <p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} \pmod{m_{i}} $，求 $ S $</p>
-<p>先看 $ S \equiv a_{i} \pmod{m_{i}} $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 \pmod{m_{i}} $，$ \forall j \neq i, M_{i}x \equiv 0 \pmod{m_{j}} $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} \pmod{m_{i}} $，$ S = (\sum a_{i}M_{i}x_{i}) \bmod M$</p>
+<p>先看 $ S \equiv a_{i} \pmod{m_{i}} $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 \pmod{m_{i}} $，$ \forall j \neq i, M_{i}x \equiv 0 \pmod{m_{j}} $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} \pmod{m_{i}} $，$ S \equiv \sum a_{i}M_{i}x_{i} \pmod{M}$</p>
 <h3 id="容斥原理">容斥原理</h3><p><a href="https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle" target="_blank" rel="external">https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle</a></p>
 <p>這部分內容姑且放在反演的前面，給讀者壓壓驚。<br>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。</p>
 <p>定義：<br>$ g(A) = \sum\limits_{S : S \subseteq A} f(S) $<br>$ f(A) = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) $</p>
