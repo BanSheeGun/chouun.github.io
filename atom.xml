@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-19T03:28:05.834Z</updated>
+  <updated>2015-12-19T11:09:05.820Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-12-19T03:28:05.834Z</published>
-    <updated>2015-12-19T03:28:05.834Z</updated>
+    <published>2015-12-19T11:09:05.820Z</published>
+    <updated>2015-12-19T11:09:05.820Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -28,6 +28,7 @@
 <p>$ \begin{eqnarray} gcd(a,b) = \begin{cases}<br>a,                  &amp; b = 0 \cr<br>gcd(b, a \bmod b), &amp; otherwise<br>\end{cases} \end{eqnarray} $</p>
 <p>令 $ r = gcd(a,b) $<br>則 $ r \mid a, r \mid b $<br>故 $ r \mid (a - b) $<br>引 $ r \mid (a - kb)<br>\Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b)<br>\Rightarrow r \mid (a \bmod b) $<br>故 $ gcd(a,b) \equiv gcd(b, a \bmod b) $</p>
 <h4 id="擴展歐幾里德算法">擴展歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a></p>
+<p>若 $ a, b, gcd(a,b) = 1 $，求 $ax + by = 1$</p>
 <h3 id="乘法逆元">乘法逆元</h3><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
 <h4 id="费马小定理">费马小定理</h4><p><a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Fermat%27s_little_theorem</a></p>
 <p>若 $p$ 是素數，$a$ 是正整數，則：$a^p \equiv a \pmod{p}$。<br>若 $p$ 是素數，$a$ 是正整數且不能被 $p$ 整除，則：$a^{p-1} \equiv 1 \pmod{p}$。</p>
