@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-19T02:20:45.068Z</updated>
+  <updated>2015-12-19T02:22:39.876Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-12-19T02:20:45.068Z</published>
-    <updated>2015-12-19T02:20:45.068Z</updated>
+    <published>2015-12-19T02:22:39.876Z</published>
+    <updated>2015-12-19T02:22:39.876Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -35,7 +35,7 @@
 <h4 id="乘法逆元">乘法逆元</h4><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
 <p>若 $ax \equiv 1 (\bmod p)$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x (\bmod p)$。</p>
 <p>若 $b | a$，則：$\frac{a}{b} \bmod p = \frac{a \bmod pb}{b}$</p>
-<p>證明：<br>$ \begin{align*}<br> &amp; \because \frac{a}{b} \equiv y \pmod{p} \\<br> &amp; \therefore \frac{a}{b} = px + y \\<br> &amp; a = pbx + by \\<br> &amp; a \bmod pb = by \\<br> &amp; \frac{a \bmod pb}{b} = y \\<br> &amp; \frac{a}{b} \bmod p = \frac{a \bmod pb}{b} \\<br>\end{align*} $</p>
+<p>證明：<br>$ \begin{align*}<br> &amp; \frac{a}{b} \equiv y \pmod{p} \\<br> &amp; \Rightarrow \frac{a}{b} = px + y \\<br> &amp; \Rightarrow a = pbx + by \\<br> &amp; \Rightarrow a \bmod pb = by \\<br> &amp; \Rightarrow \frac{a \bmod pb}{b} = y \\<br> &amp; \Rightarrow \frac{a}{b} \bmod p = \frac{a \bmod pb}{b} \\<br>\end{align*} $</p>
 <p>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 (\bmod p)$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$</p>
 <h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
 <p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} \pmod{m_{i}} $，求 $ S $</p>
