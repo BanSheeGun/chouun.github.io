@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-19T03:06:19.386Z</updated>
+  <updated>2015-12-19T03:12:28.802Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-12-19T03:06:19.386Z</published>
-    <updated>2015-12-19T03:06:19.386Z</updated>
+    <published>2015-12-19T03:12:28.802Z</published>
+    <updated>2015-12-19T03:12:28.802Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -28,15 +28,16 @@
 <p>$ \begin{eqnarray} gcd(a,b) = \begin{cases}<br>a,                  &amp; b = 0 \cr<br>gcd(b, a \bmod b), &amp; otherwise<br>\end{cases} \end{eqnarray} $</p>
 <p>令 $ r = gcd(a,b) $<br>則 $ r \mid a, r \mid b $<br>故 $ r \mid (a - b) $<br>引 $ r \mid (a - kb)<br>\Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b)<br>\Rightarrow r \mid (a \bmod b) $<br>故 $ gcd(a,b) \equiv gcd(b, a \bmod b) $</p>
 <h4 id="擴展歐幾里德算法">擴展歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a></p>
-<h3 id="费马小定理">费马小定理</h3><p><a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Fermat%27s_little_theorem</a></p>
+<h3 id="乘法逆元">乘法逆元</h3><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
+<h4 id="费马小定理">费马小定理</h4><p><a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Fermat%27s_little_theorem</a></p>
 <p>若 $p$ 是素數，$a$ 是正整數，則：$a^p \equiv a \pmod{p}$。<br>若 $p$ 是素數，$a$ 是正整數且不能被 $p$ 整除，則：$a^{p-1} \equiv 1 \pmod{p}$。</p>
 <h4 id="歐拉定理">歐拉定理</h4><p><a href="https://en.wikipedia.org/wiki/Euler%27s_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euler%27s_theorem</a></p>
 <p>若 $gcd(p, a)$ = 1，則：$a^{\phi(p)} \equiv 1 \pmod{p}$。$\phi(n)$ 是<a href="#歐拉函數">歐拉函數</a>。</p>
-<h4 id="乘法逆元">乘法逆元</h4><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
-<p>若 $ax \equiv 1 \pmod{p}$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x \pmod{p}$。</p>
-<p>若 $b | a$，則：$\frac{a}{b} \bmod p = \frac{a \bmod pb}{b}$</p>
+<h4 id="定義">定義</h4><p>若 $ax \equiv 1 \pmod{p}$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x \pmod{p}$。</p>
+<p>接下來我會講實踐中的兩個小trick。</p>
+<h4 id="規避">規避</h4><p>如果不想求逆元，可以通過以下性質來避開：<br>若 $b | a$，則：$\frac{a}{b} \bmod p = \frac{a \bmod pb}{b}$</p>
 <p>證明：<br>$ \begin{align*}<br> &amp; \because \frac{a}{b} \equiv y \pmod{p} \\<br> &amp; \Rightarrow \frac{a}{b} = px + y \\<br> &amp; \Rightarrow a = pbx + by \\<br> &amp; \Rightarrow a \bmod pb = by \\<br> &amp; \Rightarrow \frac{a \bmod pb}{b} = y \\<br> &amp; \therefore \frac{a}{b} \bmod p = \frac{a \bmod pb}{b} \\<br>\end{align*} $</p>
-<p>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 \pmod{p}$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$<br>所以 $x = (p-b) / a = -b / a \pmod{p}$，$inv(x) = -a/b = -a \cdot inv(b) \pmod{p}$</p>
+<h4 id="打表">打表</h4><p>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 \pmod{p}$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$<br>所以 $x = (p-b) / a = -b / a \pmod{p}$，$inv(x) = -a/b = -a \cdot inv(b) \pmod{p}$</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; p; ++i) inv[i] = (p - p / i) * inv[p % i] % p;</span><br></pre></td></tr></table></figure>
 <h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
 <p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} \pmod{m_{i}} $，求 $ S $</p>
