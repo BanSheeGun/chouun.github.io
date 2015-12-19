@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-10T08:06:10.311Z</updated>
+  <updated>2015-12-19T01:53:33.601Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -16,49 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[每日一摘]]></title>
-    <link href="http://fateud.com/note-excerpt/"/>
-    <id>http://fateud.com/note-excerpt/</id>
-    <published>2015-12-10T08:06:10.311Z</published>
-    <updated>2015-12-10T08:06:10.311Z</updated>
-    <content type="html"><![CDATA[<p>20151210<br>皇權的合法性不是一個可以拿來討論的東西。</p>
-<p>20151204</p>
-<p>你站在道德高地就不冷嗎<br>Does it ever get cold on the moral high ground? —— from Downton Abbey</p>
-<p>20151122</p>
-<p>在中國，任何超脫飛揚的思想都會砰然墜地的，現實的引力太沉重了。</p>
-<p>20151027</p>
-<p>海不擇細流，故能成其大；山不拒細壤，方能就其高。</p>
-<a id="more"></a>
-<p>20151025</p>
-<p>水深則流緩，人貴則語遲。</p>
-<p>20151012</p>
-<p>人吃土一輩，土吃人一回。</p>
-<p>20151010</p>
-<p>三毛：刻意去找的東西，往往是找不到的。天下萬物的來和去，都有他的時間。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>20151210<br>皇權的合法性不是一個可以拿來討論的東西。</p>
-<p>20151204</p>
-<p>你站在道德高地就不冷嗎<br>Does it ever get cold on the moral high ground? —— from Downton Abbey</p>
-<p>20151122</p>
-<p>在中國，任何超脫飛揚的思想都會砰然墜地的，現實的引力太沉重了。</p>
-<p>20151027</p>
-<p>海不擇細流，故能成其大；山不拒細壤，方能就其高。</p>]]>
-    
-    </summary>
-    
-      <category term="摘錄" scheme="http://fateud.com/tags/%E6%91%98%E9%8C%84/"/>
-    
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-12-03T15:58:46.275Z</published>
-    <updated>2015-12-03T15:58:46.275Z</updated>
+    <published>2015-12-19T01:53:33.601Z</published>
+    <updated>2015-12-19T01:53:33.601Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -66,8 +28,15 @@
 <p>$ \begin{eqnarray} gcd(a,b) = \begin{cases}<br>a,                  &amp; b = 0 \cr<br>gcd(b, a \bmod b), &amp; otherwise<br>\end{cases} \end{eqnarray} $</p>
 <p>令 $ r = gcd(a,b) $<br>則 $ r \mid a, r \mid b $<br>故 $ r \mid (a - b) $<br>引 $ r \mid (a - kb)<br>\Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b)<br>\Rightarrow r \mid (a \bmod b) $<br>故 $ gcd(a,b) \equiv gcd(b, a \bmod b) $</p>
 <h4 id="擴展歐幾里德算法">擴展歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a></p>
+<h3 id="费马小定理">费马小定理</h3><p><a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Fermat%27s_little_theorem</a></p>
+<p>若 $p$ 是素數，$a$ 是正整數，則：$a^p \equiv a (\bmod p)$。<br>若 $p$ 是素數，$a$ 是正整數且不能被 $p$ 整除，則：$a^{p-1} \equiv 1 (\bmod p)$。</p>
+<h4 id="歐拉定理">歐拉定理</h4><p><a href="https://en.wikipedia.org/wiki/Euler%27s_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euler%27s_theorem</a></p>
+<p>若 $gcd(p, a)$ = 1，則：$a^{\phi(p)} \equiv 1 (\bmod p)$。$\phi(n)$ 是<a href="#歐拉函數">歐拉函數</a>。</p>
+<h4 id="乘法逆元">乘法逆元</h4><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
+<p>若 $ax \equiv 1 (\bmod p)$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x (\bmod p)$。</p>
+<p>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 (\bmod p)$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$</p>
 <h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
-<p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} (\bmod m_{i}) $，求 $ S $</p>
+<p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} \pmod{m_{i}} $，求 $ S $</p>
 <p>先看 $ S \equiv a_{i} (\bmod m_{i}) $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 (\bmod m_{i}) $，$ \forall j \neq i, M_{i}x \equiv 0 (\bmod m_{j}) $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} (\bmod m_{i}) $，$ S = \sum a_{i}M_{i}x_{i} (\bmod M)$</p>
 <h3 id="容斥原理">容斥原理</h3><p><a href="https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle" target="_blank" rel="external">https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle</a></p>
 <p>這部分內容姑且放在反演的前面，給讀者壓壓驚。<br>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。</p>
@@ -125,6 +94,40 @@
       <category term="數論" scheme="http://fateud.com/tags/%E6%95%B8%E8%AB%96/"/>
     
       <category term="遞推" scheme="http://fateud.com/tags/%E9%81%9E%E6%8E%A8/"/>
+    
+      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[每日一摘]]></title>
+    <link href="http://fateud.com/note-excerpt/"/>
+    <id>http://fateud.com/note-excerpt/</id>
+    <published>2015-12-18T17:06:58.415Z</published>
+    <updated>2015-12-18T17:06:58.415Z</updated>
+    <content type="html"><![CDATA[<p>20151210<br>皇權的合法性不是一個可以拿來討論的東西。</p>
+<p>20151204</p>
+<p>你站在道德高地就不冷嗎<br>Does it ever get cold on the moral high ground? —— from Downton Abbey</p>
+<a id="more"></a>
+<p>20151122</p>
+<p>在中國，任何超脫飛揚的思想都會砰然墜地的，現實的引力太沉重了。</p>
+<p>20151027</p>
+<p>海不擇細流，故能成其大；山不拒細壤，方能就其高。</p>
+<p>20151025</p>
+<p>水深則流緩，人貴則語遲。</p>
+<p>20151012</p>
+<p>人吃土一輩，土吃人一回。</p>
+<p>20151010</p>
+<p>三毛：刻意去找的東西，往往是找不到的。天下萬物的來和去，都有他的時間。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>20151210<br>皇權的合法性不是一個可以拿來討論的東西。</p>
+<p>20151204</p>
+<p>你站在道德高地就不冷嗎<br>Does it ever get cold on the moral high ground? —— from Downton Abbey</p>]]>
+    
+    </summary>
+    
+      <category term="摘錄" scheme="http://fateud.com/tags/%E6%91%98%E9%8C%84/"/>
     
       <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
