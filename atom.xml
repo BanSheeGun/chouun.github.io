@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-20T15:49:11.788Z</updated>
+  <updated>2015-12-20T15:50:31.007Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -20,8 +20,9 @@
     <link href="http://fateud.com/zucc2015-newtrials/"/>
     <id>http://fateud.com/zucc2015-newtrials/</id>
     <published>2015-12-20T14:44:50.000Z</published>
-    <updated>2015-12-20T15:49:11.788Z</updated>
+    <updated>2015-12-20T15:50:31.007Z</updated>
     <content type="html"><![CDATA[<h2 id="引言">引言</h2><p>考虑到一本招生，略微提高难度；预计可做题4-5道，然而没到预期。</p>
+<a id="more"></a>
 <h2 id="A-_五则计算器">A. 五则计算器</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1606" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1606</a></p>
 <p>解题报告：水题。<br>分支循环的应用，做不出建议转专业。</p>
 <h2 id="B-_五则计算器">B. 五则计算器</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1607" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1607</a></p>
@@ -50,8 +51,8 @@
 <h2 id="后记">后记</h2><p>刷题很重要，思考不能少；只刷不思考，药丸是吃枣。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="引言">引言</h2><p>考虑到一本招生，略微提高难度；预计可做题4-5道，然而没到预期。</p>
-<h2 id="A-_五则计算器">A. 五则计算器</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/pro]]>
+    <![CDATA[<h2 id="引言">引言</h2><p>考虑到一本招生，略微提高难度；预计可做题4-5道，然而没到预期。</p>]]>
+    
     </summary>
     
       <category term="ZUCC" scheme="http://fateud.com/tags/ZUCC/"/>

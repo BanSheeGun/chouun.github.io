@@ -95,36 +95,11 @@
     <div class="article-content">
         
         <h2 id="引言">引言</h2><p>考虑到一本招生，略微提高难度；预计可做题4-5道，然而没到预期。</p>
-<h2 id="A-_五则计算器">A. 五则计算器</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1606" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1606</a></p>
-<p>解题报告：水题。<br>分支循环的应用，做不出建议转专业。</p>
-<h2 id="B-_五则计算器">B. 五则计算器</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1607" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1607</a></p>
-<p>解题报告：水题。<br>gets容易受到系统环境影响，建议使用scanf输入。<br>本来查询次数 $q$ 较大，需要预先处理出每个字符的总数，再处理询问。</p>
-<h2 id="C-_土鸡拜火教">C. 土鸡拜火教</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1608" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1608</a></p>
-<p>解题报告：逻辑题。<br>输出 $n - m + 1$ 即可。<br>证明部分详见<a href="https://www.zhihu.com/question/21262930" target="_blank" rel="external">一个关于数学归纳法的悖论问题：到底是第 N 天有 N 个红眼睛自杀，还是什么都不会发生？ - 知乎</a></p>
-<h2 id="D-_汪洋的绯闻">D. 汪洋的绯闻</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1609" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1609</a></p>
-<p>解题报告：数学题。<br>递推公式为 $f_{n} = f_{n-1} + (n-1)f_{n-2}$<br>第 $n$ 个人如果跟外人脱单，剩下 $n-1$ 个人有 $f_{n-1}$ 种情况；<br>如果跟 $n-1$ 里的其中一个人脱单，有 $n-1$ 种选择，而剩下 $n-2$ 个人有 $f_{n-2}$ 种情况，根据乘法原理相乘即可。</p>
-<h2 id="E-_土鸡摩天楼">E. 土鸡摩天楼</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1610" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1610</a></p>
-<p>解题报告：模拟题。<br>先用二维数据记录零到九的 $LED$ 灯亮灭情况，然后用二维数组记录两种数字间的差异多大。<br>这样预先处理好，对于输入的 $M$ 每一位，分开来考虑差异范围内的数字一共几个，根据乘法原理相乘即可。</p>
-<h2 id="F-_检索联系人">F. 检索联系人</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1611" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1611</a></p>
-<p>解题报告：字符串处理。<br>主要是处理部分复杂。<br>需要注意的是，元音只有 $a, e, o, u, i, v$，声母包括 $zh, ch, sh$。<br>对于一个元音，如果前一个也是元音，则忽略；否则前面必为声母，声母可能一位或两位。<br>先把所有缩写预先处理好，每次查询只要用strstr函数比较即可。</p>
-<h2 id="G-_荣荣的爱情">G. 荣荣的爱情</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1612" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1612</a></p>
-<p>解题报告：逻辑题。<br>对方是知道月份的：</p>
-<ul>
-<li>如果该月份内所有日期，在别的月份内都未出现过，则你必然知道答案</li>
-<li>如果该月份内所有日期，在别的月份内都出现过，则你必然不知道答案</li>
-<li>如果该月份内所有日期，在别的月份内出现过与未出现过都有，则你不一定知道答案<br>显然第一第三两种情况，是话语 $2$；第二种情况，是话语 $1$。<br>所有我们枚举出生月份，加以判断即可。</li>
-</ul>
-<h2 id="H-_奏心的土鸡">H. 奏心的土鸡</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1613" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1613</a></p>
-<p>解题报告：数学题。<br>用 $f_n$ 表示土鸡数量，用 $s_n$ 表示总记录数。<br>根据题意得出 $f_n = f_{n-1} + f_{n-2}$，对其求和计算 $s_n$，很容易发现 $s_n = f_{n+2} - 1$。<br>因为题目给了你 $f_n, s_n$，直接得到 $s_{n-1}, s_{n-2}$，数列前后昭然若揭。<br>而且为了简化问题，题目给出数据 $n - k \leq 10$，所以循环十次内就能求出答案。<br>出题人把 $n$ 的实际值限定在 $32767$ 内，这样还是有人强行用递归导致 $TLE$。</p>
-<h2 id="I-_小气的楠楠">I. 小气的楠楠</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1614" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1614</a></p>
-<p>解题报告：贪心题。<br>先将两个数列排序，然后进行贪心。<br>两两对应后，有三种情况：同负，异号，同正，即：<br>A: - + +<br>B: - - +<br>对于同号的两种，通过比较 $A_l B_l$ 与 $A_r B_r$ 的大小，决定取哪一个。<br>对于异号的部分，假如还需要取 $k$ 个，取最小的正数与最大的负数，一一对应相乘即可，切勿交叉相乘。<br>下面是组容易错误的数据，建议替换 $M$ 来理解一下本质：<br>5 3或4<br>-1000 1 10 100 1000<br>-1000 -100 -10 -1 1000</p>
-<h2 id="J-_楠楠与瓜瓜">J. 楠楠与瓜瓜</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1615" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1615</a></p>
-<p>解题报告：构造题。<br>通过相减得出愉悦值之差（记得取模），然后问题转化成寻找相同的两项，这样能很方便构造出相反的策略。<br>每次找出愉悦值最大的物品合并，愉悦值相减作为新物品的愉悦值。<br>这样对于 $n$ 个物品，愉悦值最大为 $m$；<br>第一轮，$n/2$ 次操作之后，愉悦值最大为 $\frac{2m}{n}$；<br>第二轮，$n/4$ 次操作之后，愉悦值最大为 $\frac{8m}{n^2}$；<br>第三轮，$n/8$ 次操作之后，愉悦值最大为 $\frac{64m}{n^3}$；<br>三次之后愉悦值最大只有6了，显然能出解，所以最后倒着 $dfs$ 把分配方法解出来即可。<br>窝不会告诉你们这题有彩蛋。</p>
-<h2 id="后记">后记</h2><p>刷题很重要，思考不能少；只刷不思考，药丸是吃枣。</p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/zucc2015-newtrials/#more">Read More</a>
           
        </p>
     </div>
