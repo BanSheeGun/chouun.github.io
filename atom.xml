@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-20T15:50:31.007Z</updated>
+  <updated>2015-12-20T15:53:07.846Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://fateud.com/zucc2015-newtrials/"/>
     <id>http://fateud.com/zucc2015-newtrials/</id>
     <published>2015-12-20T14:44:50.000Z</published>
-    <updated>2015-12-20T15:50:31.007Z</updated>
+    <updated>2015-12-20T15:53:07.846Z</updated>
     <content type="html"><![CDATA[<h2 id="引言">引言</h2><p>考虑到一本招生，略微提高难度；预计可做题4-5道，然而没到预期。</p>
 <a id="more"></a>
 <h2 id="A-_五则计算器">A. 五则计算器</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1606" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1606</a></p>
-<p>解题报告：水题。<br>分支循环的应用，做不出建议转专业。</p>
+<p>解题报告：水题。<br>分支结构的应用，做不出建议转专业。</p>
 <h2 id="B-_五则计算器">B. 五则计算器</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1607" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1607</a></p>
 <p>解题报告：水题。<br>gets容易受到系统环境影响，建议使用scanf输入。<br>本来查询次数 $q$ 较大，需要预先处理出每个字符的总数，再处理询问。</p>
 <h2 id="C-_土鸡拜火教">C. 土鸡拜火教</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1608" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1608</a></p>
