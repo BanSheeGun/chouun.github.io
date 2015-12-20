@@ -3,6 +3,53 @@
 
     
   <url>
+    <loc>http://fateud.com/zucc2015-newtrials/</loc>
+    <lastmod>2015-12-20T15:49:11.788Z</lastmod>
+    <data>
+        <display>
+        <title>ZUCC2015新生选拔赛</title>
+        <pubTime>2015-12-20T14:44:50.000Z</pubTime>
+        
+        <tag>ZUCC </tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-antifascism/</loc>
+    <lastmod>2015-12-20T14:44:56.644Z</lastmod>
+    <data>
+        <display>
+        <title>紀念世界反法西斯戰爭勝利70週年閱兵式</title>
+        <pubTime>2015-09-03T04:27:40.000Z</pubTime>
+        
+        <tag>反法西斯 </tag>
+         
+        <tag>木村成彥 </tag>
+         
+        <tag>西決 </tag>
+         
+        <tag>閱兵 </tag>
+         
+         
+           
+             
+              <breadCrumb title="雜記" url="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://fateud.com/note-math/</loc>
     <lastmod>2015-12-20T01:44:33.783Z</lastmod>
     <data>
@@ -47,7 +94,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://fateud.com/note-excerpt/</loc>
@@ -253,32 +299,6 @@
            
              
               <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://fateud.com/note-antifascism/</loc>
-    <lastmod>2015-09-06T23:17:50.687Z</lastmod>
-    <data>
-        <display>
-        <title>紀念世界反法西斯戰爭勝利70週年閱兵式</title>
-        <pubTime>2015-09-03T04:27:40.000Z</pubTime>
-        
-        <tag>反法西斯 </tag>
-         
-        <tag>木村成彥 </tag>
-         
-        <tag>西決 </tag>
-         
-        <tag>閱兵 </tag>
-         
-         
-           
-             
-              <breadCrumb title="雜記" url="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
           
         </display>
     </data>
