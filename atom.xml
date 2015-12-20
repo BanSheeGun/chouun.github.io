@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2015-12-19T11:09:05.820Z</updated>
+  <updated>2015-12-20T01:44:33.783Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2015-12-19T11:09:05.820Z</published>
-    <updated>2015-12-19T11:09:05.820Z</updated>
+    <published>2015-12-20T01:44:33.783Z</published>
+    <updated>2015-12-20T01:44:33.783Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -78,7 +78,7 @@
 <h3 id="反演公式">反演公式</h3><h4 id="莫比烏斯反演">莫比烏斯反演</h4><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula</a></p>
 <p>$ \sum\limits_{d|n} \phi(d) = Id(n) \Rightarrow \phi * 1 = Id $<br>$ \sum\limits_{d|n} \mu(d) = \epsilon(n) \Rightarrow \mu * 1 = \epsilon $</p>
 <p>$ \begin{align*}<br> &amp; \because \mu * 1 = \epsilon \\<br> &amp; \therefore \phi(n) \\<br> &amp; = \sum\limits_{i = 1}^{n} \epsilon(gcd(i,n)) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | gcd(i,n)} \mu(d) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | i \wedge d | n} \mu(d) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \frac{n}{d} \\<br> &amp; = (\mu * Id)(n)<br>\end{align*} $</p>
-<p>按這思路，顯然得證 $ \sum\limits_{i = 1}^{n} i \epsilon(gcd(i,n)) = \frac{n}{2} (\mu * 1 + \mu * Id)(n) = \frac{n}{2} (\epsilon + \phi)(n) $，即[1,n]中與n互質的數之和。<br>[2015.12.03] 顺便补充下平方和的结论： $ \sum\limits_{i = 1}^{n} i^2 \epsilon(gcd(i,n)) = \frac{n^2}{3} \phi(n) + \frac{n^2}{2} \epsilon(n) + \frac{n}{6} \sum\limits_{d | n} \mu(d) d $</p>
+<p>按這思路，顯然得證 $ \sum\limits_{i = 1}^{n} i \cdot \epsilon(gcd(i,n)) = \frac{n}{2} (\mu * 1 + \mu * Id)(n) = \frac{n}{2} (\epsilon + \phi)(n) $，即[1,n]中與n互質的數之和。<br>[2015.12.03] 顺便补充下平方和的结论： $ \sum\limits_{i = 1}^{n} i^2 \cdot \epsilon(gcd(i,n)) = \frac{n^2}{3} \phi(n) + \frac{n^2}{2} \epsilon(n) + \frac{n}{6} \sum\limits_{d | n} \mu(d) d $</p>
 <p>如 $ \phi * 1 = Id $，$ \mu * Id = \phi $；<br>又 $ \epsilon * 1 = 1 $，$ \mu * 1 = \epsilon $；<br>顯然能得出莫比烏斯反演公式 $ f * 1 = F $，$ \mu * F = f $<br>亦可以寫作：<br>$ F(n) = \sum\limits_{d | n} f(d) $<br>$ f(n) = \sum\limits_{d | n} \mu(\frac{n}{d}) F(d) $</p>
 <p>證明：<br>$ \begin{align*}<br> &amp; \because f * 1 = F \\<br> &amp; \therefore (\mu * F)(n) \\<br> &amp; = \sum\limits_{d | n} \mu(d) F(\frac{n}{d}) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \sum\limits_{d’ | \frac{n}{d}} f(d’) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \sum\limits_{d | \frac{n}{d’}} \mu(d) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \epsilon(frac{n}{d’}) \\<br> &amp; = f(n)<br>\end{align*} $</p>
 <h4 id="二項式反演">二項式反演</h4><p>對於 $ 0 ^ n $ 的二項式展開：<br>$ \sum\limits_{i = 0}^{n} (-1)^i \binom{n}{i} = (1 + (-1))^{n} $<br>然後是個組合數學的小trick：<br>$ \binom{n}{i} \binom{i}{k} = \frac{n!}{(n-i)!} \frac{1}{k!(i-k)!} = \frac{n!}{k!(n-k)!} \frac{(n-k)!}{(n-i)!(i-k)!} = \binom{n}{k} \binom{n-k}{i-k} $</p>
@@ -101,6 +101,52 @@
       <category term="數論" scheme="http://fateud.com/tags/%E6%95%B8%E8%AB%96/"/>
     
       <category term="遞推" scheme="http://fateud.com/tags/%E9%81%9E%E6%8E%A8/"/>
+    
+      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[架設一個L2TP協議的簡易vpn]]></title>
+    <link href="http://fateud.com/note-vpn/"/>
+    <id>http://fateud.com/note-vpn/</id>
+    <published>2015-12-20T01:44:17.215Z</published>
+    <updated>2015-12-20T01:44:17.215Z</updated>
+    <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
+<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
+<a id="more"></a>
+<h2 id="起因">起因</h2><p>又值開學季，慘無人道的十一點斷網不速而來，最近準備區域賽、急需大量資料的我，無法接受慘痛的現實。<br>轉念一想，實驗室是通宵供電供網的，然而天天睡實驗室對身體不利，所以我決定通過代理來解決上網問題。</p>
+<h2 id="架設">架設</h2><p>我先回憶了上個學期架設vpn的過程，進行了同樣的步驟。</p>
+<p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
+<p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
+<p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
+<h2 id="路由">路由</h2><p>// 警告：這一部分已經驗證非關鍵作用，請無視</p>
+<p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
+<p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
+<ol>
+<li>TCP 1723 端口：PPTP協議連接端口</li>
+<li>UDP 1701 端口：L2TP協議連接端口</li>
+<li>UDP 500 端口：Internet密鑰交換(IKE) - 用戶數據報協議</li>
+<li>UDP 4500 端口：IPsec NAT-T</li>
+<li>TCP/UDP 50 端口：封裝式安全協議(ESP) - Internet協議(IP)協議</li>
+</ol>
+<p>然後嘗試著訪問百度，哇哦！還是血崩…</p>
+<h2 id="尾聲">尾聲</h2><p>我原以爲要跟上次一樣不了了之了，結果chrome虎軀一震，竟然連上了，真是xnmbyy！<br>測試了一下Google，秒連，說明並不是錯覺。也懶得糾結這麼多了，能上就好。</p>
+<h2 id="UPD1">UPD1</h2><p>聽說11月以後，通過撥號能上內網，但是子網掩碼默認是四個255，導致我無法ping通機房。<br>我用netsh命令改成了255.255.255.0，還是可以連vpn的，靜候11點斷電斷網，保佑。</p>
+<h2 id="UPD2">UPD2</h2><p>然後到了11點這一刻，告訴我網線已被拔出，日媽。<br>本來就能直接連內網，所以你弄個PPPOE有瘠薄用？<br>弄得斷網以後能上內網一樣，不知道網絡部是不是用菊花思考的。<br>衷心祝願你們後裔的消化系統是一個單向棧。</p>
+<h2 id="UPD3">UPD3</h2><p>vpn在連接上有偏差，我是要負責的！<br>我沒有說vpn使用者要欽定，沒有任何這個意思。<br>但是你問——一定要問我——vpn密碼是多少，我可能回答你說“無可奉告”。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
+<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>]]>
+    
+    </summary>
+    
+      <category term="L2TP" scheme="http://fateud.com/tags/L2TP/"/>
+    
+      <category term="vpn" scheme="http://fateud.com/tags/vpn/"/>
+    
+      <category term="網絡" scheme="http://fateud.com/tags/%E7%B6%B2%E7%B5%A1/"/>
     
       <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
@@ -362,51 +408,6 @@
       <category term="Lua" scheme="http://fateud.com/tags/Lua/"/>
     
       <category term="編程語言" scheme="http://fateud.com/tags/%E7%B7%A8%E7%A8%8B%E8%AA%9E%E8%A8%80/"/>
-    
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[架設一個L2TP協議的簡易vpn]]></title>
-    <link href="http://fateud.com/note-vpn/"/>
-    <id>http://fateud.com/note-vpn/</id>
-    <published>2015-11-02T15:23:58.604Z</published>
-    <updated>2015-11-02T15:23:58.604Z</updated>
-    <content type="html"><![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
-<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1" target="_blank" rel="external">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>
-<a id="more"></a>
-<h2 id="起因">起因</h2><p>又值開學季，慘無人道的十一點斷網不速而來，最近準備區域賽、急需大量資料的我，無法接受慘痛的現實。<br>轉念一想，實驗室是通宵供電供網的，然而天天睡實驗室對身體不利，所以我決定通過代理來解決上網問題。</p>
-<h2 id="架設">架設</h2><p>我先回憶了上個學期架設vpn的過程，進行了同樣的步驟。</p>
-<p>在作爲服務器的電腦上，新建一個傳入連接。<br>右鍵屬性，“用戶”選項卡，除去該項的勾“要求所有用戶對其密碼和數據的安全進行保護”。</p>
-<p>在作爲客戶端的電腦上，設置新的連接，連接到工作區，使用我的Internet連接，Internet地址填服務器的IP。<br>右鍵屬性，“安全”選項卡，VPN類型使用L2TP，數據加密可選，允許使用這些協議（PAP、CHAP、MS-CHAP v2）。</p>
-<p>連接成功，然後血崩。喂，根上學期的劇本不一樣啊。我開始思考，L2TP能連，然而無法上網。</p>
-<h2 id="路由">路由</h2><p>// 警告：這一部分已經驗證非關鍵作用，請無視</p>
-<p>後來我想起，自從上次斷電以後，實驗室的路由就怪怪的，難道禁止了L2TP穿透？<br>於是我強行黑進了實驗室的路由，去尋找問題的緣由。</p>
-<p>在“轉發規則-虛擬服務器”（也就是很多地方所說的映射關係），我發現了一片空白，腦中也一片空白。<br>隨便一搜，找到老司機所發佈的長文，裏面有如下一段。我把死馬當活馬醫，添加了進去。</p>
-<ol>
-<li>TCP 1723 端口：PPTP協議連接端口</li>
-<li>UDP 1701 端口：L2TP協議連接端口</li>
-<li>UDP 500 端口：Internet密鑰交換(IKE) - 用戶數據報協議</li>
-<li>UDP 4500 端口：IPsec NAT-T</li>
-<li>TCP/UDP 50 端口：封裝式安全協議(ESP) - Internet協議(IP)協議</li>
-</ol>
-<p>然後嘗試著訪問百度，哇哦！還是血崩…</p>
-<h2 id="尾聲">尾聲</h2><p>我原以爲要跟上次一樣不了了之了，結果chrome虎軀一震，竟然連上了，真是xnmbyy！<br>測試了一下Google，秒連，說明並不是錯覺。也懶得糾結這麼多了，能上就好。</p>
-<h2 id="UPD1">UPD1</h2><p>聽說11月以後，通過撥號能上內網，但是子網掩碼默認是四個255，導致我無法ping通機房。<br>我用netsh命令改成了255.255.255.0，還是可以連vpn的，靜候11點斷電斷網，保佑。</p>
-<h2 id="UPD2">UPD2</h2><p>然後到了11點這一刻，告訴我網線已被拔出，日媽。<br>本來就能直接連內網，所以你弄個PPPOE有雞巴用？<br>弄得斷網以後能上內網一樣，不知道網絡部是不是用菊花思考的。<br>衷心祝願你們後裔的消化系統是一個單向棧。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<blockquote><p>|9.21| 战五猹网络部，区区断网岂能拦得住我，求你把L2TP之类的穿透给封印了，不然我还是强行能用VPN啊。</p>
-<footer><strong>ChouUn</strong><cite><a href="http://user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1">user.qzone.qq.com/327739187/mood/33e788132ef9fe55ab490600.1</a></cite></footer></blockquote>]]>
-    
-    </summary>
-    
-      <category term="L2TP" scheme="http://fateud.com/tags/L2TP/"/>
-    
-      <category term="vpn" scheme="http://fateud.com/tags/vpn/"/>
-    
-      <category term="網絡" scheme="http://fateud.com/tags/%E7%B6%B2%E7%B5%A1/"/>
     
       <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     

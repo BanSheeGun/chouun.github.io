@@ -4,15 +4,39 @@
     
   <url>
     <loc>http://fateud.com/note-math/</loc>
-    <lastmod>2015-12-19T11:09:05.820Z</lastmod>
+    <lastmod>2015-12-20T01:44:33.783Z</lastmod>
     <data>
         <display>
         <title>殘龍的數學筆記</title>
-        <pubTime>2015-12-19T11:09:05.820Z</pubTime>
+        <pubTime>2015-12-20T01:44:33.783Z</pubTime>
         
         <tag>數論 </tag>
          
         <tag>遞推 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-vpn/</loc>
+    <lastmod>2015-12-20T01:44:17.215Z</lastmod>
+    <data>
+        <display>
+        <title>架設一個L2TP協議的簡易vpn</title>
+        <pubTime>2015-12-20T01:44:17.215Z</pubTime>
+        
+        <tag>L2TP </tag>
+         
+        <tag>vpn </tag>
+         
+        <tag>網絡 </tag>
          
          
            
@@ -83,30 +107,6 @@
         <tag>Lua </tag>
          
         <tag>編程語言 </tag>
-         
-         
-           
-             
-              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://fateud.com/note-vpn/</loc>
-    <lastmod>2015-11-02T15:23:58.604Z</lastmod>
-    <data>
-        <display>
-        <title>架設一個L2TP協議的簡易vpn</title>
-        <pubTime>2015-11-02T15:23:58.604Z</pubTime>
-        
-        <tag>L2TP </tag>
-         
-        <tag>vpn </tag>
-         
-        <tag>網絡 </tag>
          
          
            
