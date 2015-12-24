@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://fateud.com/zucc2015-newtrials/index.html">
 <meta property="og:site_name" content="Fate / Unlimited Darkness">
 <meta property="og:description" content="引言考虑到一本招生，略微提高难度；预计可做题4-5道，然而没到预期。">
-<meta property="og:updated_time" content="2015-12-20T16:17:33.042Z">
+<meta property="og:updated_time" content="2015-12-24T13:37:01.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZUCC2015新生选拔赛">
 <meta name="twitter:description" content="引言考虑到一本招生，略微提高难度；预计可做题4-5道，然而没到预期。">
@@ -126,7 +126,7 @@
 <p>解题报告：数学题。<br>用 $f_n$ 表示土鸡数量，用 $s_n$ 表示总记录数。<br>根据题意得出 $f_n = f_{n-1} + f_{n-2}$，对其求和计算 $s_n$，很容易发现 $s_n = f_{n+2} - 1$。<br>因为题目给了你 $f_n, s_n$，直接得到 $s_{n-1}, s_{n-2}$，整个数列昭然若揭。<br>而且为了简化问题，题目给出数据 $n - k \leq 10$，所以循环十次内就能求出答案。<br>出题人把 $n$ 的实际值限定在 $32767$ 内，这样还是有人强行用递归导致 $TLE$。</p>
 <h2 id="I-_小气的楠楠">I. 小气的楠楠</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1614" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1614</a></p>
 <p>解题报告：贪心题。谷歌面试出过。<br>先将两个数列排序，然后进行贪心。<br>两两对应后，有三种情况：同负，异号，同正，即：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A: - + +&#10;B: - - +</span><br></pre></td></tr></table></figure></p>
-<p>对于同号的两种，通过比较 $A_l B_l$ 与 $A_r B_r$ 的大小，决定取哪一个。<br>对于异号的部分，假如还需要取 $k$ 对，取最小的正数与最大的负数，一一对应相乘即可，切勿交叉相乘。<br>下面是组容易错误的数据，建议替换 $M$ 来理解一下本质：<br>5 3或4<br>-1000 1 10 100 1000<br>-1000 -100 -10 -1 1000</p>
+<p>对于同号的两种，通过比较 $A_l B_l$ 与 $A_r B_r$ 的大小，决定取哪一个。<br>对于异号的部分，假如还需要取k对，那么从小到大取出k个正数作为第一行，从大到小取出k个负数作为第二行，两行都由小到大排列，最后从左到右对应相乘想加即可，切勿交叉相乘<br>下面是组容易错误的数据，建议替换 $M$ 来理解一下本质：<br>5 3或4<br>-1000 1 10 100 1000<br>-1000 -100 -10 -1 1000</p>
 <h2 id="J-_楠楠与瓜瓜">J. 楠楠与瓜瓜</h2><p><a href="http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1615" target="_blank" rel="external">http://acm.zucc.edu.cn/JudgeOnline/problem.php?id=1615</a></p>
 <p>解题报告：构造题。多校2015第九场。<br>通过相减得出愉悦值之差（记得取模），然后问题转化成寻找相同的两项，这样能很方便构造出相反的策略。<br>每次找出愉悦值最大的物品合并，愉悦值相减作为新物品的愉悦值。<br>这样对于 $n$ 个物品，愉悦值最大为 $m$；<br>第一轮，$n/2$ 次操作之后，愉悦值最大为 $\frac{2m}{n}$；<br>第二轮，$n/4$ 次操作之后，愉悦值最大为 $\frac{8m}{n^2}$；<br>第三轮，$n/8$ 次操作之后，愉悦值最大为 $\frac{64m}{n^3}$；<br>三次之后愉悦值最大只有6了，显然能出解，所以最后倒着 $dfs$ 把分配方法解出来即可。<br>窝不会告诉你们这题有彩蛋。</p>
 <h2 id="后记">后记</h2><p>刷题很重要，思考不能少；只刷不思考，药丸是吃枣。</p>
