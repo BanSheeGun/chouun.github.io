@@ -24,9 +24,8 @@
 <meta property="og:image" content="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/cd&ls.png">
 <meta property="og:image" content="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/dnspod.png">
 <meta property="og:image" content="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/ping.png">
-<meta property="og:image" content="http://7xjw62.com5.z0.glb.clouddn.com/static/images/exam.png">
 <meta property="og:image" content="http://7xjw62.com5.z0.glb.clouddn.com/static/images/note-hexo/sublime.png">
-<meta property="og:updated_time" content="2015-12-03T06:19:47.873Z">
+<meta property="og:updated_time" content="2016-01-28T06:42:34.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo">
 <meta name="twitter:description" content="Welcome to Hexo! Check documentation for more info.
@@ -98,7 +97,7 @@
 		<a href="https://plus.google.com/117134980329222155883?rel=author" title="ChouUn" target="_blank" itemprop="author">ChouUn</a>
 		
   <p class="article-time">
-    <time datetime="2015-12-03T06:19:47.873Z" itemprop="datePublished"> 发表于 2015-12-03</time>
+    <time datetime="2016-01-28T06:42:34.604Z" itemprop="datePublished"> 发表于 2016-01-28</time>
     
   </p>
 </header>
@@ -201,8 +200,10 @@
 <li>执行<code>$ npm install hexo-qiniu-sync --save</code>安装七牛插件</li>
 <li>对七牛进行设置，详见<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">gyk001/hexo-qiniu-sync</a>；ak和sk参见<a href="https://portal.qiniu.com/setting/key" target="_blank" rel="external">密钥 - 账号设置 - 七牛云存储</a>，要注意空间不能是<code>private</code>的，被坑了很久</li>
 <li>运行<code>$ hexo qiniu s</code>进行第一次同步，<code>/hexo</code>下会出现一个与<code>local_dir</code>属性同名的文件夹，里面的分类你懂的</li>
-<li>在文章中使用<code><img title="图片标题" alt="图片说明" class="class1" src="http://7xjw62.com5.z0.glb.clouddn.com/static/images/exam.png"></code>标签插入图片<br>ps. 第二步中的<code>urlPrefix</code>因人而异，比如我是<code>http://7xjw62.com5.z0.glb.clouddn.com/</code>，所以你们别被坑了<br>pss. 因为对<code>$ hexo deploy</code>的支持尚有问题，我们需要手动进行上传..</li>
+<li>在文章中使用以下标签插入图片<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% qnimg exam.png <span class="string">title:</span>图片标题 <span class="string">alt:</span>图片说明 <span class="string">'class:class1 class2'</span> %&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>ps. 第二步中的<code>urlPrefix</code>因人而异，比如我是<code>http://7xjw62.com5.z0.glb.clouddn.com/</code>，所以你们别被坑了<br>pss. 因为对<code>$ hexo deploy</code>的支持尚有问题，我们需要手动进行上传..</p>
 <h3 id="更多信息">更多信息</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a><br><a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a><br><a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a><br><a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a><br><a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="external">Tag Plugins</a></p>
 <h2 id="编辑">编辑</h2><h3 id="安装Sublime">安装Sublime</h3><p>个人喜欢用稳定的<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime 2</a>，下载了官方原版（无限试用期）。</p>
 <h3 id="安装Package_Control">安装Package Control</h3><p>按下<code>Control + BackQuote</code>调出Console，键入一下代码并回车。所谓BackQuote就是<code>~</code>键中的反引号。</p>
@@ -285,19 +286,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/note-vpn/" title="架設一個L2TP協議的簡易vpn">
-  <strong>上一篇：</strong><br/>
-  <span>
-  架設一個L2TP協議的簡易vpn</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/note-lua/"  title="Lua學習筆記">
+<a href="/note-excerpt/"  title="每日一摘">
  <strong>下一篇：</strong><br/> 
- <span>Lua學習筆記
+ <span>每日一摘
 </span>
 </a>
 </div>
