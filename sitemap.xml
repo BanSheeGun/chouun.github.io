@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fateud.com/acm/2015winter.html</loc>
-    <lastmod>2016-01-28T13:18:17.673Z</lastmod>
+    <loc>http://fateud.com/note-lnpfp/</loc>
+    <lastmod>2016-01-30T09:05:51.449Z</lastmod>
   </url>
   
   <url>
     <loc>http://fateud.com/note-hexo/</loc>
-    <lastmod>2016-01-28T06:42:34.604Z</lastmod>
+    <lastmod>2016-01-29T13:15:41.869Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fateud.com/acm/2015winter.html</loc>
+    <lastmod>2016-01-28T13:18:17.673Z</lastmod>
   </url>
   
   <url>

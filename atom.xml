@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2016-01-28T06:42:34.604Z</updated>
+  <updated>2016-01-30T09:05:51.449Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -16,11 +16,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[《狱中书简》章五《关于愚蠢》摘录]]></title>
+    <link href="http://fateud.com/note-lnpfp/"/>
+    <id>http://fateud.com/note-lnpfp/</id>
+    <published>2016-01-30T08:51:35.000Z</published>
+    <updated>2016-01-30T09:05:51.449Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">狱中书简</span><br><span class="line"><span class="attr_selector">[德]</span> 迪特里希·朋霍费尔 著</span><br></pre></td></tr></table></figure>
+<blockquote><p>……对于善来说，愚蠢是比恶意更加危险的敌人。你可以抵抗恶意，你可以揭下它的面具，或者凭借力量来防止它。恶意总是包含着它自身毁灭的种子，因为它总是使人不舒服，假如不是更糟的话。然而面对愚蠢，根本无法防卫。要反对愚蠢，抵抗和力量都无济于事，愚蠢根本不服从理性。假如事实与一己的偏见相左，那就不必相信事实，假如那些事实无法否认，那就可以把它们干脆作为例外推开不理。所以同恶棍相比，蠢人总是自鸣得意。而且他很容易变成危险，因为要使他挥拳出击，那是易如反掌的。所以，比起恶意来，愚蠢需要加倍小心地对付。<strong>我们不要再三努力同蠢人论理，因为那既无用又危险</strong>。</p>
+<p>……要恰当地对待愚蠢，认识它的本来面目是必不可少的。十分肯定的是，<strong>愚蠢是一种道德上的缺陷，而不是一种理智上的缺陷</strong>。有些人智力高超，但却是蠢人，还有些人智力低下，但绝非蠢人，作为某些特定环境的产物，我们惊讶地发现了这种情况。我们得到的印象是：愚蠢是养成的，而不是天生的；愚蠢是在这样一些环境中养成的，在这种环境下，人们把自己弄成蠢人，或者允许别人把自己弄成蠢人。我们还进一步注意到，比起不善交际或孤寂独处的人来，在倾向于或注定要群居或交往的个人或团体当中，愚蠢要普遍得多。由此看来，愚蠢是一个社会学问题，而不是一个心理学问题。</p>
+<p>……然而正是在这个方面，我们意识到，<strong>蠢人不可能靠教育来拯救</strong>。他所需要的是救赎，此外别无他法。迄今为止，企图用理性论证去说服他，丝毫没有用处。在这种事态中，我们可以完全明白，为什么试图去发现“人民”真的在想什么是徒劳无益的，为什么这个问题对于负责地思考和行动的人来说也完全多余。正如《圣经》所言：“对上帝的畏惧，就是智慧的开端。”换言之，治疗愚蠢的唯一办法，是灵性上的救赎，因为唯有这样，才能使一个人像上帝眼中负责任的人那样生活。</p>
+<p>……不过，在对人的愚蠢的这些思考中，也有一点可慰之处。我们没有任何理由认为，大多数人在所有的环境中都是愚蠢的。长期起重大作用的是：<strong>我们的统治者是希望从人们的愚蠢之中</strong>，而不是从人们的独立判断和敏锐思想之中，<strong>获得更多的东西</strong>。</p>
+<footer><strong>《狱中书简》章五《关于愚蠢》</strong><cite><a href="http://read.jd.com/8368/409929.html" target="_blank" rel="external">read.jd.com/8368/409929.html</a></cite></footer></blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><t]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Hello Hexo]]></title>
     <link href="http://fateud.com/note-hexo/"/>
     <id>http://fateud.com/note-hexo/</id>
-    <published>2016-01-28T06:42:34.604Z</published>
-    <updated>2016-01-28T06:42:34.604Z</updated>
+    <published>2016-01-29T13:15:41.869Z</published>
+    <updated>2016-01-29T13:15:41.869Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info.</p>
 </blockquote>
