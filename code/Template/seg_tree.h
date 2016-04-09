@@ -1,67 +1,55 @@
 // Name : segment tree 非递归线段树
 // Copyright : fateud.com
-
 #ifndef SEG_TREE_H_
-#define SEG_TREE_H_ 20150927L
-
+#define SEG_TREE_H_ 20151229L
 #include <vector>
 #include <functional>
-
+using std::size_t;
 namespace csl {
-  template<typename _Tp,typename _Op = std::plus<_Tp>>
-  struct seg_tree {
-    typedef _Tp value_type;
-    typedef std::size_t size_type;
-
-    // constructor & destructor.
+  template< typename T,typename F = std::plus<T> >
+  class seg_tree {
+  public :
     seg_tree() :
-        m_size(), m_func() {
+      data(), n(), func() {
     }
 
-    // capacity.
-    void build(size_type p_size) {
-      for(m_size = 1; m_size < p_size; m_size <<= 1)
-        ;
-      m_data.assign(m_size << 1, value_type());
+    void build(size_t m) {
+      for(n = 1; n < m; n <<= 1);
+      data.assign(n << 1, T());
     }
 
-    template<typename _InputIterator>
-    inline void build(_InputIterator first,_InputIterator last) {
-      size_type p_size = last - first;
-      for(m_size = 1; m_size < p_size; m_size <<= 1)
-        ;
-      m_data.assign(m_size << 1, value_type());
-      copy(first, last, m_data[m_size]);
-      for(size_type i = m_size - 1; i; --i)
-        m_data[i] = m_func(m_data[i << 1], m_data[i << 1 ^ 1]);
+    template<typename Iterator>
+    inline void build(Iterator first, Iterator last) {
+      size_t m = last - first;
+      for(n = 1; n < m; n <<= 1);
+      data.assign(n << 1, T());
+      std::copy(first, last, data.data() + n);
+      for(size_t i = n - 1; i; --i)
+        data[i] = func(data[i << 1], data[i << 1 ^ 1]);
     }
 
-    value_type query(size_type l,size_type r,value_type res =
-        value_type()) const {
-      for(++r; l && l + (l & -l) <= r; l += l & -l)
-        res = m_func(res, m_data[(m_size + l) / (l & -l)]);
+    T query(size_t l, size_t r, T res = T()) const {
+      for(++r; l && l + (l & -l) <= r; l += (l & -l))
+        res = func(res, data[(n + l) / (l & -l)]);
       for(; l < r; r -= r & -r)
-        res = m_func(res, m_data[(m_size + r) / (r & -r) - 1]);
+        res = func(res, data[(n + r) / (r & -r) - 1]);
       return res;
     }
 
-    // element access.
-    _Tp operator [](const size_type __x) const {
-      return m_data[m_size + __x];
+    T operator [](const size_t x) const {
+      return data[n + x];
     }
 
-    // modifiers.
-    void update(size_type __x,const value_type& __v) {
-      m_data[m_size + __x] = __v;
-      for(size_type i = (m_size + __x) >> 1; i; i >>= 1)
-        m_data[i] = m_func(m_data[i << 1], m_data[i << 1 ^ 1]);
+    void update(size_t x,const size_t& v) {
+      data[n + x] = v;
+      for(size_t i = (n + x) >> 1; i; i >>= 1)
+        data[i] = func(data[i << 1], data[i << 1 ^ 1]);
     }
 
-    // member variable.
-    std::vector<_Tp> m_data;
-    size_type m_size;
-    const _Op m_func;
+  private :
+    std::vector<T> data;
+    size_t n;
+    const F func;
   };
 } // namespace csl
-
 #endif /* SEG_TREE_H_ */

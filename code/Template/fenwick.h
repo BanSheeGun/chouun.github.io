@@ -27,7 +27,7 @@ namespace csl {
     inline void build(size_type p_size) {
       data.assign(p_size + 1, 0);
     }
-    void build(const value_type* p_data,size_type p_size) {
+    void build(const value_type* p_data, size_type p_size) {
       data.resize(p_size + 1);
       for(int i = 1; i <= p_size; ++i)
         data[i] = p_data[i - 1];
@@ -39,7 +39,7 @@ namespace csl {
       return data.size();
     }
 
-    value_type query(size_type __x,value_type __res = value_type()) const {
+    value_type query(size_type __x, value_type __res = value_type()) const {
       for(; __x > 0; __x -= lowbit(__x))
         __res = func(__res, data[__x]);
       return __res;

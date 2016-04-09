@@ -2,7 +2,7 @@
 // Copyright : fateud.com
 
 #ifndef GEOMETRY_H_
-#define GEOMETRY_H_ 20150924L
+#define GEOMETRY_H_ 20160331L
 
 #include <algorithm>
 #include <vector>
@@ -62,23 +62,22 @@
 namespace csl {
   // 点
   struct point {
-    point(double __x = 0,double __y = 0) :
+    point(double __x = 0, double __y = 0) :
         x(__x), y(__y) {
     }
 
-    double x;
-    double y;
+    double x, y;
   };
 
-  point operator -(const point& a,const point& b) {
+  point operator - (const point& a,const point& b) {
     return point(a.x - b.x, a.y - b.y);
   }
 
-  double operator ^(const point& a,const point& b) {
+  double operator ^ (const point& a,const point& b) {
     return a.x * b.y - a.y * b.x;
   }
 
-  double operator *(const point& a,const point& b) {
+  double operator * (const point& a,const point& b) {
     return a.x * b.x + a.y * b.y;
   }
 

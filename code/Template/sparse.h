@@ -3,10 +3,13 @@
 #ifndef SPARSE_H_
 #define SPARSE_H_ 20151124L
 #include <vector>
+using std::size_t;
+
 #ifndef CSL_ALGO_H_
 #pragma message("need : csl_algo.h");
 #include <csl_algo.h>
 #endif
+
 namespace csl {
   static std::vector<std::size_t> msb(2, 0);
   void msb_build(std::size_t p_data) {
@@ -14,39 +17,39 @@ namespace csl {
       msb.push_back(t += !(i & (i - 1)));
   }
 
-  template<typename _Tp,typename _Compare = csl::min<_Tp>>
+  template<typename T, typename F = csl::min<T>>
   class sparse_table {
   public:
-    typedef std::size_t size_type;
-
-    sparse_table(const _Compare& p_comp = _Compare()) :
-        m_data(), m_comp(p_comp) {
+    sparse_table() :
+        data(), func() {
     }
 
-    void clear() {
-      m_data.clear();
-    }
-    size_type size() const {
-      return m_data.empty() ? 0 : m_data.at(0).size();
+    inline void clear() {
+      data.clear();
     }
 
-    _Tp query(size_type first,size_type last) const {
-      size_type k = csl::msb[last - first + 1];
-      return m_comp(m_data[k][first], m_data[k][last + 1 - (1 << k)]);
+    inline size_t size() const {
+      return data.empty() ? 0 : data.at(0).size();
     }
-    void build(_Tp* p_data,size_type p_size) {
-      msb_build(p_size);
-      m_data.clear();
-      m_data.push_back(std::vector<_Tp>(p_data, p_data + p_size));
-      for(size_type k = 1, d = 2, t = 1; d <= p_size; ++k, d <<= 1, t <<= 1) {
-        m_data.push_back(std::vector<_Tp>(p_size - d + 1));
-        for(size_type i = 0, j = p_size + 1 - d; i < j; ++i)
-          m_data[k][i] = m_comp(m_data[k - 1][i], m_data[k - 1][i + t]);
+
+    inline T query(size_t first, size_t last) const {
+      size_t k = csl::msb[last-first+1];
+      return func(data[k][first], data[k][last+1-(1<<k)]);
+    }
+
+    void build(T* s, size_t n) {
+      msb_build(n), data.clear();
+      data.push_back(std::vector<T>(s, s+n));
+      for(size_t k = 1, d = 2, t = 1; d <= n; ++k, d <<= 1, t <<= 1) {
+        data.push_back(std::vector<T>(n-d+1));
+        for(size_t i = 0, j = n+1-d; i < j; ++i)
+          data[k][i] = func(data[k-1][i], data[k-1][i+t]);
       }
     }
+
   private:
-    std::vector<std::vector<_Tp>> m_data;
-    _Compare m_comp;
+    std::vector<std::vector<T>> data;
+    const F func;
   };
 } // namespace csl
 #endif /* SPARSE_H_ */

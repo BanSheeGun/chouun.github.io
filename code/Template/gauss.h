@@ -2,7 +2,7 @@
 // Copyright : fateud.com
 
 #ifndef GAUSS_H_
-#define GAUSS_H_ 20151011L
+#define GAUSS_H_ 20151229L
 
 #include <vector>
 
@@ -18,10 +18,10 @@
 
 namespace csl {
   // for matrix of normal type
-  template<typename _Tp>
+  template<typename T>
   class gauss {
   public:
-    typedef _Tp value_type;
+    typedef T value_type;
     typedef int size_type;
 
     size_type dim;
