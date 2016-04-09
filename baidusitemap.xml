@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+  <url>
+    <loc>http://fateud.com/note-math/</loc>
+    <lastmod>2016-04-09T10:49:48.374Z</lastmod>
+    <data>
+        <display>
+        <title>殘龍的數學筆記</title>
+        <pubTime>2016-04-09T10:49:48.374Z</pubTime>
+        
+        <tag>數論 </tag>
+         
+        <tag>遞推 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-nsww/</loc>
+    <lastmod>2016-04-09T10:45:20.441Z</lastmod>
+    <data>
+        <display>
+        <title>由《從內聖到外王》引發的思考</title>
+        <pubTime>2016-03-01T14:03:41.000Z</pubTime>
+        
+        <tag>內聖外王 </tag>
+         
+         
+           
+             
+              <breadCrumb title="雜記" url="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-lnpfp/</loc>
+    <lastmod>2016-03-01T13:41:38.708Z</lastmod>
+    <data>
+        <display>
+        <title>《狱中书简》章五《关于愚蠢》摘录</title>
+        <pubTime>2016-01-30T08:51:35.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="摘抄" url="http://fateud.com/categories/%E6%91%98%E6%8A%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://fateud.com/note-hexo/</loc>
+    <lastmod>2016-01-29T13:15:41.869Z</lastmod>
+    <data>
+        <display>
+        <title>Hello Hexo</title>
+        <pubTime>2016-01-29T13:15:41.869Z</pubTime>
+        
+        <tag>blog </tag>
+         
+        <tag>github </tag>
+         
+        <tag>hexo </tag>
+         
+        <tag>markdown </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://fateud.com/note-excerpt/</loc>
+    <lastmod>2016-01-14T09:55:36.179Z</lastmod>
+    <data>
+        <display>
+        <title>每日一摘</title>
+        <pubTime>2016-01-14T09:55:36.179Z</pubTime>
+        
+        <tag>摘錄 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://fateud.com/zucc2015-newtrials/</loc>
+    <lastmod>2015-12-24T13:37:01.286Z</lastmod>
+    <data>
+        <display>
+        <title>ZUCC2015新生选拔赛</title>
+        <pubTime>2015-12-20T14:44:50.000Z</pubTime>
+        
+        <tag>ZUCC </tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://fateud.com/code-template/</loc>
+    <lastmod>2015-12-22T10:10:35.856Z</lastmod>
+    <data>
+        <display>
+        <title>代码模板（长期更新）</title>
+        <pubTime>2015-12-22T10:10:35.856Z</pubTime>
+        
+        <tag>bestcoder </tag>
+         
+        <tag>codeforces </tag>
+         
+        <tag>template </tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-antifascism/</loc>
+    <lastmod>2015-12-20T14:44:56.644Z</lastmod>
+    <data>
+        <display>
+        <title>紀念世界反法西斯戰爭勝利70週年閱兵式</title>
+        <pubTime>2015-09-03T04:27:40.000Z</pubTime>
+        
+        <tag>反法西斯 </tag>
+         
+        <tag>木村成彥 </tag>
+         
+        <tag>西決 </tag>
+         
+        <tag>閱兵 </tag>
+         
+         
+           
+             
+              <breadCrumb title="雜記" url="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-vpn/</loc>
+    <lastmod>2015-12-20T01:44:17.215Z</lastmod>
+    <data>
+        <display>
+        <title>架設一個L2TP協議的簡易vpn</title>
+        <pubTime>2015-12-20T01:44:17.215Z</pubTime>
+        
+        <tag>L2TP </tag>
+         
+        <tag>vpn </tag>
+         
+        <tag>網絡 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-lua/</loc>
+    <lastmod>2015-11-05T13:45:54.959Z</lastmod>
+    <data>
+        <display>
+        <title>Lua學習筆記</title>
+        <pubTime>2015-11-05T13:45:54.959Z</pubTime>
+        
+        <tag>Lua </tag>
+         
+        <tag>編程語言 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/icpc2015-ccos/</loc>
+    <lastmod>2015-10-20T14:21:59.370Z</lastmod>
+    <data>
+        <display>
+        <title>2015 ACM/ICPC Asia Regional Changchun OnSite</title>
+        <pubTime>2015-10-17T02:59:08.000Z</pubTime>
+        
+        <tag>現場賽 </tag>
+         
+        <tag>長春賽區 </tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://fateud.com/note-turtle/</loc>
+    <lastmod>2015-10-11T05:16:29.429Z</lastmod>
+    <data>
+        <display>
+        <title>不存在上帝，因而人類沒有救贖</title>
+        <pubTime>2015-08-23T05:44:14.000Z</pubTime>
+        
+        <tag>人性 </tag>
+         
+         
+           
+             
+              <breadCrumb title="雜記" url="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/astar2015-round2a/</loc>
+    <lastmod>2015-09-25T17:49:01.227Z</lastmod>
+    <data>
+        <display>
+        <title>2015 Astar Contest - Round 2A</title>
+        <pubTime>2015-09-25T16:23:50.000Z</pubTime>
+        
+        <tag>百度之星 </tag>
+         
+        <tag>網絡賽 </tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/icpc2015-ccol/</loc>
+    <lastmod>2015-09-19T17:18:33.408Z</lastmod>
+    <data>
+        <display>
+        <title>2015 ACM/ICPC Asia Regional Changchun Online</title>
+        <pubTime>2015-09-18T12:29:30.000Z</pubTime>
+        
+        <tag>網絡賽 </tag>
+         
+        <tag>長春賽區 </tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM/ICPC" url="http://fateud.com/categories/ACM-ICPC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://fateud.com/note-pearl/</loc>
+    <lastmod>2015-09-08T23:43:27.899Z</lastmod>
+    <data>
+        <display>
+        <title>餘姚珠璣</title>
+        <pubTime>2015-08-03T04:03:41.000Z</pubTime>
+        
+        <tag>方音 </tag>
+         
+        <tag>語言學 </tag>
+         
+        <tag>音韻學 </tag>
+         
+        <tag>餘姚 </tag>
+         
+         
+           
+             
+              <breadCrumb title="筆記" url="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://fateud.com/note-leave/</loc>
+    <lastmod>2015-08-28T13:50:50.915Z</lastmod>
+    <data>
+        <display>
+        <title>亡语</title>
+        <pubTime>2015-04-13T07:36:26.000Z</pubTime>
+        
+        <tag>伤离别 </tag>
+         
+         
+           
+             
+              <breadCrumb title="雜記" url="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+</urlset>
