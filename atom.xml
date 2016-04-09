@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2016-01-30T09:05:51.449Z</updated>
+  <updated>2016-03-12T06:16:56.651Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -16,12 +16,130 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[殘龍的數學筆記]]></title>
+    <link href="http://fateud.com/note-math/"/>
+    <id>http://fateud.com/note-math/</id>
+    <published>2016-03-12T06:16:56.651Z</published>
+    <updated>2016-03-12T06:16:56.651Z</updated>
+    <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
+<a id="more"></a>
+<h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
+<h4 id="歐幾里德算法">歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euclidean_algorithm</a></p>
+<p>$ \begin{eqnarray} gcd(a,b) = \begin{cases}<br>a,                  &amp; b = 0 \cr<br>gcd(b, a \bmod b), &amp; otherwise<br>\end{cases} \end{eqnarray} $</p>
+<p>令 $ r = gcd(a,b) $<br>則 $ r \mid a, r \mid b $<br>故 $ r \mid (a - b) $<br>引 $ r \mid (a - kb)<br>\Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b)<br>\Rightarrow r \mid (a \bmod b) $<br>故 $ gcd(a,b) \equiv gcd(b, a \bmod b) $</p>
+<h4 id="擴展歐幾里德算法">擴展歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a></p>
+<p>若 $ a, b, gcd(a,b) = 1 $，求 $ax + by = 1$</p>
+<h3 id="乘法逆元">乘法逆元</h3><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
+<h4 id="费马小定理">费马小定理</h4><p><a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Fermat%27s_little_theorem</a></p>
+<p>若 $p$ 是素數，$a$ 是正整數，則：$a^p \equiv a \pmod{p}$。<br>若 $p$ 是素數，$a$ 是正整數且不能被 $p$ 整除，則：$a^{p-1} \equiv 1 \pmod{p}$。</p>
+<h4 id="歐拉定理">歐拉定理</h4><p><a href="https://en.wikipedia.org/wiki/Euler%27s_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euler%27s_theorem</a></p>
+<p>若 $gcd(p, a)$ = 1，則：$a^{\phi(p)} \equiv 1 \pmod{p}$。$\phi(n)$ 是<a href="#歐拉函數">歐拉函數</a>。</p>
+<h4 id="逆元定義">逆元定義</h4><p>若 $ax \equiv 1 \pmod{p}$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x \pmod{p}$。</p>
+<p>接下來講實踐中的三個小trick。</p>
+<h4 id="編程技巧">編程技巧</h4><p>Q：教練，我不想求逆元！<br>A：可以通過以下性質來避開。</p>
+<p>若 $b | a$，則：$\frac{a}{b} \bmod p = \frac{a \bmod pb}{b}$</p>
+<p>證明：<br>$ \begin{align*}<br> &amp; \because \frac{a}{b} \equiv y \pmod{p} \\<br> &amp; \Rightarrow \frac{a}{b} = px + y \\<br> &amp; \Rightarrow a = pbx + by \\<br> &amp; \Rightarrow a \bmod pb = by \\<br> &amp; \Rightarrow \frac{a \bmod pb}{b} = y \\<br> &amp; \therefore \frac{a}{b} \bmod p = \frac{a \bmod pb}{b} \\<br>\end{align*} $</p>
+<p>Q：如何對 $1!$ 到 $p-1!$ 的逆元高效打表？<br>A：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fac[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; p; ++i) fac[i] = fac[i-<span class="number">1</span>] * i;</span><br><span class="line">inv[p-<span class="number">1</span>] = getinv(fac[p-<span class="number">1</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; p; ++i) inv[i-<span class="number">1</span>] = inv[i] * i;</span><br></pre></td></tr></table></figure></p>
+<p>Q：那 $1$ 到 $p-1$ 不能這樣玩啊！<br>A：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; p; ++i) inv[i] = (p - p / i) * inv[p % i] % p;</span><br></pre></td></tr></table></figure></p>
+<p>證明：<br>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 \pmod{p}$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$<br>所以 $x = (p-b) / a = -b / a \pmod{p}$，$inv(x) = -a/b = -a \cdot inv(b) \pmod{p}$</p>
+<h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
+<p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} \pmod{m_{i}} $，求 $ S $</p>
+<p>先看 $ S \equiv a_{i} \pmod{m_{i}} $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 \pmod{m_{i}} $，$ \forall j \neq i, M_{i}x \equiv 0 \pmod{m_{j}} $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} \pmod{m_{i}} $，$ S \equiv \sum a_{i}M_{i}x_{i} \pmod{M}$。<br>本質即求出對於 $m_{i}$ 相互獨立的各項 $ a_{i}M_{i}x_{i}$，然後對其進行合併即可。</p>
+<p>一種巧妙的實現：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BigInt <span class="keyword">M</span> = <span class="keyword">m</span>[0], R = a[0];</span><br><span class="line">rep(i, 1, <span class="keyword">n</span>) &#123;</span><br><span class="line">  BigInt mi = <span class="keyword">m</span>[i], ri = a[i];</span><br><span class="line">  BigInt <span class="keyword">g</span> = csl::gcd(<span class="keyword">M</span>, mi);</span><br><span class="line">  <span class="keyword">if</span> ((R - ri) % <span class="keyword">g</span> != 0) &#123; cout &lt;&lt; <span class="string">"Impossible"</span> &lt;&lt; endl; <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="keyword">if</span> (csl::gcd(<span class="keyword">M</span> / <span class="keyword">g</span>, <span class="keyword">g</span>) == 1) <span class="keyword">M</span> /= <span class="keyword">g</span>; <span class="keyword">else</span> mi /= <span class="keyword">g</span>;</span><br><span class="line">  R = R * mi * csl::<span class="literal">inv</span>(mi, <span class="keyword">M</span>) + ri * <span class="keyword">M</span> * csl::<span class="literal">inv</span>(<span class="keyword">M</span>, mi);</span><br><span class="line">  <span class="keyword">M</span> *= mi, R %= <span class="keyword">M</span>;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; R &lt;&lt; endl;</span><br></pre></td></tr></table></figure></p>
+<h3 id="容斥原理">容斥原理</h3><p><a href="https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle" target="_blank" rel="external">https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle</a></p>
+<p>這部分內容姑且放在反演的前面，給讀者壓壓驚。<br>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。</p>
+<p>定義：<br>$ g(A) = \sum\limits_{S : S \subseteq A} f(S) $<br>$ f(A) = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) $</p>
+<p>證明：<br>$ \begin{align*}<br> &amp; \because g(A) = \sum\limits_{S : S \subseteq A} f(S) \\<br> &amp; \therefore \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) \\<br> &amp; = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} \sum\limits_{T : T \subseteq S} f(T) \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{R : R \subseteq A - T} (-1)^{|R|} \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{k = 0}^{|A - T|} \binom{|A - T|}{k} (-1)^k \\<br> &amp; = \sum\limits_{T : T \subsetneqq A} f(T) (1 + (-1))^{|A - T|} + \sum\limits_{T : T \subseteqq A} f(T) (-1)^0 \\<br> &amp; = 0 + f(A) = f(A) \\<br>\end{align*} $</p>
+<h3 id="積性函數">積性函數</h3><p><a href="https://en.wikipedia.org/wiki/Multiplicative_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_function</a></p>
+<p>定義：<br>$ f(1) = 1 $ 且 $ \forall gcd(a,b) = 1, f(ab) = f(a) f(b) $<br>當 $ \forall a,b $ 都滿足 $ f(ab) = f(a) f(b) $ 時，稱爲<a href="https://en.wikipedia.org/wiki/Completely_multiplicative_function" target="_blank" rel="external">完全積性函數</a>。</p>
+<ul>
+<li>$ Id_{k}(n) $ : $ Id_{k}(n) = n^k $ 完全積性<ul>
+<li>$k = 0$ 時，有 $ 1(n) = 1 $</li>
+<li>$k = 1$ 時，有 $ Id(n) = n $</li>
+</ul>
+</li>
+<li>$ \epsilon(n) $ : $ \epsilon(n) = \begin{cases} 1, &amp; n = 1 \cr 0, &amp; \text{otherwise} \end{cases} $</li>
+</ul>
+<h4 id="狄利克雷卷積">狄利克雷卷積</h4><p><a href="https://en.wikipedia.org/wiki/Dirichlet_convolution" target="_blank" rel="external">https://en.wikipedia.org/wiki/Dirichlet_convolution</a></p>
+<p>定義：<br>$ (f * g)(n) = \sum\limits_{d|n} f(d)g(\frac{n}{d}) $</p>
+<ul>
+<li>交換律：$ f * g = g * f $</li>
+<li>結合律：$ (f * g) * h = f * (g * h) $</li>
+<li>分配率：$ f * (g * h) = f * g + f * h $</li>
+<li>$ f = f * \epsilon = \epsilon * f $</li>
+<li>$ f * f^{-1} = \epsilon $</li>
+<li>$ f^{-1}(n) = \frac{-1}{f(1)}\sum\limits_{d|n,n \neq d} f(\frac{n}{d}) f^{-1}(d) $</li>
+</ul>
+<h4 id="歐拉函數">歐拉函數</h4><p><a href="https://en.wikipedia.org/wiki/Euler%27s_totient_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euler%27s_totient_function</a></p>
+<p>一般用 $ phi(n) $ 或者 $ \phi(n) $ 表示，是個不完全積性函數。</p>
+<p>若 $ n = \prod\limits_{i = 1}^{m} p_i^{k_i} $，<br>則 $ \phi(n) = n \prod\limits_{i = 1}^{m} (1 - \frac{1}{p_i}) $</p>
+<h4 id="莫比烏斯函數">莫比烏斯函數</h4><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_function</a></p>
+<p>一般用 $ mu(n) $ 或者 $ \mu(n) $ 表示，是個不完全積性函數。</p>
+<p>若 $ n = \prod\limits_{i = 1}^{m} p_i^{k_i} $，<br>則 $ \mu(n) = \begin{cases}<br>1,      &amp; n = 1 \cr<br>0,      &amp; \exists k_i &gt; 1 \cr<br>(-1)^m, &amp; \text{otherwise}<br>\end{cases} $</p>
+<h3 id="反演公式">反演公式</h3><h4 id="莫比烏斯反演">莫比烏斯反演</h4><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula</a></p>
+<p>$ \sum\limits_{d|n} \phi(d) = Id(n) \Rightarrow \phi * 1 = Id $<br>$ \sum\limits_{d|n} \mu(d) = \epsilon(n) \Rightarrow \mu * 1 = \epsilon $</p>
+<p>$ \begin{align*}<br> &amp; \because \mu * 1 = \epsilon \\<br> &amp; \therefore \phi(n) \\<br> &amp; = \sum\limits_{i = 1}^{n} \epsilon(gcd(i,n)) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | gcd(i,n)} \mu(d) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | i \wedge d | n} \mu(d) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \frac{n}{d} \\<br> &amp; = (\mu * Id)(n)<br>\end{align*} $</p>
+<p>按這思路，顯然得證 $ \sum\limits_{i = 1}^{n} i \cdot \epsilon(gcd(i,n)) = \frac{n}{2} (\mu * 1 + \mu * Id)(n) = \frac{n}{2} (\epsilon + \phi)(n) $，即[1,n]中與n互質的數之和。<br>[2015.12.03] 顺便补充下平方和的结论： $ \sum\limits_{i = 1}^{n} i^2 \cdot \epsilon(gcd(i,n)) = \frac{n^2}{3} \phi(n) + \frac{n^2}{2} \epsilon(n) + \frac{n}{6} \sum\limits_{d | n} \mu(d) d $</p>
+<p>如 $ \phi * 1 = Id $，$ \mu * Id = \phi $；<br>又 $ \epsilon * 1 = 1 $，$ \mu * 1 = \epsilon $；<br>顯然能得出莫比烏斯反演公式 $ f * 1 = F $，$ \mu * F = f $<br>亦可以寫作：<br>$ F(n) = \sum\limits_{d | n} f(d) $<br>$ f(n) = \sum\limits_{d | n} \mu(\frac{n}{d}) F(d) $</p>
+<p>證明：<br>$ \begin{align*}<br> &amp; \because f * 1 = F \\<br> &amp; \therefore (\mu * F)(n) \\<br> &amp; = \sum\limits_{d | n} \mu(d) F(\frac{n}{d}) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \sum\limits_{d’ | \frac{n}{d}} f(d’) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \sum\limits_{d | \frac{n}{d’}} \mu(d) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \epsilon(frac{n}{d’}) \\<br> &amp; = f(n)<br>\end{align*} $</p>
+<h4 id="二項式反演">二項式反演</h4><p>對於 $ 0 ^ n $ 的二項式展開：<br>$ \sum\limits_{i = 0}^{n} (-1)^i \binom{n}{i} = (1 + (-1))^{n} $<br>然後是個組合數學的小trick：<br>$ \binom{n}{i} \binom{i}{k} = \frac{n!}{(n-i)!} \frac{1}{k!(i-k)!} = \frac{n!}{k!(n-k)!} \frac{(n-k)!}{(n-i)!(i-k)!} = \binom{n}{k} \binom{n-k}{i-k} $</p>
+<p>既然都這樣惹，再隨便推導下二項式的反演吧。<br>$ \begin{align*}<br> &amp; \because F(n) = \sum\limits_{i = 0}^{n} \binom{n}{k} f(i) \\<br> &amp; \therefore \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} F(i) \\<br> &amp; = \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} \sum\limits_{k = 0}^{i} \binom{i}{k} f(k) \\<br> &amp; = \sum\limits_{k = 0}^{n} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n}{i} \binom{i}{k} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n-k}{n-i} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) (1 + (-1))^{n - k} \\<br> &amp; = 0 + f(n) = f(n)<br>\end{align*} $</p>
+<h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
+<h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = p x + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
+<h3 id="(a+√b)^n">(a+√b)^n</h3><p>$ S_{n} = \lceil (a + \sqrt{b}) ^ {n} \rceil $<br>構造 $ (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ \because 0 &lt; a - \sqrt{b} &lt; 1 $，<br>且二項式展開、合併同類項後，只可能有 $ \sqrt{b} ^ {2i} = b ^ i $<br>$ \therefore S_{n} = (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ S_{n} ⋅ ((a + \sqrt{b}) + (a - \sqrt{b})) $<br>$ =<br>(a + \sqrt{b}) ^ {n+1} +<br>(a - \sqrt{b}) ^ {n+1} +<br>(a + \sqrt{b}) (a - \sqrt{b}) ((a + \sqrt{b}) ^ {n-1} + (a - \sqrt{b}) ^ {n-1}) $<br>$ = S_{n+1} + (a ^ 2 - b) S_{n-1} $<br>移項得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
+<p>也可以直接構造上一節 “a[n] = p⋅a[n-1] + q⋅a[n-2]” 的形式，<br>特徵根 $ a - \sqrt{b}, a + \sqrt{b} $，$ p = 2a, q = b - a ^ 2 $<br>輕鬆得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
+<h2 id="浮點">浮點</h2><h3 id="卡翰求和算法">卡翰求和算法</h3><p><a href="https://en.wikipedia.org/wiki/Kahan_summation_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Kahan_summation_algorithm</a></p>
+<p>對浮點序列求 $ \sum a_i $ 減小過程中的誤差</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="title">KahanSum</span><span class="params">(input)</span></span></span><br><span class="line">  <span class="tag">var</span> sum = <span class="number">0.0</span></span><br><span class="line">  <span class="tag">var</span> c = <span class="number">0.0</span></span><br><span class="line">  <span class="keyword">for</span> <span class="tag">i</span> = <span class="number">1</span> to <span class="tag">input</span><span class="class">.length</span> do</span><br><span class="line">    <span class="tag">var</span> y = <span class="tag">input</span>[i] - c</span><br><span class="line">    <span class="tag">var</span> t = sum + y</span><br><span class="line">    c = (t - sum) - y</span><br><span class="line">    sum = t</span><br><span class="line">  return sum</span><br></pre></td></tr></table></figure>
+<h3 id="牛頓迭代法">牛頓迭代法</h3><p>牛頓迭代法（Newton Method）：<a href="https://en.wikipedia.org/wiki/Newton%27s_method" target="_blank" rel="external">https://en.wikipedia.org/wiki/Newton%27s_method</a></p>
+<p>對 $ \sqrt{S} $ 構造 $ f(x) = x ^ 2 - S = 0 $<br>有 $ x_{n+1}<br>= x_{n} - \frac{ f(x_{n}) }{ f’(x_{n}) }<br>= x_{n} - \frac{ x_{n}^{2} - S }{ 2x_{n} }<br>= \frac{1}{2} (x_{n} + \frac{S}{x_{n}}) $</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>]]>
+    
+    </summary>
+    
+      <category term="數論" scheme="http://fateud.com/tags/%E6%95%B8%E8%AB%96/"/>
+    
+      <category term="遞推" scheme="http://fateud.com/tags/%E9%81%9E%E6%8E%A8/"/>
+    
+      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[由<從內聖到外王》引發的思考]]></title>
+    <link href="http://fateud.com/note-nsww/"/>
+    <id>http://fateud.com/note-nsww/</id>
+    <published>2016-03-01T14:03:41.000Z</published>
+    <updated>2016-03-01T14:33:03.634Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>上學期末，有幸搶到了楊海峯老師的公選課《從內聖到外王》；今天是第一堂課，我覺得不虛此行。<br>順便附上：生生學堂(<a href="http://sssch.net/" target="_blank" rel="external">http://sssch.net/</a>)是楊老師創辦的一個公益學習平臺。</p>
+<a id="more"></a>
+<h2 id="梗概">梗概</h2><p>楊老師並非聖賢，正如他所言，只是一個活生生的人。但他敢於把某些事情擺到檯面上來談論，而其他的人不外乎瞎子、鴕鳥，以及既得利益者。我很慶幸，因爲他所提及的話題，與我以前的瞎想，不謀而合。雖然對於個人與整體的問題上，我對他的看法不以爲然。</p>
+<h2 id="對於學問">對於學問</h2><p>誠然，中國古代文化，並非那些膚淺的條條框框，它隱藏而躍動在古書的字裏行間。<br>而我們的教育，則是給了你一把鑰匙，打開新世界的大門；而不是大多數人所臆測的，諸如“詰屈聱牙就是古人的文化”。<br>平心而論，若連古文、古語都不懂，又有甚麼資格妄自揣測古代文化，得到的結論只是夜郎自大式的笑料罷了。<br>中國的民科，異常喜歡引經據典。甚麼經？山海經！愈是光怪陸離，愈發獲得他們的鍾愛。在他們眼裏，大衆便是他們愚弄的對象，而古書就是他們作惡的工具。這對古典文化無疑產生了惡劣的影響，但我犯不着跟民科慪氣，何必自降身段？</p>
+<h2 id="對於教育">對於教育</h2><p>我一向討論機械性的重複動作，這次楊老師也提及了這個名詞。我覺得這極端扼殺一個人的天性與天賦。<br>由此可見，縱使我們經歷了改革開放，思想的桎梏仍然不減，只是改頭換面換個土壤繼續滋生；然而十年文革，反而令殘存的道德與血氣都消失殆盡了。<br>我們的教育是基礎性的教育，這爲大類的學科奠定了基礎。或許是實施的過程中有所偏差，現實是成爲了死板的考試。而我一直想詬病的，則是很多學科並不存在於他們的視界中，也沒更沒有啓蒙的意向。例如古代的“小學”，是教人知文識字的，更要講述字形的來源與讀音的變遷，而不是強制推行的千篇一律的簡化字、普通話，並壓制地方文化的發展。</p>
+<h2 id="對於選擇">對於選擇</h2><p>回實驗室的路上，我就在思索，是什麼壓彎了我們的腰。<br>我跟楠提過一句：“改變這種東西，本身就是內源性的。就算你是被強迫的，你爲什麼不去反抗？你失去反抗勇氣的一刻，就是默許了接受。”<br>而我想做的，無非掛羊頭賣狗肉，應付了事。我爲此付出了代價，來到了這並不算好的學校，這也是我的選擇。<br>遊離在邊緣，在夾縫中尋找，大概是我如今處境的最好寫照。</p>
+<h2 id="後話">後話</h2><p>我打“楊老師”三字時，誤鍵入爲“楊老司機”。<br>不過想來他是不會在意的。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p>上學期末，有幸搶到了楊海峯老師的公選課《從內聖到外王》；今天是第一堂課，我覺得不虛此行。<br>順便附上：生生學堂(<a href="http://sssch.net/">http://sssch.net/</a>)是楊老師創辦的一個公益學習平臺。</p>]]>
+    
+    </summary>
+    
+      <category term="內聖外王" scheme="http://fateud.com/tags/%E5%85%A7%E8%81%96%E5%A4%96%E7%8E%8B/"/>
+    
+      <category term="雜記" scheme="http://fateud.com/categories/%E9%9B%9C%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[《狱中书简》章五《关于愚蠢》摘录]]></title>
     <link href="http://fateud.com/note-lnpfp/"/>
     <id>http://fateud.com/note-lnpfp/</id>
     <published>2016-01-30T08:51:35.000Z</published>
-    <updated>2016-01-30T09:05:51.449Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">狱中书简</span><br><span class="line"><span class="attr_selector">[德]</span> 迪特里希·朋霍费尔 著</span><br></pre></td></tr></table></figure>
+    <updated>2016-03-01T13:41:38.708Z</updated>
+    <content type="html"><![CDATA[<p>狱中书简<br>[德] 迪特里希·朋霍费尔 著</p>
+<a id="more"></a>
 <blockquote><p>……对于善来说，愚蠢是比恶意更加危险的敌人。你可以抵抗恶意，你可以揭下它的面具，或者凭借力量来防止它。恶意总是包含着它自身毁灭的种子，因为它总是使人不舒服，假如不是更糟的话。然而面对愚蠢，根本无法防卫。要反对愚蠢，抵抗和力量都无济于事，愚蠢根本不服从理性。假如事实与一己的偏见相左，那就不必相信事实，假如那些事实无法否认，那就可以把它们干脆作为例外推开不理。所以同恶棍相比，蠢人总是自鸣得意。而且他很容易变成危险，因为要使他挥拳出击，那是易如反掌的。所以，比起恶意来，愚蠢需要加倍小心地对付。<strong>我们不要再三努力同蠢人论理，因为那既无用又危险</strong>。</p>
 <p>……要恰当地对待愚蠢，认识它的本来面目是必不可少的。十分肯定的是，<strong>愚蠢是一种道德上的缺陷，而不是一种理智上的缺陷</strong>。有些人智力高超，但却是蠢人，还有些人智力低下，但绝非蠢人，作为某些特定环境的产物，我们惊讶地发现了这种情况。我们得到的印象是：愚蠢是养成的，而不是天生的；愚蠢是在这样一些环境中养成的，在这种环境下，人们把自己弄成蠢人，或者允许别人把自己弄成蠢人。我们还进一步注意到，比起不善交际或孤寂独处的人来，在倾向于或注定要群居或交往的个人或团体当中，愚蠢要普遍得多。由此看来，愚蠢是一个社会学问题，而不是一个心理学问题。</p>
 <p>……然而正是在这个方面，我们意识到，<strong>蠢人不可能靠教育来拯救</strong>。他所需要的是救赎，此外别无他法。迄今为止，企图用理性论证去说服他，丝毫没有用处。在这种事态中，我们可以完全明白，为什么试图去发现“人民”真的在想什么是徒劳无益的，为什么这个问题对于负责地思考和行动的人来说也完全多余。正如《圣经》所言：“对上帝的畏惧，就是智慧的开端。”换言之，治疗愚蠢的唯一办法，是灵性上的救赎，因为唯有这样，才能使一个人像上帝眼中负责任的人那样生活。</p>
@@ -29,8 +147,11 @@
 <footer><strong>《狱中书简》章五《关于愚蠢》</strong><cite><a href="http://read.jd.com/8368/409929.html" target="_blank" rel="external">read.jd.com/8368/409929.html</a></cite></footer></blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><t]]>
+    <![CDATA[<p>狱中书简<br>[德] 迪特里希·朋霍费尔 著</p>]]>
+    
     </summary>
+    
+      <category term="摘抄" scheme="http://fateud.com/categories/%E6%91%98%E6%8A%84/"/>
     
   </entry>
   
@@ -351,97 +472,6 @@
       <category term="ZUCC" scheme="http://fateud.com/tags/ZUCC/"/>
     
       <category term="ACM/ICPC" scheme="http://fateud.com/categories/ACM-ICPC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[殘龍的數學筆記]]></title>
-    <link href="http://fateud.com/note-math/"/>
-    <id>http://fateud.com/note-math/</id>
-    <published>2015-12-20T01:44:33.783Z</published>
-    <updated>2015-12-20T01:44:33.783Z</updated>
-    <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
-<a id="more"></a>
-<h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
-<h4 id="歐幾里德算法">歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euclidean_algorithm</a></p>
-<p>$ \begin{eqnarray} gcd(a,b) = \begin{cases}<br>a,                  &amp; b = 0 \cr<br>gcd(b, a \bmod b), &amp; otherwise<br>\end{cases} \end{eqnarray} $</p>
-<p>令 $ r = gcd(a,b) $<br>則 $ r \mid a, r \mid b $<br>故 $ r \mid (a - b) $<br>引 $ r \mid (a - kb)<br>\Rightarrow r \mid (a - \lfloor \frac{a}{b} \rfloor b)<br>\Rightarrow r \mid (a \bmod b) $<br>故 $ gcd(a,b) \equiv gcd(b, a \bmod b) $</p>
-<h4 id="擴展歐幾里德算法">擴展歐幾里德算法</h4><p><a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a></p>
-<p>若 $ a, b, gcd(a,b) = 1 $，求 $ax + by = 1$</p>
-<h3 id="乘法逆元">乘法逆元</h3><p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_inverse</a></p>
-<h4 id="费马小定理">费马小定理</h4><p><a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Fermat%27s_little_theorem</a></p>
-<p>若 $p$ 是素數，$a$ 是正整數，則：$a^p \equiv a \pmod{p}$。<br>若 $p$ 是素數，$a$ 是正整數且不能被 $p$ 整除，則：$a^{p-1} \equiv 1 \pmod{p}$。</p>
-<h4 id="歐拉定理">歐拉定理</h4><p><a href="https://en.wikipedia.org/wiki/Euler%27s_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euler%27s_theorem</a></p>
-<p>若 $gcd(p, a)$ = 1，則：$a^{\phi(p)} \equiv 1 \pmod{p}$。$\phi(n)$ 是<a href="#歐拉函數">歐拉函數</a>。</p>
-<h4 id="逆元定義">逆元定義</h4><p>若 $ax \equiv 1 \pmod{p}$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x \pmod{p}$。</p>
-<p>接下來講實踐中的三個小trick。</p>
-<h4 id="編程技巧">編程技巧</h4><p>Q：教練，我不想求逆元！<br>A：可以通過以下性質來避開。</p>
-<p>若 $b | a$，則：$\frac{a}{b} \bmod p = \frac{a \bmod pb}{b}$</p>
-<p>證明：<br>$ \begin{align*}<br> &amp; \because \frac{a}{b} \equiv y \pmod{p} \\<br> &amp; \Rightarrow \frac{a}{b} = px + y \\<br> &amp; \Rightarrow a = pbx + by \\<br> &amp; \Rightarrow a \bmod pb = by \\<br> &amp; \Rightarrow \frac{a \bmod pb}{b} = y \\<br> &amp; \therefore \frac{a}{b} \bmod p = \frac{a \bmod pb}{b} \\<br>\end{align*} $</p>
-<p>Q：如何對 $1!$ 到 $p-1!$ 的逆元高效打表？<br>A：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fac[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; p; ++i) fac[i] = fac[i-<span class="number">1</span>] * i;</span><br><span class="line">inv[p-<span class="number">1</span>] = getinv(fac[p-<span class="number">1</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; p; ++i) inv[i-<span class="number">1</span>] = inv[i] * i;</span><br></pre></td></tr></table></figure></p>
-<p>Q：那 $1$ 到 $p-1$ 不能這樣玩啊！<br>A：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; p; ++i) inv[i] = (p - p / i) * inv[p % i] % p;</span><br></pre></td></tr></table></figure></p>
-<p>證明：<br>對於 $x$ 的逆元 $inv(x)$，滿足 $ x \cdot inv(x) \equiv 1 \pmod{p}$<br>由於 $p = ax + b$，令 $a = \lfloor \frac{p}{x} \rfloor, b = p \bmod x$<br>所以 $x = (p-b) / a = -b / a \pmod{p}$，$inv(x) = -a/b = -a \cdot inv(b) \pmod{p}$</p>
-<h3 id="中國剩餘定理">中國剩餘定理</h3><p><a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Chinese_remainder_theorem</a></p>
-<p>已知 $ M = \prod m_{i} $，$ m_{i} \text{ is a prime number} $，$ S \equiv a_{i} \pmod{m_{i}} $，求 $ S $</p>
-<p>先看 $ S \equiv a_{i} \pmod{m_{i}} $ 可以轉化爲 $ S + m_{i}y = a_{i} $，這個公式仍然不利於求解<br>聯想到 $ ax + by = gcd(a, b) $ 的形式，可以用 <a href="#擴展歐幾里德算法">擴展歐幾里德</a> 搞一搞<br>不妨令 $ M_{i} = \frac{ M }{ m_{i} } $，構造 $ M_{i}x + m_{i}y = gcd(M_{i},  m_{i}) = 1 $<br>這樣搞的好處都有啥？ 誰說對了csy就給他（非金坷拉<br>化成 $ M_{i}x \equiv 1 \pmod{m_{i}} $，$ \forall j \neq i, M_{i}x \equiv 0 \pmod{m_{j}} $<br>顯然 $ x $ 是 $ M_{i} $ 關於 $ m_{i} $ 的逆元，發現並不一定要用 $ exgcd $，我們記爲 $ x_{i} $<br>那麼 $ a_{i}M_{i}x_{i} \equiv a_{i} \pmod{m_{i}} $，$ S \equiv \sum a_{i}M_{i}x_{i} \pmod{M}$。<br>本質即求出對於 $m_{i}$ 相互獨立的各項 $ a_{i}M_{i}x_{i}$，然後對其進行合併即可。</p>
-<h3 id="容斥原理">容斥原理</h3><p><a href="https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle" target="_blank" rel="external">https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle</a></p>
-<p>這部分內容姑且放在反演的前面，給讀者壓壓驚。<br>私以爲，這是組很美妙的公式，如同陰陽兩魚相互糾纏。</p>
-<p>定義：<br>$ g(A) = \sum\limits_{S : S \subseteq A} f(S) $<br>$ f(A) = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) $</p>
-<p>證明：<br>$ \begin{align*}<br> &amp; \because g(A) = \sum\limits_{S : S \subseteq A} f(S) \\<br> &amp; \therefore \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} g(S) \\<br> &amp; = \sum\limits_{S : S \subseteq A} (-1)^{|A| - |S|} \sum\limits_{T : T \subseteq S} f(T) \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{R : R \subseteq A - T} (-1)^{|R|} \\<br> &amp; = \sum\limits_{T : T \subseteq A} f(T) \sum\limits_{k = 0}^{|A - T|} \binom{|A - T|}{k} (-1)^k \\<br> &amp; = \sum\limits_{T : T \subsetneqq A} f(T) (1 + (-1))^{|A - T|} + \sum\limits_{T : T \subseteqq A} f(T) (-1)^0 \\<br> &amp; = 0 + f(A) = f(A) \\<br>\end{align*} $</p>
-<h3 id="積性函數">積性函數</h3><p><a href="https://en.wikipedia.org/wiki/Multiplicative_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/Multiplicative_function</a></p>
-<p>定義：<br>$ f(1) = 1 $ 且 $ \forall gcd(a,b) = 1, f(ab) = f(a) f(b) $<br>當 $ \forall a,b $ 都滿足 $ f(ab) = f(a) f(b) $ 時，稱爲<a href="https://en.wikipedia.org/wiki/Completely_multiplicative_function" target="_blank" rel="external">完全積性函數</a>。</p>
-<ul>
-<li>$ Id_{k}(n) $ : $ Id_{k}(n) = n^k $ 完全積性<ul>
-<li>$k = 0$ 時，有 $ 1(n) = 1 $</li>
-<li>$k = 1$ 時，有 $ Id(n) = n $</li>
-</ul>
-</li>
-<li>$ \epsilon(n) $ : $ \epsilon(n) = \begin{cases} 1, &amp; n = 1 \cr 0, &amp; \text{otherwise} \end{cases} $</li>
-</ul>
-<h4 id="狄利克雷卷積">狄利克雷卷積</h4><p><a href="https://en.wikipedia.org/wiki/Dirichlet_convolution" target="_blank" rel="external">https://en.wikipedia.org/wiki/Dirichlet_convolution</a></p>
-<p>定義：<br>$ (f * g)(n) = \sum\limits_{d|n} f(d)g(\frac{n}{d}) $</p>
-<ul>
-<li>交換律：$ f * g = g * f $</li>
-<li>結合律：$ (f * g) * h = f * (g * h) $</li>
-<li>分配率：$ f * (g * h) = f * g + f * h $</li>
-<li>$ f = f * \epsilon = \epsilon * f $</li>
-<li>$ f * f^{-1} = \epsilon $</li>
-<li>$ f^{-1}(n) = \frac{-1}{f(1)}\sum\limits_{d|n,n \neq d} f(\frac{n}{d}) f^{-1}(d) $</li>
-</ul>
-<h4 id="歐拉函數">歐拉函數</h4><p><a href="https://en.wikipedia.org/wiki/Euler%27s_totient_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euler%27s_totient_function</a></p>
-<p>一般用 $ phi(n) $ 或者 $ \phi(n) $ 表示，是個不完全積性函數。</p>
-<p>若 $ n = \prod\limits_{i = 1}^{m} p_i^{k_i} $，<br>則 $ \phi(n) = n \prod\limits_{i = 1}^{m} (1 - \frac{1}{p_i}) $</p>
-<h4 id="莫比烏斯函數">莫比烏斯函數</h4><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_function" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_function</a></p>
-<p>一般用 $ mu(n) $ 或者 $ \mu(n) $ 表示，是個不完全積性函數。</p>
-<p>若 $ n = \prod\limits_{i = 1}^{m} p_i^{k_i} $，<br>則 $ \mu(n) = \begin{cases}<br>1,      &amp; n = 1 \cr<br>0,      &amp; \exists k_i &gt; 1 \cr<br>(-1)^m, &amp; \text{otherwise}<br>\end{cases} $</p>
-<h3 id="反演公式">反演公式</h3><h4 id="莫比烏斯反演">莫比烏斯反演</h4><p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula" target="_blank" rel="external">https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula</a></p>
-<p>$ \sum\limits_{d|n} \phi(d) = Id(n) \Rightarrow \phi * 1 = Id $<br>$ \sum\limits_{d|n} \mu(d) = \epsilon(n) \Rightarrow \mu * 1 = \epsilon $</p>
-<p>$ \begin{align*}<br> &amp; \because \mu * 1 = \epsilon \\<br> &amp; \therefore \phi(n) \\<br> &amp; = \sum\limits_{i = 1}^{n} \epsilon(gcd(i,n)) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | gcd(i,n)} \mu(d) \\<br> &amp; = \sum\limits_{i = 1}^{n} \sum\limits_{d | i \wedge d | n} \mu(d) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \frac{n}{d} \\<br> &amp; = (\mu * Id)(n)<br>\end{align*} $</p>
-<p>按這思路，顯然得證 $ \sum\limits_{i = 1}^{n} i \cdot \epsilon(gcd(i,n)) = \frac{n}{2} (\mu * 1 + \mu * Id)(n) = \frac{n}{2} (\epsilon + \phi)(n) $，即[1,n]中與n互質的數之和。<br>[2015.12.03] 顺便补充下平方和的结论： $ \sum\limits_{i = 1}^{n} i^2 \cdot \epsilon(gcd(i,n)) = \frac{n^2}{3} \phi(n) + \frac{n^2}{2} \epsilon(n) + \frac{n}{6} \sum\limits_{d | n} \mu(d) d $</p>
-<p>如 $ \phi * 1 = Id $，$ \mu * Id = \phi $；<br>又 $ \epsilon * 1 = 1 $，$ \mu * 1 = \epsilon $；<br>顯然能得出莫比烏斯反演公式 $ f * 1 = F $，$ \mu * F = f $<br>亦可以寫作：<br>$ F(n) = \sum\limits_{d | n} f(d) $<br>$ f(n) = \sum\limits_{d | n} \mu(\frac{n}{d}) F(d) $</p>
-<p>證明：<br>$ \begin{align*}<br> &amp; \because f * 1 = F \\<br> &amp; \therefore (\mu * F)(n) \\<br> &amp; = \sum\limits_{d | n} \mu(d) F(\frac{n}{d}) \\<br> &amp; = \sum\limits_{d | n} \mu(d) \sum\limits_{d’ | \frac{n}{d}} f(d’) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \sum\limits_{d | \frac{n}{d’}} \mu(d) \\<br> &amp; = \sum\limits_{d’ | n} f(d’) \epsilon(frac{n}{d’}) \\<br> &amp; = f(n)<br>\end{align*} $</p>
-<h4 id="二項式反演">二項式反演</h4><p>對於 $ 0 ^ n $ 的二項式展開：<br>$ \sum\limits_{i = 0}^{n} (-1)^i \binom{n}{i} = (1 + (-1))^{n} $<br>然後是個組合數學的小trick：<br>$ \binom{n}{i} \binom{i}{k} = \frac{n!}{(n-i)!} \frac{1}{k!(i-k)!} = \frac{n!}{k!(n-k)!} \frac{(n-k)!}{(n-i)!(i-k)!} = \binom{n}{k} \binom{n-k}{i-k} $</p>
-<p>既然都這樣惹，再隨便推導下二項式的反演吧。<br>$ \begin{align*}<br> &amp; \because F(n) = \sum\limits_{i = 0}^{n} \binom{n}{k} f(i) \\<br> &amp; \therefore \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} F(i) \\<br> &amp; = \sum\limits_{i = 0}^{n} (-1)^{n-i} \binom{n}{i} \sum\limits_{k = 0}^{i} \binom{i}{k} f(k) \\<br> &amp; = \sum\limits_{k = 0}^{n} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n}{i} \binom{i}{k} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) \sum\limits_{i = k}^{n} (-1)^{n-i} \binom{n-k}{n-i} \\<br> &amp; = \sum\limits_{k = 0}^{n} \binom{n}{k} f(k) (1 + (-1))^{n - k} \\<br> &amp; = 0 + f(n) = f(n)<br>\end{align*} $</p>
-<h2 id="遞推">遞推</h2><h3 id="a[n]_=_a[n-1]^2_-_2">a[n] = a[n-1]^2 - 2</h3><p>$ a_{n} = a_{n-1} ^ 2 - 2 $<br>令 $ a_{0} = x + \frac{1}{x} $<br>則 $ a_{n} = x ^ {2^n} + \frac{1}{x^{2^n}} $</p>
-<h3 id="a[n]_=_p⋅a[n-1]_+_q⋅a[n-2]">a[n] = p⋅a[n-1] + q⋅a[n-2]</h3><p>$ a_{n} = p⋅a_{n-1} + q⋅a_{n-2} $<br>特徵方程 $ x ^ 2 = p x + q $，求得 $ \alpha \beta $。<br>若 $ \alpha \neq \beta $，則 $ a_{n} = c_{1} \alpha ^ n + c_{2} \beta ^ n $；<br>若 $ \alpha = \beta $，則 $ a_{n} = (c_{1} + n c_{2}) \alpha ^ n $。<br>求得 $ c_{1}, c_{2} $，求得 $ p, q $，即求得 $ a_{n} $。</p>
-<h3 id="(a+√b)^n">(a+√b)^n</h3><p>$ S_{n} = \lceil (a + \sqrt{b}) ^ {n} \rceil $<br>構造 $ (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ \because 0 &lt; a - \sqrt{b} &lt; 1 $，<br>且二項式展開、合併同類項後，只可能有 $ \sqrt{b} ^ {2i} = b ^ i $<br>$ \therefore S_{n} = (a + \sqrt{b}) ^ {n} + (a - \sqrt{b}) ^ {n} $<br>$ S_{n} ⋅ ((a + \sqrt{b}) + (a - \sqrt{b})) $<br>$ =<br>(a + \sqrt{b}) ^ {n+1} +<br>(a - \sqrt{b}) ^ {n+1} +<br>(a + \sqrt{b}) (a - \sqrt{b}) ((a + \sqrt{b}) ^ {n-1} + (a - \sqrt{b}) ^ {n-1}) $<br>$ = S_{n+1} + (a ^ 2 - b) S_{n-1} $<br>移項得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
-<p>也可以直接構造上一節 “a[n] = p⋅a[n-1] + q⋅a[n-2]” 的形式，<br>特徵根 $ a - \sqrt{b}, a + \sqrt{b} $，$ p = 2a, q = b - a ^ 2 $<br>輕鬆得 $ S_{n+1} = 2a S_{n} + (b - a ^ 2) S_{n-1} $</p>
-<h2 id="浮點">浮點</h2><h3 id="卡翰求和算法">卡翰求和算法</h3><p><a href="https://en.wikipedia.org/wiki/Kahan_summation_algorithm" target="_blank" rel="external">https://en.wikipedia.org/wiki/Kahan_summation_algorithm</a></p>
-<p>對浮點序列求 $ \sum a_i $ 減小過程中的誤差</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="title">KahanSum</span><span class="params">(input)</span></span></span><br><span class="line">  <span class="tag">var</span> sum = <span class="number">0.0</span></span><br><span class="line">  <span class="tag">var</span> c = <span class="number">0.0</span></span><br><span class="line">  <span class="keyword">for</span> <span class="tag">i</span> = <span class="number">1</span> to <span class="tag">input</span><span class="class">.length</span> do</span><br><span class="line">    <span class="tag">var</span> y = <span class="tag">input</span>[i] - c</span><br><span class="line">    <span class="tag">var</span> t = sum + y</span><br><span class="line">    c = (t - sum) - y</span><br><span class="line">    sum = t</span><br><span class="line">  return sum</span><br></pre></td></tr></table></figure>
-<h3 id="牛頓迭代法">牛頓迭代法</h3><p>牛頓迭代法（Newton Method）：<a href="https://en.wikipedia.org/wiki/Newton%27s_method" target="_blank" rel="external">https://en.wikipedia.org/wiki/Newton%27s_method</a></p>
-<p>對 $ \sqrt{S} $ 構造 $ f(x) = x ^ 2 - S = 0 $<br>有 $ x_{n+1}<br>= x_{n} - \frac{ f(x_{n}) }{ f’(x_{n}) }<br>= x_{n} - \frac{ x_{n}^{2} - S }{ 2x_{n} }<br>= \frac{1}{2} (x_{n} + \frac{S}{x_{n}}) $</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>]]>
-    
-    </summary>
-    
-      <category term="數論" scheme="http://fateud.com/tags/%E6%95%B8%E8%AB%96/"/>
-    
-      <category term="遞推" scheme="http://fateud.com/tags/%E9%81%9E%E6%8E%A8/"/>
-    
-      <category term="筆記" scheme="http://fateud.com/categories/%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
