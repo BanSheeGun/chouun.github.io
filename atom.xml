@@ -5,7 +5,7 @@
   <subtitle><![CDATA[命運 / 無盡長夜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://fateud.com//"/>
-  <updated>2016-03-12T06:16:56.651Z</updated>
+  <updated>2016-04-09T10:45:44.600Z</updated>
   <id>http://fateud.com//</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title><![CDATA[殘龍的數學筆記]]></title>
     <link href="http://fateud.com/note-math/"/>
     <id>http://fateud.com/note-math/</id>
-    <published>2016-03-12T06:16:56.651Z</published>
-    <updated>2016-03-12T06:16:56.651Z</updated>
+    <published>2016-04-09T10:45:44.600Z</published>
+    <updated>2016-04-09T10:45:44.600Z</updated>
     <content type="html"><![CDATA[<p>老實說了吧，這篇東西是個大坑，反正我根本沒準備填。<br>你們如果有靠譜的資料，可以貼在下面供我參考，謝謝。</p>
 <a id="more"></a>
 <h2 id="數論">數論</h2><h3 id="最大公約數">最大公約數</h3><p><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="external">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
@@ -34,7 +34,7 @@
 <p>若 $p$ 是素數，$a$ 是正整數，則：$a^p \equiv a \pmod{p}$。<br>若 $p$ 是素數，$a$ 是正整數且不能被 $p$ 整除，則：$a^{p-1} \equiv 1 \pmod{p}$。</p>
 <h4 id="歐拉定理">歐拉定理</h4><p><a href="https://en.wikipedia.org/wiki/Euler%27s_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Euler%27s_theorem</a></p>
 <p>若 $gcd(p, a)$ = 1，則：$a^{\phi(p)} \equiv 1 \pmod{p}$。$\phi(n)$ 是<a href="#歐拉函數">歐拉函數</a>。</p>
-<h4 id="逆元定義">逆元定義</h4><p>若 $ax \equiv 1 \pmod{p}$，則稱 $x$ 爲 $a$ 模 $m$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x \pmod{p}$。</p>
+<h4 id="逆元定義">逆元定義</h4><p>若 $ax \equiv 1 \pmod{p}$，則稱 $x$ 爲 $a$ 模 $p$ 的逆元。<br>構造 $ax + py = 1$，則x可以用擴展歐幾里德算法求得；<br>若 $p$ 是質數，$a^{p-2} \equiv x \pmod{p}$。</p>
 <p>接下來講實踐中的三個小trick。</p>
 <h4 id="編程技巧">編程技巧</h4><p>Q：教練，我不想求逆元！<br>A：可以通過以下性質來避開。</p>
 <p>若 $b | a$，則：$\frac{a}{b} \bmod p = \frac{a \bmod pb}{b}$</p>
@@ -108,11 +108,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[由<從內聖到外王》引發的思考]]></title>
+    <title><![CDATA[由《從內聖到外王》引發的思考]]></title>
     <link href="http://fateud.com/note-nsww/"/>
     <id>http://fateud.com/note-nsww/</id>
     <published>2016-03-01T14:03:41.000Z</published>
-    <updated>2016-03-01T14:33:03.634Z</updated>
+    <updated>2016-04-09T10:45:20.441Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>上學期末，有幸搶到了楊海峯老師的公選課《從內聖到外王》；今天是第一堂課，我覺得不虛此行。<br>順便附上：生生學堂(<a href="http://sssch.net/" target="_blank" rel="external">http://sssch.net/</a>)是楊老師創辦的一個公益學習平臺。</p>
 <a id="more"></a>
 <h2 id="梗概">梗概</h2><p>楊老師並非聖賢，正如他所言，只是一個活生生的人。但他敢於把某些事情擺到檯面上來談論，而其他的人不外乎瞎子、鴕鳥，以及既得利益者。我很慶幸，因爲他所提及的話題，與我以前的瞎想，不謀而合。雖然對於個人與整體的問題上，我對他的看法不以爲然。</p>
