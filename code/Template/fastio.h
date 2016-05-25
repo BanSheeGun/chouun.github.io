@@ -2,58 +2,57 @@
 // Copyright : fateud.com
 
 #ifndef FASTIO_H_
-#define FASTIO_H_ 20151122L
+#define FASTIO_H_ 20160411L
 
-#include <stdio.h>
-#include <ctype.h>
-
-#ifndef BUF_SIZE
-#define BUF_SIZE (20 << 20) // KB(<< 10), MB(<< 20).
-#endif
+#include <cstdio>
+#include <cctype>
 
 namespace csl {
-  namespace fastio {
-    char BUF[BUF_SIZE];
-
-    char* ptr;
-    char* end;
-
-    inline void build() {
-      ptr = BUF;
-      end = BUF + fread(BUF, sizeof(char), BUF_SIZE, stdin);
-    }
-
+  class fastio {
+  public:
+    char *head, *tail;
+    fastio(char* data, unsigned size)
+    { head = data, tail = data + fread(data, sizeof(char), size, stdin); }
     inline bool empty() {
-      for(char* __x = ptr; __x < end; ++__x) {
+      for(char* __x = head; __x < tail; ++__x) {
         if(isspace(*__x)) continue;
         if(isalnum(*__x)) return false;
       }
       return true;
     }
-
+    friend fastio& operator >> (fastio& in, int& x)
+    { return in.nextSigned(x), in; }
+    friend fastio& operator >> (fastio& in, long long& x)
+    { return in.nextSigned(x), in; }
+    friend fastio& operator >> (fastio& in, unsigned int& x)
+    { return in.nextUnsigned(x), in; }
+    friend fastio& operator >> (fastio& in, unsigned long long& x)
+    { return in.nextUnsigned(x), in; }
+    friend fastio& operator >> (fastio& in, char& ch)
+    { return ch = *in.head, ++in.head, in; }
+    friend fastio& operator >> (fastio& in, char* s) {
+      for(; in.head < in.tail && isgraph(*s = *in.head); ++s, ++in.head);
+      return *s = 0, in;
+    }
+    void getline(char* s)
+    { for(; head < tail && isprint(*s = *head); ++s, ++head); *s = 0; }
+  private:
     template<typename _Tp>
-    inline void nextInt(_Tp& __x) {
-      __x = _Tp();
-      for(register bool __vf = 0, __sf = 0; true; ++ptr) {
-        if(isdigit(*ptr)) __x = (__x << 3) + (__x << 1) + *ptr - '0', __vf = 1;
-        else if(__vf) {
-          if(__sf) __x = -__x;
-          break;
-        }
-        else if(*ptr == '-') __sf = true;
-      }
+    inline void nextSigned(_Tp& x) {
+      x = _Tp();
+      for(bool __vf = 0; true; ++head)
+        if(isdigit(*head)) x = (x << 3) + (x << 1) + *head - '0', __vf = 1;
+        else if(__vf) break;
     }
-
-    inline void nextChar(char& __x) {
-      __x = *ptr, ++ptr;
+    template<typename _Tp>
+    inline void nextUnsigned(_Tp& x) {
+      x = _Tp();
+      for(bool __vf = 0, __sf = 0; true; ++head)
+        if(isdigit(*head)) x = (x << 3) + (x << 1) + *head - '0', __vf = 1;
+        else if(__vf) { if(__sf) x = -x; break; }
+        else if(*head == '-') __sf = true;
     }
-
-    inline void nextStr(char* __s) {
-      for(; (*__s = *ptr); ++__s, ++ptr);
-    }
-
-  } // namespace fastio
-
+  };
 } // namespace csl
 
 #endif /* FASTIO_H_ */

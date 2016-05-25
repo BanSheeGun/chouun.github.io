@@ -8,7 +8,7 @@
 #include <functional>
 #include <vector>
 
-#if !_USE_MATH_DEFINES && !_POSIX_C_SOURCE
+#ifndef M_PI
 #define M_E        2.71828182845904523536     // - e
 #define M_LOG2E    1.44269504088896340736     // - log2(e)
 #define M_LOG10E   0.434294481903251827651    // - log10(e)
@@ -18,7 +18,7 @@
 #define M_1_PI     0.318309886183790671538    // - 1/pi
 #define M_SQRT2    1.41421356237309504880     // - sqrt(2)
 #define M_SQRT1_2  0.707106781186547524401    // - 1/sqrt(2)
-#endif /* !_USE_MATH_DEFINES && !_POSIX_C_SOURCE */
+#endif /* M_PI */
 
 namespace csl {
   /*
